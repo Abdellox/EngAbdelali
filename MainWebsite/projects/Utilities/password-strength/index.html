@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🔒 Password Strength</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="checker-box">
+            <h2>Password Strength Checker</h2>
+            <p>Check how strong your password is</p>
+            
+            <div class="input-section">
+                <label>Enter Password</label>
+                <div class="password-input">
+                    <input type="password" id="passwordInput" placeholder="Enter password" oninput="checkStrength()">
+                    <button onclick="togglePassword()" class="btn-toggle">👁️</button>
+                </div>
+            </div>
+            
+            <div class="strength-meter">
+                <div id="strengthBar" class="strength-bar"></div>
+            </div>
+            
+            <div id="strengthText" class="strength-text">Enter a password</div>
+            
+            <div class="requirements">
+                <h3>Requirements:</h3>
+                <div id="req-length" class="requirement">❌ At least 8 characters</div>
+                <div id="req-upper" class="requirement">❌ Uppercase letter</div>
+                <div id="req-lower" class="requirement">❌ Lowercase letter</div>
+                <div id="req-number" class="requirement">❌ Number</div>
+                <div id="req-special" class="requirement">❌ Special character</div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

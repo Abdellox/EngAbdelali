@@ -1,0 +1,39 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">⏲️ Timer App</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Timer</h1>
+        <div id="display" class="display">00:00</div>
+        <div class="controls">
+            <input type="number" id="minutes" placeholder="Minutes" min="0" max="99" value="5">
+            <input type="number" id="seconds" placeholder="Seconds" min="0" max="59" value="0">
+        </div>
+        <div class="buttons">
+            <button onclick="startTimer()" id="startBtn">Start</button>
+            <button onclick="pauseTimer()" id="pauseBtn">Pause</button>
+            <button onclick="resetTimer()" id="resetBtn">Reset</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

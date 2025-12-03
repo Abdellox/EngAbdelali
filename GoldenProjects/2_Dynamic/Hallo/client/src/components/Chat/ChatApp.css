@@ -1,0 +1,12 @@
+.chat-app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+}
+
+@media (max-width: 768px) {
+  .chat-app {
+    flex-direction: column;
+  }
+}

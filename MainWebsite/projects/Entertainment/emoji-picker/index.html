@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Emoji Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">😀 Emoji Picker</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="picker-box">
+            <input type="text" id="search" placeholder="Search emojis..." oninput="filter()">
+            <div class="emoji-grid" id="grid"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

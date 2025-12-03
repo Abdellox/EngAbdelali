@@ -1,0 +1,10 @@
+let transactions=JSON.parse(localStorage.getItem('transactions'))||[];function addTransaction(){const desc=document.getElementById('descInput').value.trim();const amount=parseFloat(document.getElementById('amountInput').value);const type=document.getElementById('typeInput').value;const category=document.getElementById('categoryInput').value;if(!desc||!amount){alert('Fill all fields!');return}transactions.push({id:Date.now(),desc,amount,type,category,date:new Date().toISOString()});save();render();document.getElementById('descInput').value='';document.getElementById('amountInput').value=''}function deleteTransaction(id){if(confirm('Delete?')){transactions=transactions.filter(t=>t.id!==id);save();render()}}function render(){const list=document.getElementById('transactionsList');const sorted=[...transactions].sort((a,b)=>new Date(b.date)-new Date(a.date));if(sorted.length===0){list.innerHTML='<div class="no-data">No transactions yet</div>';updateSummary();return}list.innerHTML=sorted.map(t=>`
+<div class="transaction-item ${t.type}">
+<div class="transaction-info">
+<div class="transaction-desc">${t.desc}</div>
+<div class="transaction-meta">${t.category} • ${new Date(t.date).toLocaleDateString()}</div>
+</div>
+<div class="transaction-amount ${t.type}">${t.type==='income'?'+':'-'}$${t.amount.toFixed(2)}</div>
+<button onclick="deleteTransaction(${t.id})" class="btn-delete">×</button>
+</div>
+`).join('');updateSummary()}function updateSummary(){const income=transactions.filter(t=>t.type==='income').reduce((sum,t)=>sum+t.amount,0);const expense=transactions.filter(t=>t.type==='expense').reduce((sum,t)=>sum+t.amount,0);const balance=income-expense;document.getElementById('totalIncome').textContent=`$${income.toFixed(2)}`;document.getElementById('totalExpense').textContent=`$${expense.toFixed(2)}`;document.getElementById('balance').textContent=`$${balance.toFixed(2)}`;document.getElementById('balance').style.color=balance>=0?'#27ae60':'#e74c3c'}function save(){localStorage.setItem('transactions',JSON.stringify(transactions))}render();console.log('💰 Budget Planner Ready');

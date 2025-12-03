@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Me ☕ - Abdel Ali</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .support-container {
+      max-width: 1200px;
+      width: 100%;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Left Column - Info */
+    .left-column {
+      background: linear-gradient(135deg, #13C3FF 0%, #FF39D9 100%);
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .left-column::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .left-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .coffee-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .left-column h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .left-column p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    /* Right Column - Action */
+    .right-column {
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .message {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .message h2 {
+      font-size: 1.5rem;
+      color: #2d3748;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .message p {
+      font-size: 1rem;
+      color: #718096;
+      line-height: 1.6;
+    }
+
+    /* Ko-fi Button */
+    .kofi-button {
+      display: block;
+      background: linear-gradient(135deg, #13C3FF 0%, #FF39D9 100%);
+      color: white;
+      text-decoration: none;
+      padding: 1.25rem 2rem;
+      border-radius: 16px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(255, 57, 217, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kofi-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .kofi-button:hover::before {
+      left: 100%;
+    }
+
+    .kofi-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(255, 57, 217, 0.4);
+    }
+
+    .kofi-button:active {
+      transform: translateY(-1px);
+    }
+
+    .button-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .button-icon {
+      font-size: 1.75rem;
+    }
+
+
+
+    /* Unlock Info */
+    .unlock-info {
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+
+    .unlock-info h3 {
+      color: #2d3748;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .unlock-info p {
+      color: #4a5568;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .unlock-info strong {
+      color: #667eea;
+      font-size: 1.1rem;
+    }
+
+    .unlock-steps-small {
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .unlock-steps-small div {
+      padding: 0.4rem 0;
+      color: #2d3748;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    /* Thank You Note */
+    .thank-you {
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: #f7fafc;
+      transform: translateX(-3px);
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .support-container {
+        grid-template-columns: 1fr;
+      }
+
+      .left-column {
+        padding: 3rem 2rem;
+      }
+
+      .right-column {
+        padding: 3rem 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+
+      .left-column,
+      .right-column {
+        padding: 2rem 1.5rem;
+      }
+
+      .left-column h1 {
+        font-size: 2rem;
+      }
+
+      .coffee-icon {
+        font-size: 4rem;
+      }
+
+      .kofi-button {
+        font-size: 1.1rem;
+        padding: 1rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="support-container">
+    <!-- Left Column - Info -->
+    <div class="left-column">
+      <div class="left-content">
+        <div class="coffee-icon">☕</div>
+        <h1>Support My Work</h1>
+        <p>
+          Hi! I'm Abdel Ali, a passionate software engineer who loves building 
+          innovative web applications.
+        </p>
+        <p>
+          Your support helps me dedicate more time to creating free, open-source 
+          projects and sharing knowledge with the community. Every contribution 
+          makes a huge difference!
+        </p>
+        <a href="index.html" class="back-link">
+          <span>←</span>
+          <span>Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column - Action -->
+    <div class="right-column">
+      <div class="message">
+        <h2>Buy Me a Coffee</h2>
+        <p>
+          Choose any amount you'd like to contribute. Your generosity keeps me 
+          motivated to create more amazing projects!
+        </p>
+      </div>
+
+      <!-- Ko-fi Button -->
+      <a href="https://ko-fi.com/abdelalii" target="_blank" class="kofi-button">
+        <div class="button-content">
+          <span class="button-icon">☕</span>
+          <span>Support on Ko-fi</span>
+        </div>
+      </a>
+
+      <!-- Unlock Info -->
+      <div class="unlock-info">
+        <h3>🔓 Unlock Golden Projects</h3>
+        <p>Support with <strong>$5 or more</strong> to unlock all 25+ premium Golden Projects!</p>
+        <div class="unlock-steps-small">
+          <div>1. Support on Ko-fi above</div>
+          <div>2. Message me for your unlock code</div>
+          <div>3. Enter code on portfolio</div>
+          <div>4. Enjoy lifetime access!</div>
+        </div>
+      </div>
+
+      <!-- Thank You -->
+      <div class="thank-you">
+        💖 Thank you for your support!
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Track support page visit
+    if (typeof PortfolioAnalytics !== 'undefined') {
+      window.portfolioAnalytics.trackEvent('supportPageVisit', {
+        page: 'support',
+        timestamp: new Date().toISOString()
+      });
+    }
+  </script>
+</body>
+</html>

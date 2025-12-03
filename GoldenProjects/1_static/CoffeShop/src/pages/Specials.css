@@ -1,0 +1,225 @@
+.specials {
+  padding: 40px 20px;
+}
+
+.specials h1 {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.today-special {
+  background: linear-gradient(135deg, var(--coffee-brown), var(--deep-espresso));
+  color: var(--cream-white);
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+.special-badge {
+  background: var(--caramel-gold);
+  color: var(--deep-espresso);
+  padding: 16px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.special-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px;
+  align-items: center;
+}
+
+.special-image {
+  font-size: 200px;
+  text-align: center;
+}
+
+.special-info h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.special-info p {
+  font-size: 18px;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.price-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.original-price {
+  font-size: 20px;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.special-price {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--caramel-gold);
+}
+
+.countdown {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.weekly-specials {
+  margin-bottom: 60px;
+}
+
+.weekly-specials h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 32px;
+}
+
+.weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.weekly-card {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.weekly-card.active {
+  border: 3px solid var(--caramel-gold);
+}
+
+.day-label {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--coffee-brown);
+}
+
+.dark-mode .day-label {
+  color: var(--caramel-gold);
+}
+
+.weekly-image {
+  font-size: 60px;
+  margin-bottom: 12px;
+}
+
+.weekly-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.discount-badge {
+  background: #FF5722;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.combo-deals h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 32px;
+}
+
+.combo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.combo-card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.combo-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.combo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--cream-white);
+  border-radius: 8px;
+}
+
+.dark-mode .combo-item {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.combo-icon {
+  font-size: 32px;
+}
+
+.combo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 2px solid var(--cream-white);
+}
+
+.dark-mode .combo-footer {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.combo-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--caramel-gold);
+}
+
+.combo-savings {
+  font-size: 14px;
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .specials h1 {
+    font-size: 32px;
+  }
+
+  .special-content {
+    grid-template-columns: 1fr;
+  }
+
+  .special-image {
+    font-size: 120px;
+  }
+
+  .weekly-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .combo-grid {
+    grid-template-columns: 1fr;
+  }
+}

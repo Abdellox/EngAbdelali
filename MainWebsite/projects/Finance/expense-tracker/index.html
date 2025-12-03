@@ -1,0 +1,57 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">💰 Expense Tracker</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    <div class="tracker-container">
+        <div class="balance-card">
+            <h3>Total Balance</h3>
+            <h1 class="balance" id="balance">$0.00</h1>
+            <div class="summary">
+                <div class="summary-item income">
+                    <span>Income</span>
+                    <span id="income">$0.00</span>
+                </div>
+    <div class="summary-item expense">
+                    <span>Expense</span>
+                    <span id="expense">$0.00</span>
+                </div>
+    </div>
+        </div>
+    <div class="add-transaction">
+            <h3>Add Transaction</h3>
+            <form id="transactionForm">
+                <input type="text" id="description" placeholder="Description" required>
+                <input type="number" id="amount" placeholder="Amount" step="0.01" required>
+                <select id="type" required>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button type="submit" class="btn">Add Transaction</button>
+            </form>
+        </div>
+    <div class="transactions">
+            <h3>Transaction History</h3>
+            <div class="transaction-list" id="transactionList"></div>
+    </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

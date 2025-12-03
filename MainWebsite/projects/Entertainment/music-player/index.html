@@ -1,0 +1,52 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🎵 Music Player</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    <div class="player-container">
+        <div class="music-player">
+            <div class="album-art">
+                <div class="vinyl" id="vinyl">💿</div>
+    </div>
+            <div class="song-info">
+                <h2 class="song-title" id="songTitle">Summer Vibes</h2>
+                <p class="artist" id="artist">The Coders</p>
+            </div>
+    <div class="progress-container">
+                <div class="time" id="currentTime">0:00</div>
+    <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+    </div>
+                <div class="time" id="duration">3:45</div>
+    </div>
+            <div class="controls">
+                <button class="control-btn" onclick="previousSong()">⏮️</button>
+                <button class="control-btn play-btn" id="playBtn" onclick="togglePlay()">▶️</button>
+                <button class="control-btn" onclick="nextSong()">⏭️</button>
+            </div>
+    <div class="playlist">
+                <h3>Playlist</h3>
+                <div class="playlist-items" id="playlist"></div>
+    </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

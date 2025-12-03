@@ -1,0 +1,46 @@
+# IDE and Editor files
+.vscode/
+.idea/
+.kiro/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node modules (if you add npm later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# Personal/sensitive data (optional - uncomment if needed)
+# MainWebsite/assets/Allouche_Resume_2026.pdf
+
+# Private admin test files
+test-admin.html
+admin-test.html

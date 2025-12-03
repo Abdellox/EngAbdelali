@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🔤 Case Converter</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="converter-box">
+            <textarea id="input" placeholder="Enter text here..."></textarea>
+            <div class="buttons">
+                <button onclick="convert('upper')" class="btn">UPPERCASE</button>
+                <button onclick="convert('lower')" class="btn">lowercase</button>
+                <button onclick="convert('title')" class="btn">Title Case</button>
+                <button onclick="convert('sentence')" class="btn">Sentence case</button>
+                <button onclick="convert('camel')" class="btn">camelCase</button>
+                <button onclick="convert('snake')" class="btn">snake_case</button>
+                <button onclick="convert('kebab')" class="btn">kebab-case</button>
+                <button onclick="convert('toggle')" class="btn">tOGGLE cASE</button>
+            </div>
+            <textarea id="output" readonly></textarea>
+            <div class="actions">
+                <button onclick="copy()" class="btn-action">Copy</button>
+                <button onclick="clear()" class="btn-action">Clear</button>
+            </div>
+            <div class="stats">
+                <span>Characters: <strong id="chars">0</strong></span>
+                <span>Words: <strong id="words">0</strong></span>
+                <span>Lines: <strong id="lines">0</strong></span>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

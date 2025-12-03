@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Demo - Test Multiple APIs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🌐 API Demo</h1>
+            <a href="../../../index.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="demo-box">
+            <div class="header">
+                <h2>API Testing Playground</h2>
+                <p>Test various public APIs and see real-time responses</p>
+            </div>
+
+            <div class="api-tabs">
+                <button class="tab-btn active" onclick="switchTab('users')">👥 Random User</button>
+                <button class="tab-btn" onclick="switchTab('jokes')">😂 Jokes</button>
+                <button class="tab-btn" onclick="switchTab('quotes')">💭 Quotes</button>
+                <button class="tab-btn" onclick="switchTab('facts')">🐱 Cat Facts</button>
+                <button class="tab-btn" onclick="switchTab('advice')">💡 Advice</button>
+            </div>
+
+            <div class="tab-content active" id="users-tab">
+                <h3>Random User Generator</h3>
+                <p>Get random user data from randomuser.me API</p>
+                <button onclick="fetchRandomUser()" class="btn-fetch">Fetch Random User</button>
+                <div id="users-result" class="result-box"></div>
+            </div>
+
+            <div class="tab-content" id="jokes-tab">
+                <h3>Random Jokes</h3>
+                <p>Get random programming jokes</p>
+                <button onclick="fetchJoke()" class="btn-fetch">Get a Joke</button>
+                <div id="jokes-result" class="result-box"></div>
+            </div>
+
+            <div class="tab-content" id="quotes-tab">
+                <h3>Inspirational Quotes</h3>
+                <p>Get random inspirational quotes</p>
+                <button onclick="fetchQuote()" class="btn-fetch">Get Quote</button>
+                <div id="quotes-result" class="result-box"></div>
+            </div>
+
+            <div class="tab-content" id="facts-tab">
+                <h3>Cat Facts</h3>
+                <p>Learn interesting facts about cats</p>
+                <button onclick="fetchCatFact()" class="btn-fetch">Get Cat Fact</button>
+                <div id="facts-result" class="result-box"></div>
+            </div>
+
+            <div class="tab-content" id="advice-tab">
+                <h3>Random Advice</h3>
+                <p>Get random life advice</p>
+                <button onclick="fetchAdvice()" class="btn-fetch">Get Advice</button>
+                <div id="advice-result" class="result-box"></div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalRequests">0</div>
+                    <div class="stat-label">Total Requests</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="successRate">100%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

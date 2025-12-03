@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Hand Evaluator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🃏 Poker Hand Evaluator</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="app-box">
+            <h2>Poker Hand Evaluator</h2>
+            <p>Draw 5 cards and see what hand you have!</p>
+            
+            <div class="hand" id="hand"></div>
+            
+            <div class="result" id="result">
+                <h3>Your Hand:</h3>
+                <p id="handName">Draw cards to start</p>
+            </div>
+            
+            <div class="buttons">
+                <button onclick="drawHand()" class="btn-primary">Draw New Hand</button>
+                <button onclick="evaluateHand()" class="btn-secondary">Evaluate Hand</button>
+            </div>
+            
+            <div class="info">
+                <h4>Poker Hands (Highest to Lowest):</h4>
+                <ul>
+                    <li>🏆 Royal Flush</li>
+                    <li>💎 Straight Flush</li>
+                    <li>🎯 Four of a Kind</li>
+                    <li>🏠 Full House</li>
+                    <li>♦️ Flush</li>
+                    <li>📊 Straight</li>
+                    <li>🎲 Three of a Kind</li>
+                    <li>👥 Two Pair</li>
+                    <li>🎴 One Pair</li>
+                    <li>🃏 High Card</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

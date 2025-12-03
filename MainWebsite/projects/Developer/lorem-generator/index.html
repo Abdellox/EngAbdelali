@@ -1,0 +1,83 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">📝 Lorem Ipsum Generator</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="generator-box">
+            <h2>Generate Lorem Ipsum Text</h2>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label>Type</label>
+                    <select id="type">
+                        <option value="paragraphs">Paragraphs</option>
+                        <option value="sentences">Sentences</option>
+                        <option value="words">Words</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Count</label>
+                    <input type="number" id="count" min="1" max="100" value="3">
+                </div>
+
+                <div class="control-group">
+                    <label>
+                        <input type="checkbox" id="startWithLorem">
+                        Start with "Lorem ipsum dolor sit amet..."
+                    </label>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-generate" onclick="generate()">Generate</button>
+                <button class="btn-copy" onclick="copyText()">Copy to Clipboard</button>
+                <button class="btn-clear" onclick="clearText()">Clear</button>
+            </div>
+
+            <div class="output-section">
+                <div class="stats">
+                    <span>Words: <strong id="wordCount">0</strong></span>
+                    <span>Characters: <strong id="charCount">0</strong></span>
+                    <span>Paragraphs: <strong id="paraCount">0</strong></span>
+                </div>
+                <textarea id="output" readonly placeholder="Generated text will appear here..."></textarea>
+            </div>
+
+            <div class="presets">
+                <h3>Quick Presets</h3>
+                <div class="preset-buttons">
+                    <button onclick="quickGenerate('paragraphs', 1)">1 Paragraph</button>
+                    <button onclick="quickGenerate('paragraphs', 3)">3 Paragraphs</button>
+                    <button onclick="quickGenerate('paragraphs', 5)">5 Paragraphs</button>
+                    <button onclick="quickGenerate('sentences', 5)">5 Sentences</button>
+                    <button onclick="quickGenerate('words', 50)">50 Words</button>
+                    <button onclick="quickGenerate('words', 100)">100 Words</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

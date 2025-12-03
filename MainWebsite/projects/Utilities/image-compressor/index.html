@@ -1,0 +1,41 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🗜️ Image Compressor</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Image Compressor</h1>
+        <input type="file" id="imageInput" accept="image/*">
+        <div id="preview" class="preview"></div>
+        <div class="controls">
+            <label>Quality: <input type="range" id="quality" min="1" max="100" value="80"> <span id="qualityValue">80%</span></label>
+            <button onclick="compressImage()">Compress</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+    <script>
+        document.getElementById('quality').addEventListener('input', (e) => {
+            document.getElementById('qualityValue').textContent = e.target.value + '%';
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

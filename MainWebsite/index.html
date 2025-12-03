@@ -1,0 +1,731 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║                                                                       ║
+║   Portfolio Website - Abdel Ali                                      ║
+║   Copyright © 2025 Abdel Ali. All Rights Reserved.                   ║
+║                                                                       ║
+║   This code is the intellectual property of Abdel Ali.               ║
+║   Unauthorized copying, modification, or distribution is prohibited. ║
+║                                                                       ║
+║   For inquiries: abelaliaalouch@gmail.com                            ║
+║                                                                       ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abdel Ali - Software Engineer Portfolio showcasing 193 projects across multiple categories including games, productivity tools, and web applications.">
+  <meta name="keywords" content="software engineer, web developer, portfolio, JavaScript, TypeScript, React, Node.js, Abdel Ali">
+  <meta name="author" content="Abdel Ali">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Abdel Ali - Software Engineer Portfolio">
+  <meta property="og:description" content="Explore 193 innovative projects by Abdel Ali, a passionate Software Engineer specializing in modern web technologies.">
+  <meta property="og:image" content="src/myPhoto600x600.jpg">
+  <meta property="og:url" content="https://abdelalii.github.io">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abdel Ali - Software Engineer Portfolio">
+  <meta name="twitter:description" content="Explore 193 innovative projects by Abdel Ali, a passionate Software Engineer.">
+  <meta name="twitter:image" content="src/myPhoto600x600.jpg">
+  
+  <title>Abdel Ali - Software Engineer Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/unlock-styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-brand">
+          <a href="#home" class="logo" aria-label="Home">&lt;AbdelAli/&gt;</a>
+        </div>
+        <ul class="nav-menu" role="menubar">
+          <li role="none"><a href="#home" role="menuitem">Home</a></li>
+          <li role="none"><a href="#about" role="menuitem">About</a></li>
+          <li role="none"><a href="#services" role="menuitem">Services</a></li>
+          <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
+          <li role="none"><a href="#testimonials" role="menuitem">Testimonials</a></li>
+          <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+          <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+          <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="hero-greeting">Hi, I'm</div>
+            <h1 class="hero-title">Abdel Ali</h1>
+            <h2 class="hero-role">
+              <span class="gradient-text typewriter" id="typewriter"></span>
+              <span class="cursor">|</span>
+            </h2>
+            <p class="hero-subtitle" id="heroSubtitle" style="opacity: 0;">
+              I build exceptional digital experiences with clean code and modern technologies.
+            </p>
+            <div class="hero-buttons" id="heroButtons" style="opacity: 0;">
+              <a href="#projects" class="btn btn-primary">View My Work</a>
+              <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+              <a href="support.html" class="btn btn-support">☕ Support Me</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="code-snippet">
+              <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"Abdel Ali"</span>,
+  <span class="code-property">role</span>: <span class="code-string">"Software Engineer"</span>,
+  <span class="code-property">projects</span>: <span class="code-number">193</span>,
+  <span class="code-property">skills</span>: [<span class="code-string">"JavaScript"</span>, <span class="code-string">"TypeScript"</span>, <span class="code-string">"React"</span>, <span class="code-string">"Node.js"</span>],
+  <span class="code-property">passion</span>: <span class="code-string">"Building innovative solutions"</span>
+};</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        
+        <!-- Two Column Layout -->
+        <div class="about-two-columns">
+          <!-- Left Column: Text Content -->
+          <div class="about-left-column">
+            <div class="about-intro">
+              <h3 class="about-subtitle">👋 Hello, I'm Abdel Ali</h3>
+              <p>
+                I'm a passionate Software Engineer with over 5 years of experience building innovative web applications 
+                and digital solutions. My journey in software development has been driven by curiosity and a desire to 
+                create meaningful products that solve real-world problems.
+              </p>
+              <p>
+                With expertise in modern web technologies and a strong foundation in both frontend and backend development, 
+                I've successfully delivered 193 projects across various domains including games, productivity tools, 
+                developer utilities, and creative applications.
+              </p>
+              <p>
+                I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends. 
+                When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+                or sharing knowledge with the developer community.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Stats, Links & Actions -->
+          <div class="about-right-column">
+            <!-- Stats Grid -->
+            <div class="about-stats-compact">
+              <div class="stat-compact">
+                <div class="stat-number-compact gradient-text">5+</div>
+                <div class="stat-label-compact">Years Experience</div>
+              </div>
+              <div class="stat-compact">
+                <div class="stat-number-compact gradient-text">193</div>
+                <div class="stat-label-compact">Projects</div>
+              </div>
+              <div class="stat-compact">
+                <div class="stat-number-compact gradient-text">22</div>
+                <div class="stat-label-compact">Golden Projects</div>
+              </div>
+              <div class="stat-compact">
+                <div class="stat-number-compact gradient-text">20+</div>
+                <div class="stat-label-compact">Happy Clients</div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="about-social-section">
+              <h4 class="about-section-title">🔗 Connect With Me</h4>
+              <div class="about-social-links">
+                <a href="https://www.linkedin.com/in/abdel-a-3795ba161/" target="_blank" rel="noopener noreferrer" class="about-social-btn linkedin">
+                  <svg class="social-icon-small" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/Abdellox" target="_blank" rel="noopener noreferrer" class="about-social-btn github">
+                  <svg class="social-icon-small" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="secondPortfolio/portfolio-cv.html" target="_blank" rel="noopener noreferrer" class="about-social-btn portfolio">
+                  <span style="font-size: 1.2rem;">👨‍💻</span>
+                  <span>Portfolio CV</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="about-actions-section">
+              <h4 class="about-section-title">📄 Resources</h4>
+              <div class="about-action-buttons">
+                <a href="assets/Allouche_Resume_2026.pdf" target="_blank" class="btn-about btn-about-primary">
+                  <span class="btn-icon">📄</span>
+                  <span>Download Resume</span>
+                </a>
+                <a href="secondPortfolio/portfolio-cv.html" target="_blank" class="btn-about btn-about-secondary">
+                  <span class="btn-icon">👨‍💻</span>
+                  <span>View Full CV</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <h2 class="section-title">My Services</h2>
+        <p class="section-subtitle">Professional web development solutions tailored to your needs</p>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">📄</div>
+            <h3 class="service-title">CV to Web App</h3>
+            <p class="service-description">Turn your CV into a sleek, dynamic web application that stands out from traditional PDFs.</p>
+            <ul class="service-features">
+              <li>Interactive design</li>
+              <li>Mobile responsive</li>
+              <li>Easy to share</li>
+              <li>Professional look</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🧱</div>
+            <h3 class="service-title">Frontend Development</h3>
+            <p class="service-description">Build responsive and interactive user interfaces with modern technologies.</p>
+            <ul class="service-features">
+              <li>HTML5, CSS3, JavaScript</li>
+              <li>React, Vue.js, Next.js</li>
+              <li>Responsive design</li>
+              <li>Performance optimization</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔙</div>
+            <h3 class="service-title">Backend Development</h3>
+            <p class="service-description">Create robust APIs and server-side logic for your applications.</p>
+            <ul class="service-features">
+              <li>Node.js & Express</li>
+              <li>Python & Django</li>
+              <li>PHP & Laravel</li>
+              <li>RESTful APIs</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">💾</div>
+            <h3 class="service-title">Database Setup</h3>
+            <p class="service-description">Design and manage efficient database systems for your data.</p>
+            <ul class="service-features">
+              <li>MySQL & PostgreSQL</li>
+              <li>MongoDB & Redis</li>
+              <li>Database design</li>
+              <li>Query optimization</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔗</div>
+            <h3 class="service-title">API Integration</h3>
+            <p class="service-description">Connect your application with payment gateways, authentication, and third-party services.</p>
+            <ul class="service-features">
+              <li>Payment integration</li>
+              <li>Social login</li>
+              <li>Third-party APIs</li>
+              <li>Webhooks setup</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">☁️</div>
+            <h3 class="service-title">Hosting & Deployment</h3>
+            <p class="service-description">Deploy your applications on reliable cloud platforms.</p>
+            <ul class="service-features">
+              <li>Vercel & Netlify</li>
+              <li>AWS & Render</li>
+              <li>CI/CD pipelines</li>
+              <li>Domain setup</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔐</div>
+            <h3 class="service-title">Authentication & Security</h3>
+            <p class="service-description">Implement secure user authentication and data protection.</p>
+            <ul class="service-features">
+              <li>User login systems</li>
+              <li>Role-based access</li>
+              <li>Data encryption</li>
+              <li>Security best practices</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🧠</div>
+            <h3 class="service-title">UI/UX Design</h3>
+            <p class="service-description">Create simple, clean, and mobile-friendly layouts.</p>
+            <ul class="service-features">
+              <li>Responsive layouts</li>
+              <li>User-friendly design</li>
+              <li>Modern aesthetics</li>
+              <li>Accessibility</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🧰</div>
+            <h3 class="service-title">Maintenance & Updates</h3>
+            <p class="service-description">Keep your application running smoothly with ongoing support.</p>
+            <ul class="service-features">
+              <li>Bug fixes</li>
+              <li>Feature updates</li>
+              <li>Performance monitoring</li>
+              <li>Technical support</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="services-cta">
+          <h3>Ready to start your project?</h3>
+          <p>Let's discuss how I can help bring your ideas to life</p>
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+      <div class="container">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2022 - Present</div>
+              <h3>Senior Software Engineer</h3>
+              <h4>Tech Solutions Inc.</h4>
+              <p>
+                Leading development of enterprise web applications using modern JavaScript frameworks and cloud technologies.
+                Architecting scalable solutions and mentoring junior developers.
+              </p>
+              <ul class="timeline-highlights">
+                <li>Architected and deployed 20+ microservices on AWS, improving system scalability by 300%</li>
+                <li>Led a team of 5 developers in building a real-time analytics dashboard serving 10K+ users</li>
+                <li>Reduced application load time by 60% through performance optimization and code refactoring</li>
+                <li>Implemented CI/CD pipelines reducing deployment time from hours to minutes</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2020 - 2022</div>
+              <h3>Full Stack Developer</h3>
+              <h4>Digital Innovations Ltd.</h4>
+              <p>
+                Developed and maintained full-stack web applications using React, Node.js, and PostgreSQL.
+                Collaborated with cross-functional teams to deliver high-quality software solutions.
+              </p>
+              <ul class="timeline-highlights">
+                <li>Built 30+ responsive web applications from concept to deployment</li>
+                <li>Integrated third-party APIs and payment gateways for e-commerce platforms</li>
+                <li>Improved code quality by implementing automated testing with 85% coverage</li>
+                <li>Mentored 3 junior developers and conducted code reviews</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2019 - 2020</div>
+              <h3>Frontend Developer</h3>
+              <h4>Creative Web Studio</h4>
+              <p>
+                Specialized in creating engaging user interfaces and interactive web experiences.
+                Worked closely with designers to bring creative visions to life.
+              </p>
+              <ul class="timeline-highlights">
+                <li>Developed 50+ pixel-perfect responsive websites and landing pages</li>
+                <li>Implemented complex animations and interactions using CSS3 and JavaScript</li>
+                <li>Optimized website performance achieving 95+ Lighthouse scores</li>
+                <li>Collaborated with UX designers to improve user experience and accessibility</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <h2 class="section-title">Client Testimonials</h2>
+        <p class="section-subtitle">What clients say about working with me</p>
+        
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+            </div>
+            <p class="testimonial-text">
+              "Abdel delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and problem-solving skills are outstanding. The project was completed ahead of schedule with clean, maintainable code."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SM</div>
+              <div class="author-info">
+                <h4 class="author-name">Sarah Mitchell</h4>
+                <p class="author-role">CEO, TechStart Solutions</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+            </div>
+            <p class="testimonial-text">
+              "Working with Abdel on our productivity app was a game-changer. He transformed our complex requirements into an intuitive, user-friendly application. His expertise in React and Node.js is truly impressive."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JC</div>
+              <div class="author-info">
+                <h4 class="author-name">James Chen</h4>
+                <p class="author-role">Product Manager, InnovateCo</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+            </div>
+            <p class="testimonial-text">
+              "Abdel's work on our weather application was phenomenal. He implemented real-time data visualization with smooth animations. His code quality and documentation made future maintenance effortless. Highly recommended!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">EJ</div>
+              <div class="author-info">
+                <h4 class="author-name">Emily Johnson</h4>
+                <p class="author-role">CTO, CloudMetrics Inc</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+            </div>
+            <p class="testimonial-text">
+              "The calculator and converter tools Abdel built for our platform are incredibly robust. His mathematical precision and UI/UX sensibility created tools our users love. Professional, responsive, and talented."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MR</div>
+              <div class="author-info">
+                <h4 class="author-name">Michael Rodriguez</h4>
+                <p class="author-role">Founder, ToolBox Pro</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+            </div>
+            <p class="testimonial-text">
+              "Abdel developed multiple interactive games for our educational platform. His creativity and technical skills brought our vision to life. The games are engaging, bug-free, and perform flawlessly across all devices."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">LP</div>
+              <div class="author-info">
+                <h4 class="author-name">Lisa Park</h4>
+                <p class="author-role">Director, EduPlay Games</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-rating">
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+              <span class="star">⭐</span>
+            </div>
+            <p class="testimonial-text">
+              "The task management system Abdel created revolutionized our workflow. His understanding of productivity tools and clean architecture resulted in a solution that our entire team relies on daily. Exceptional work!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">DW</div>
+              <div class="author-info">
+                <h4 class="author-name">David Williams</h4>
+                <p class="author-role">Operations Lead, TaskFlow Systems</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="tech-stack">
+              <div class="tech-item">JavaScript</div>
+              <div class="tech-item">TypeScript</div>
+              <div class="tech-item">React</div>
+              <div class="tech-item">Vue.js</div>
+              <div class="tech-item">HTML5</div>
+              <div class="tech-item">CSS3</div>
+              <div class="tech-item">Tailwind CSS</div>
+              <div class="tech-item">SASS/SCSS</div>
+              <div class="tech-item">Redux</div>
+              <div class="tech-item">Next.js</div>
+              <div class="tech-item">Webpack</div>
+              <div class="tech-item">Vite</div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="tech-stack">
+              <div class="tech-item">Node.js</div>
+              <div class="tech-item">Express</div>
+              <div class="tech-item">Python</div>
+              <div class="tech-item">Django</div>
+              <div class="tech-item">PostgreSQL</div>
+              <div class="tech-item">MongoDB</div>
+              <div class="tech-item">Redis</div>
+              <div class="tech-item">REST APIs</div>
+              <div class="tech-item">GraphQL</div>
+              <div class="tech-item">MySQL</div>
+              <div class="tech-item">Firebase</div>
+              <div class="tech-item">Prisma</div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>DevOps & Tools</h3>
+            <div class="tech-stack">
+              <div class="tech-item">Docker</div>
+              <div class="tech-item">AWS</div>
+              <div class="tech-item">Git</div>
+              <div class="tech-item">GitHub Actions</div>
+              <div class="tech-item">CI/CD</div>
+              <div class="tech-item">Linux</div>
+              <div class="tech-item">Nginx</div>
+              <div class="tech-item">Jest</div>
+              <div class="tech-item">Vitest</div>
+              <div class="tech-item">VS Code</div>
+              <div class="tech-item">Postman</div>
+              <div class="tech-item">Figma</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Golden Projects Section -->
+    <section id="golden-projects" class="golden-projects">
+      <div class="container">
+        <div class="golden-header">
+          <div class="golden-icon">✨</div>
+          <h2 class="section-title golden-title">Golden Projects</h2>
+          <p class="section-subtitle golden-subtitle">Exceptional projects that showcase excellence and innovation</p>
+        </div>
+        <div class="golden-projects-grid" id="goldenProjectsGrid">
+          <!-- Golden projects will be loaded from admin dashboard -->
+          <div class="golden-empty-state">
+            <div class="golden-trophy">🏆</div>
+            <p>No golden projects yet. Add them from the admin dashboard!</p>
+            <a href="admin-dashboard.html" class="btn btn-golden">Go to Admin Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects"></section>
+      <div class="container">
+        <h2 class="section-title">My Projects Portfolio</h2>
+        <p class="section-subtitle">Explore 193 projects across different categories</p>
+        <div class="project-filters">
+          <button class="filter-btn active" data-category="all">All (193)</button>
+          <button class="filter-btn" data-category="games">🎮 Games (33)</button>
+          <button class="filter-btn" data-category="productivity">📋 Productivity (29)</button>
+          <button class="filter-btn" data-category="utilities">🔧 Utilities (47)</button>
+          <button class="filter-btn" data-category="developer">💻 Developer (16)</button>
+          <button class="filter-btn" data-category="creative">🎨 Creative (13)</button>
+          <button class="filter-btn" data-category="finance">💰 Finance (4)</button>
+          <button class="filter-btn" data-category="health">❤️ Health (2)</button>
+          <button class="filter-btn" data-category="ui-components">🧩 UI Components (29)</button>
+          <button class="filter-btn" data-category="entertainment">🎬 Entertainment (15)</button>
+          <button class="filter-btn" data-category="education">📚 Education (5)</button>
+        </div>
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Project cards will be dynamically generated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-subtitle">Let's work together on your next project</p>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <span>abelaliaalouch@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📱</span>
+            <span>+212 696674648</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>Morocco, Rabat</span>
+          </div>
+        </div>
+        
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" name="name" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" id="email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" name="subject" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea name="message" id="message" rows="6" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <div class="form-message" id="formMessage"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo">&lt;AbdelAli/&gt;</span>
+          <p>Software Engineer | Building innovative solutions with modern technologies</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+          </div>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <a href="https://www.linkedin.com/in/abdel-a-3795ba161/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/Abdellox" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="mailto:abelaliaalouch@gmail.com">Email</a>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="assets/Allouche_Resume_2026.pdf" target="_blank">Resume (PDF)</a>
+            <a href="#contact">Contact Me</a>
+            <a href="#skills">Skills</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Abdel Ali. All rights reserved. Built with ❤️ and JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/analytics.js"></script>
+  <script src="js/enhanced-analytics.js"></script>
+  <script src="js/portfolio-data-init.js"></script>
+  <!-- <script src="js/golden-projects-data.js"></script> --> <!-- Disabled: Using admin-managed data from localStorage -->
+  <script src="js/unlock-system.js"></script>
+  <script src="js/script.js" defer></script>
+  
+  <!-- Optional: Uncomment to enable additional protection (right-click disable, etc.) -->
+  <!-- <script src="js/protection.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Timer - Find Your Peace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧘 Meditation Timer</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </header>
+
+        <div class="timer-circle">
+            <svg class="progress-ring" width="250" height="250">
+                <circle class="progress-ring-circle" stroke="#e0e0e0" stroke-width="8" fill="transparent" r="110" cx="125" cy="125"/>
+                <circle class="progress-ring-bar" stroke="#667eea" stroke-width="8" fill="transparent" r="110" cx="125" cy="125" id="progressCircle"/>
+            </svg>
+            <div class="timer-display" id="timer">05:00</div>
+        </div>
+
+        <div class="duration-selector">
+            <button class="duration-btn" data-minutes="3">3 min</button>
+            <button class="duration-btn active" data-minutes="5">5 min</button>
+            <button class="duration-btn" data-minutes="10">10 min</button>
+            <button class="duration-btn" data-minutes="15">15 min</button>
+            <button class="duration-btn" data-minutes="20">20 min</button>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn" id="startBtn">Start</button>
+            <button class="control-btn" id="pauseBtn" style="display: none;">Pause</button>
+            <button class="control-btn" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="sound-options">
+            <h3>Ambient Sounds</h3>
+            <button class="sound-btn active" data-sound="none">🔇 Silent</button>
+            <button class="sound-btn" data-sound="rain">🌧️ Rain</button>
+            <button class="sound-btn" data-sound="ocean">🌊 Ocean</button>
+            <button class="sound-btn" data-sound="forest">🌲 Forest</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

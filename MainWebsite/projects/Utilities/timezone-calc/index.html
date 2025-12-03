@@ -1,0 +1,57 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timezone Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🌍 Timezone Calculator</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Timezone Converter</h1>
+        <div class="converter">
+            <div class="input-group">
+                <label>From Timezone:</label>
+                <select id="fromTz">
+                    <option value="America/New_York">New York (EST)</option>
+                    <option value="Europe/London">London (GMT)</option>
+                    <option value="Europe/Paris">Paris (CET)</option>
+                    <option value="Asia/Tokyo">Tokyo (JST)</option>
+                    <option value="Australia/Sydney">Sydney (AEDT)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Time:</label>
+                <input type="time" id="timeInput" value="12:00">
+            </div>
+            <div class="input-group">
+                <label>To Timezone:</label>
+                <select id="toTz">
+                    <option value="America/New_York">New York (EST)</option>
+                    <option value="Europe/London">London (GMT)</option>
+                    <option value="Europe/Paris">Paris (CET)</option>
+                    <option value="Asia/Tokyo" selected>Tokyo (JST)</option>
+                    <option value="Australia/Sydney">Sydney (AEDT)</option>
+                </select>
+            </div>
+            <button onclick="convert()">Convert</button>
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+.navbar { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem 0; margin-bottom: 2rem; border-radius: 10px; }
+.navbar .container { max-width: 600px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+.logo { color: white; font-size: 1.5rem; }
+.back-link { color: white; text-decoration: none; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.2); border-radius: 5px; }
+.container { max-width: 600px; margin: 0 auto; }
+.converter { background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); }
+select { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; margin-bottom: 20px; cursor: pointer; }
+.conversion { display: flex; align-items: center; gap: 15px; }
+.input-group { flex: 1; }
+.input-group input { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 18px; margin-bottom: 10px; }
+.input-group select { margin-bottom: 0; }
+.equals { font-size: 24px; font-weight: bold; color: #667eea; }
+@media (max-width: 768px) { .conversion { flex-direction: column; } .equals { transform: rotate(90deg); } }

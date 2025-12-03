@@ -1,0 +1,344 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.water-icon {
+    text-align: center;
+    font-size: 5em;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.goal-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.goal-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.goal-input {
+    display: flex;
+    gap: 10px;
+}
+
+#dailyGoal {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+#setGoal {
+    padding: 12px 25px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#setGoal:hover {
+    background: #5568d3;
+}
+
+.progress-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.progress-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    transition: stroke-dashoffset 0.5s ease;
+    stroke: #667eea;
+    stroke-width: 10;
+    fill: transparent;
+}
+
+.progress-bg {
+    stroke: #e0e0e0;
+    stroke-width: 10;
+    fill: transparent;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.progress-amount {
+    font-size: 2em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.progress-label {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.water-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.water-btn {
+    padding: 20px;
+    background: white;
+    border: 3px solid #667eea;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.water-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.water-amount {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.water-label {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.water-btn:hover .water-label {
+    color: white;
+}
+
+.custom-section {
+    margin-bottom: 30px;
+}
+
+.custom-input {
+    display: flex;
+    gap: 10px;
+}
+
+#customAmount {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+#addCustom {
+    padding: 12px 25px;
+    background: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#addCustom:hover {
+    background: #653a8a;
+}
+
+.history-section h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.history-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.history-icon {
+    font-size: 1.5em;
+}
+
+.history-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.history-amount {
+    font-weight: 600;
+    color: #333;
+}
+
+.history-time {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.delete-history {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.3s;
+}
+
+.delete-history:hover {
+    background: #ff3838;
+}
+
+.reset-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#resetDay {
+    padding: 12px 30px;
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#resetDay:hover {
+    background: #ff3838;
+}
+
+.achievement {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.achievement-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .water-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .progress-circle {
+        width: 150px;
+        height: 150px;
+    }
+}

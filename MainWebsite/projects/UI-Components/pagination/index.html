@@ -1,0 +1,41 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 Pagination Demo</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </header>
+
+        <div class="items-list" id="itemsList"></div>
+
+        <div class="pagination-container">
+            <button class="pagination-btn" id="firstBtn">First</button>
+            <button class="pagination-btn" id="prevBtn">Previous</button>
+            <div class="page-numbers" id="pageNumbers"></div>
+            <button class="pagination-btn" id="nextBtn">Next</button>
+            <button class="pagination-btn" id="lastBtn">Last</button>
+        </div>
+
+        <div class="pagination-info">
+            <span id="pageInfo"></span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

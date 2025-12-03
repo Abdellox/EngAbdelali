@@ -1,0 +1,243 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+}
+
+.back-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #764ba2;
+}
+
+.timer-circle {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bar {
+    transition: stroke-dashoffset 0.3s linear;
+    stroke-linecap: round;
+}
+
+.timer-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Courier New', monospace;
+}
+
+.duration-selector {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.duration-btn {
+    padding: 12px 25px;
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 25px;
+    color: #667eea;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+.duration-btn:hover {
+    background: #f0f4ff;
+    transform: translateY(-2px);
+}
+
+.duration-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.control-btn {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.control-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.control-btn:active {
+    transform: scale(0.98);
+}
+
+.sound-options {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.sound-options h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.sound-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: all 0.3s;
+}
+
+.sound-btn:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.sound-btn.active {
+    border-color: #667eea;
+    background: #f0f4ff;
+    color: #667eea;
+}
+
+.completion-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: white;
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    font-size: 2em;
+    font-weight: bold;
+    color: #667eea;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.completion-message.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.completion-message small {
+    display: block;
+    font-size: 0.6em;
+    margin-top: 10px;
+    color: #764ba2;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .timer-circle {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .progress-ring {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .timer-display {
+        font-size: 2.5em;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+
+    .duration-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .control-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .completion-message {
+        padding: 30px 40px;
+        font-size: 1.5em;
+    }
+}

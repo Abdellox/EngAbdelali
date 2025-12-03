@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">💰 Budget Planner</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="planner-box">
+            <div class="summary">
+                <div class="summary-card income">
+                    <h3>Total Income</h3>
+                    <div class="amount" id="totalIncome">$0.00</div>
+                </div>
+                <div class="summary-card expense">
+                    <h3>Total Expense</h3>
+                    <div class="amount" id="totalExpense">$0.00</div>
+                </div>
+                <div class="summary-card balance">
+                    <h3>Balance</h3>
+                    <div class="amount" id="balance">$0.00</div>
+                </div>
+            </div>
+            <div class="add-section">
+                <h3>Add Transaction</h3>
+                <div class="form-grid">
+                    <input type="text" id="descInput" placeholder="Description">
+                    <input type="number" id="amountInput" placeholder="Amount" step="0.01">
+                    <select id="typeInput">
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                    <select id="categoryInput">
+                        <option>Salary</option>
+                        <option>Food</option>
+                        <option>Transport</option>
+                        <option>Entertainment</option>
+                        <option>Bills</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <button onclick="addTransaction()" class="btn-add">Add Transaction</button>
+            </div>
+            <div class="transactions-list" id="transactionsList"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

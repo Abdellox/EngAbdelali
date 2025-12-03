@@ -1,0 +1,9 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh}.navbar{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:1rem 0}.container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}.logo{color:white;font-size:1.5rem}.back-link{color:white;text-decoration:none;font-weight:500}.sudoku-container{display:flex;justify-content:center;align-items:center;min-height:calc(100vh - 80px);padding:20px}.sudoku-box{background:white;border-radius:20px;padding:2rem;box-shadow:0 20px 60px rgba(0,0,0,0.3);text-align:center}.sudoku-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:2px;background:#1e293b;padding:2px;margin:2rem 0;border:3px solid #1e293b}.sudoku-grid input{width:40px;height:40px;text-align:center;font-size:1.25rem;font-weight:700;border:none;background:white}.sudoku-grid input:nth-child(3n){border-right:2px solid #1e293b}.sudoku-grid input:nth-child(n+19):nth-child(-n+27),.sudoku-grid input:nth-child(n+46):nth-child(-n+54){border-bottom:2px solid #1e293b}.controls{display:flex;gap:1rem;justify-content:center}.controls button{padding:1rem 1.5rem;background:#667eea;color:white;border:none;border-radius:12px;cursor:pointer;font-weight:600}

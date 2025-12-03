@@ -1,0 +1,244 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.diff-box {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-compare {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-swap {
+    background: #ffa502;
+    color: white;
+}
+
+.btn-clear {
+    background: #ff4757;
+    color: white;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.text-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.input-section h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.input-section textarea {
+    width: 100%;
+    min-height: 250px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+    resize: vertical;
+}
+
+.input-section textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.stat-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.stat-value.added {
+    color: #2ed573;
+}
+
+.stat-value.removed {
+    color: #ff4757;
+}
+
+.diff-result h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.result-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.result-panel h4 {
+    color: #333;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.result-content {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 200px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.line {
+    padding: 5px 10px;
+    margin: 2px 0;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.line.same {
+    background: white;
+    color: #666;
+}
+
+.line.removed {
+    background: #ffe0e0;
+    color: #d32f2f;
+    border-left: 3px solid #d32f2f;
+}
+
+.line.added {
+    background: #d4edda;
+    color: #155724;
+    border-left: 3px solid #155724;
+}
+
+.line.empty {
+    background: #f0f0f0;
+    color: #999;
+}
+
+@media (max-width: 1024px) {
+    .text-inputs,
+    .result-panels {
+        grid-template-columns: 1fr;
+    }
+
+    .diff-box {
+        padding: 20px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,49 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encryptor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">text-encryptor</h1>
+            <a href="../../../index.html" class="back-link">Back to Portfolio</a>
+        </div>
+    <div class="container">
+        <h1>🔐 Text Encryptor</h1>
+        <p class="subtitle">Encrypt and decrypt your messages</p>
+        
+        <div class="input-section">
+            <label>Enter Text:</label>
+            <textarea id="inputText" placeholder="Type your message here..."></textarea>
+            
+            <label>Password:</label>
+            <input type="password" id="password" placeholder="Enter encryption password" />
+            
+            <div class="buttons">
+                <button id="encryptBtn" class="btn-primary">🔒 Encrypt</button>
+                <button id="decryptBtn" class="btn-secondary">🔓 Decrypt</button>
+            </div>
+    </div>
+
+        <div class="output-section">
+            <label>Result:</label>
+            <textarea id="outputText" readonly></textarea>
+            <button id="copyBtn" class="btn-copy">📋 Copy</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

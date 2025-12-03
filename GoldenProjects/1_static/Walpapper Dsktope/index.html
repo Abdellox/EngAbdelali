@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Gallery - Free Desktop Backgrounds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+            <h1>🖼️ Wallpaper Gallery</h1>
+            <p>Discover and download beautiful free wallpapers for your desktop</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search wallpapers (nature, space, abstract, city...)">
+                <button id="searchBtn">Search</button>
+            </div>
+            <div class="categories">
+                <button class="category-btn active" data-category="nature">🌿 Nature</button>
+                <button class="category-btn" data-category="space">🚀 Space</button>
+                <button class="category-btn" data-category="abstract">🎨 Abstract</button>
+                <button class="category-btn" data-category="city">🏙️ City</button>
+                <button class="category-btn" data-category="minimal">⚪ Minimal</button>
+                <button class="category-btn" data-category="ocean">🌊 Ocean</button>
+                <button class="category-btn" data-category="mountains">⛰️ Mountains</button>
+                <button class="category-btn" data-category="coding">💻 Coding</button>
+                <button class="category-btn" data-category="sports">⚽ Sports</button>
+                <button class="category-btn" data-category="fashion">👗 Fashion</button>
+                <button class="category-btn" data-category="cars">🚗 Cars</button>
+                <button class="category-btn" data-category="motorcycles">🏍️ Motorcycles</button>
+                <button class="category-btn" data-category="animals">🐾 Animals</button>
+                <button class="category-btn" data-category="food">🍕 Food</button>
+                <button class="category-btn" data-category="architecture">🏛️ Architecture</button>
+                <button class="category-btn" data-category="travel">✈️ Travel</button>
+                <button class="category-btn" data-category="technology">📱 Technology</button>
+                <button class="category-btn" data-category="fitness">💪 Fitness</button>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <div class="loading">Loading amazing wallpapers...</div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Wallpaper preview">
+            <div class="modal-info">
+                <p id="modalPhotographer"></p>
+                <div class="modal-actions">
+                    <a id="downloadBtn" href="#" download class="btn-download">Download Wallpaper</a>
+                    <button id="setWallpaperBtn" class="btn-set">Set as Preview</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Images provided by <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
+            <p>Free to use for personal and commercial projects</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

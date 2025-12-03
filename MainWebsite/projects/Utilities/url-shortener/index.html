@@ -1,0 +1,10 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>URL Shortener</title><link rel="stylesheet" href="style.css"></head><body><nav class="navbar"><div class="container"><h1 class="logo">🔗 URL Shortener</h1><a href="../../../index.html" class="back-link">← Back</a></div><div class="shortener-container"><div class="shortener-box"><h2>Shorten Your URL</h2><input type="url" id="urlInput" placeholder="https://example.com/very-long-url"><button onclick="shortenURL()">Shorten URL</button><div class="result" id="result" style="display:none"><p>Shortened URL:</p><div class="short-url"><input type="text" id="shortUrl" readonly><button onclick="copyURL()">Copy</button></div></div><div class="history" id="history"><h3>Recent URLs</h3><div id="historyList"></div></div></div></div><script src="app.js"></script></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">📋 Dropdown</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="dropdown">
+            <button onclick="toggle()" class="dropdown-btn">Select Option ▼</button>
+            <div class="dropdown-content" id="menu">
+                <a href="#" onclick="select('Option 1')">Option 1</a>
+                <a href="#" onclick="select('Option 2')">Option 2</a>
+                <a href="#" onclick="select('Option 3')">Option 3</a>
+                <a href="#" onclick="select('Option 4')">Option 4</a>
+                <a href="#" onclick="select('Option 5')">Option 5</a>
+            </div>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

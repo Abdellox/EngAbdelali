@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">📊 Poll App</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="poll-box">
+            <h2>Create a Poll</h2>
+            
+            <input type="text" id="question" placeholder="Poll Question">
+            
+            <div id="options">
+                <input type="text" class="option-input" placeholder="Option 1">
+                <input type="text" class="option-input" placeholder="Option 2">
+            </div>
+            
+            <button onclick="addOption()" class="btn-add">+ Add Option</button>
+            <button onclick="createPoll()" class="btn-create">Create Poll</button>
+            
+            <div id="pollDisplay"></div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

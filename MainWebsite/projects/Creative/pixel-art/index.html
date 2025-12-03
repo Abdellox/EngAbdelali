@@ -1,0 +1,51 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🎨 Pixel Art Creator</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="app-box">
+            <div class="controls">
+                <div class="control-group">
+                    <label>Grid Size:</label>
+                    <input type="range" id="gridSize" min="8" max="32" value="16" step="2">
+                    <span id="gridValue">16x16</span>
+                </div>
+                <div class="control-group">
+                    <label>Color:</label>
+                    <input type="color" id="colorPicker" value="#667eea">
+                </div>
+                <div class="control-group">
+                    <button class="btn" onclick="clearGrid()">Clear</button>
+                    <button class="btn" onclick="fillGrid()">Fill</button>
+                    <button class="btn btn-primary" onclick="downloadArt()">Download</button>
+                </div>
+            </div>
+            <div class="canvas-container">
+                <div id="pixelGrid" class="pixel-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

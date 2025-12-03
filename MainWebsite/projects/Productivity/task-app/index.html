@@ -1,0 +1,131 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Task Management App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">task-app</h1>
+            <a href="../../../index.html" class="back-link">Back to Portfolio</a>
+        </div>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="app-logo">📋 TaskFlow</h1>
+            </div>
+    <nav class="sidebar-nav">
+                <button class="nav-item active" data-filter="all">
+                    <span class="nav-icon">📊</span>
+                    <span>All Tasks</span>
+                    <span class="task-count" id="allCount">0</span>
+                </button>
+                <button class="nav-item" data-filter="active">
+                    <span class="nav-icon">⏳</span>
+                    <span>Active</span>
+                    <span class="task-count" id="activeCount">0</span>
+                </button>
+                <button class="nav-item" data-filter="completed">
+                    <span class="nav-icon">✅</span>
+                    <span>Completed</span>
+                    <span class="task-count" id="completedCount">0</span>
+                </button>
+            <div class="sidebar-footer">
+                <button class="clear-btn" id="clearCompleted">
+                    <span>🗑️</span>
+                    Clear Completed
+                </button>
+            </div>
+    </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="app-header">
+                <div class="header-content">
+                    <h2 class="page-title" id="pageTitle">All Tasks</h2>
+                    <div class="header-actions">
+                        <select class="sort-select" id="sortSelect">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="priority">Priority</option>
+                        </select>
+                    </div>
+    </div>
+            </header>
+
+            <!-- Add Task Form -->
+            <div class="add-task-section">
+                <form class="add-task-form" id="addTaskForm">
+                    <input 
+                        type="text" 
+                        class="task-input" 
+                        id="taskInput" 
+                        placeholder="What needs to be done?"
+                        required
+                    >
+                    <select class="priority-select" id="prioritySelect">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button type="submit" class="add-btn">
+                        <span>+</span> Add Task
+                    </button>
+                </form>
+            </div>
+
+    <!-- Tasks List -->
+            <div class="tasks-container">
+                <div class="tasks-list" id="tasksList">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+    <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">📝</div>
+    <h3>No tasks yet</h3>
+                    <p>Add your first task to get started!</p>
+                </div>
+    </div>
+        </main>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Task</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+    <form class="modal-form" id="editTaskForm">
+                <input type="text" class="modal-input" id="editTaskInput" required>
+                <select class="modal-select" id="editPrioritySelect">
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" id="cancelEdit">Cancel</button>
+                    <button type="submit" class="btn-save">Save Changes</button>
+                </div>
+    </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

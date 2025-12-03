@@ -1,0 +1,35 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🎤 Speech to Text</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Speech to Text</h1>
+        <div class="status" id="status">Ready</div>
+        <div class="buttons">
+            <button onclick="startRecording()" id="startBtn">Start Recording</button>
+            <button onclick="stopRecording()" id="stopBtn" disabled>Stop Recording</button>
+        </div>
+        <div id="output" class="output">Your speech will appear here...</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

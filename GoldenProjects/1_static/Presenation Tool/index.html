@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#667eea">
+    <title>SlideFlow - Modern Presentation Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app" id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1 class="logo">✨ SlideFlow</h1>
+                <input type="text" id="presentationTitle" class="title-input" placeholder="Untitled Presentation">
+            </div>
+            <div class="header-right">
+                <button class="btn-icon mobile-menu-toggle" id="mobileMenuBtn" title="Menu">☰</button>
+                <button class="btn-icon" id="helpBtn" title="Help & Shortcuts">❓</button>
+                <button class="btn-icon" id="themeBtn" title="Change Theme">🎨</button>
+                <button class="btn-icon" id="undoBtn" title="Undo (Ctrl+Z)">↶</button>
+                <button class="btn-icon" id="redoBtn" title="Redo (Ctrl+Y)">↷</button>
+                <button class="btn-icon" id="saveBtn" title="Save">💾</button>
+                <button class="btn-icon" id="loadBtn" title="Load">📂</button>
+                <button class="btn-icon" id="exportHtmlBtn" title="Export as HTML">📄</button>
+                <button class="btn btn-present" id="presentBtn">▶ Present</button>
+            </div>
+        </header>
+
+        <!-- Main Editor -->
+        <div class="editor-container">
+            <!-- Slide Navigator -->
+            <aside class="slide-nav">
+                <div class="nav-header">
+                    <span>Slides</span>
+                    <button class="btn-add" id="addSlideBtn">+</button>
+                </div>
+                <div class="slide-list" id="slideList"></div>
+            </aside>
+
+            <!-- Editor Panel -->
+            <main class="editor-panel">
+                <div class="editor-toolbar">
+                    <div class="toolbar-group">
+                        <button class="tool-btn active" data-mode="edit" title="Edit Mode">✏️</button>
+                        <button class="tool-btn" data-mode="markdown" title="Markdown Mode">📝</button>
+                    </div>
+                    <div class="toolbar-group">
+                        <button class="tool-btn" id="addTextBtn" title="Add Text">T</button>
+                        <button class="tool-btn" id="addImageBtn" title="Add Image">🖼️</button>
+                        <button class="tool-btn" id="addCodeBtn" title="Add Code">{ }</button>
+                        <button class="tool-btn" id="addShapeBtn" title="Add Shape">⬜</button>
+                        <button class="tool-btn" id="addListBtn" title="Add List">☰</button>
+                        <button class="tool-btn" id="addTableBtn" title="Add Table">⊞</button>
+                        <button class="tool-btn" id="addVideoBtn" title="Add Video">🎥</button>
+                    </div>
+                    <div class="toolbar-group">
+                        <select id="transitionSelect" class="select-input">
+                            <option value="fade">Fade</option>
+                            <option value="slide">Slide</option>
+                            <option value="zoom">Zoom</option>
+                            <option value="flip">Flip</option>
+                            <option value="cube">Cube</option>
+                            <option value="rotate">Rotate</option>
+                        </select>
+                        <button class="tool-btn" id="duplicateSlideBtn" title="Duplicate Slide">📋</button>
+                    </div>
+                    <div class="toolbar-group">
+                        <button class="tool-btn" id="deleteSlideBtn" title="Delete Slide">🗑️</button>
+                    </div>
+                </div>
+
+                <div class="canvas-wrapper">
+                    <div class="canvas" id="canvas">
+                        <div class="slide-content" id="slideContent" contenteditable="false"></div>
+                    </div>
+                </div>
+
+                <div class="markdown-editor hidden" id="markdownEditor">
+                    <textarea id="markdownInput" placeholder="# Your Slide Title&#10;&#10;Write your content in **Markdown**&#10;&#10;- Bullet points&#10;- Are supported&#10;&#10;```javascript&#10;// Code blocks too!&#10;```"></textarea>
+                    <div class="markdown-preview" id="markdownPreview"></div>
+                </div>
+            </main>
+
+            <!-- Properties Panel -->
+            <aside class="properties-panel">
+                <div class="panel-section">
+                    <h3>Slide Background</h3>
+                    <input type="color" id="bgColor" value="#ffffff">
+                    <input type="text" id="bgGradient" placeholder="gradient: #667eea, #764ba2">
+                </div>
+                <div class="panel-section">
+                    <h3>Text Style</h3>
+                    <input type="color" id="textColor" value="#333333">
+                    <input type="range" id="fontSize" min="12" max="72" value="24">
+                    <span id="fontSizeLabel">24px</span>
+                </div>
+                <div class="panel-section">
+                    <h3>Layout</h3>
+                    <button class="layout-btn" data-layout="center">Center</button>
+                    <button class="layout-btn" data-layout="left">Left</button>
+                    <button class="layout-btn" data-layout="split">Split</button>
+                </div>
+                <div class="panel-section">
+                    <h3>Animation</h3>
+                    <select id="animationSelect" class="select-input">
+                        <option value="none">None</option>
+                        <option value="fadeIn">Fade In</option>
+                        <option value="slideIn">Slide In</option>
+                        <option value="bounceIn">Bounce In</option>
+                    </select>
+                </div>
+                <div class="panel-section">
+                    <h3>Templates</h3>
+                    <button class="layout-btn" data-template="title">Title Slide</button>
+                    <button class="layout-btn" data-template="content">Content</button>
+                    <button class="layout-btn" data-template="twoColumn">Two Column</button>
+                    <button class="layout-btn" data-template="quote">Quote</button>
+                </div>
+                <div class="panel-section">
+                    <h3>Speaker Notes</h3>
+                    <textarea id="speakerNotes" placeholder="Add notes for this slide..." rows="4"></textarea>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Presentation Mode -->
+    <div class="presentation-mode hidden" id="presentationMode">
+        <div class="presentation-slide" id="presentationSlide"></div>
+        <div class="presentation-nav">
+            <button class="nav-btn" id="prevBtn">←</button>
+            <span class="slide-counter" id="slideCounter">1 / 1</span>
+            <button class="nav-btn" id="nextBtn">→</button>
+            <button class="nav-btn" id="notesBtn" title="Toggle Notes">📝</button>
+            <button class="nav-btn" id="fullscreenBtn" title="Fullscreen">⛶</button>
+            <button class="nav-btn" id="exitBtn">✕</button>
+        </div>
+        <div class="speaker-notes-panel hidden" id="speakerNotesPanel">
+            <div class="notes-content" id="notesContent"></div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="slide-overview hidden" id="slideOverview"></div>
+    </div>
+
+    <!-- Theme Selector Modal -->
+    <div class="modal hidden" id="themeModal">
+        <div class="modal-content">
+            <h2>Choose Theme</h2>
+            <div class="theme-grid">
+                <div class="theme-card" data-theme="default">
+                    <div class="theme-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"></div>
+                    <span>Default</span>
+                </div>
+                <div class="theme-card" data-theme="dark">
+                    <div class="theme-preview" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)"></div>
+                    <span>Dark</span>
+                </div>
+                <div class="theme-card" data-theme="ocean">
+                    <div class="theme-preview" style="background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%)"></div>
+                    <span>Ocean</span>
+                </div>
+                <div class="theme-card" data-theme="sunset">
+                    <div class="theme-preview" style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)"></div>
+                    <span>Sunset</span>
+                </div>
+            </div>
+            <button class="btn" id="closeThemeModal">Close</button>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div class="modal hidden" id="helpModal">
+        <div class="modal-content" style="max-width: 700px;">
+            <h2>⌨️ Keyboard Shortcuts</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
+                <div><strong>Presentation Mode:</strong></div>
+                <div></div>
+                <div>→ or Space</div><div>Next slide</div>
+                <div>←</div><div>Previous slide</div>
+                <div>O</div><div>Slide overview</div>
+                <div>N</div><div>Toggle speaker notes</div>
+                <div>F</div><div>Toggle fullscreen</div>
+                <div>ESC</div><div>Exit presentation</div>
+                <div><strong>Editor Mode:</strong></div>
+                <div></div>
+                <div>Ctrl+Z</div><div>Undo</div>
+                <div>Ctrl+Y</div><div>Redo</div>
+                <div>Ctrl+S</div><div>Save presentation</div>
+            </div>
+            <h3 style="margin-top: 20px;">✨ Features</h3>
+            <ul style="margin: 15px 0; padding-left: 20px; line-height: 1.8;">
+                <li>Drag & drop images directly onto slides</li>
+                <li>Drag slides to reorder them</li>
+                <li>Auto-save every 30 seconds</li>
+                <li>Export as standalone HTML file</li>
+                <li>Markdown support with live preview</li>
+                <li>Speaker notes for each slide</li>
+                <li>Multiple themes and transitions</li>
+            </ul>
+            <button class="btn" id="closeHelpModal">Got it!</button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="autosave-indicator"></div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">✨</div>
+            <h2>SlideFlow</h2>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

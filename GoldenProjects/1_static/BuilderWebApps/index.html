@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Cloner - Clone Any Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Website Cloner</h1>
+            <p class="subtitle">Clone any website in seconds</p>
+        </header>
+
+        <main>
+            <div class="form-card">
+                <form id="cloneForm">
+                    <div class="form-group">
+                        <label for="websiteUrl">Website URL</label>
+                        <input type="url" id="websiteUrl" placeholder="https://example.com" required>
+                        <small>Enter any website URL to clone</small>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="cloneBtn">
+                        <span class="btn-text">Clone Website</span>
+                        <span class="loader" style="display: none;"></span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="result" class="result-card" style="display: none;">
+                <h2>✅ Website Cloned Successfully!</h2>
+                <p class="result-info">Preview your cloned website below</p>
+                <div class="result-actions">
+                    <button id="downloadBtn" class="btn-primary">📦 Download ZIP</button>
+                </div>
+            </div>
+
+            <div id="preview" class="preview-section" style="display: none;">
+                <div class="preview-header">
+                    <h3>Preview</h3>
+                    <button id="closePreview" class="btn-close">✕</button>
+                </div>
+                <iframe id="previewFrame"></iframe>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

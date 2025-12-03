@@ -1,0 +1,65 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Tester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🔍 Regex Tester</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="tester-box">
+            <h2>Regular Expression Tester</h2>
+            
+            <div class="regex-input">
+                <label>Regular Expression</label>
+                <div class="regex-wrapper">
+                    <span class="regex-slash">/</span>
+                    <input type="text" id="regexInput" placeholder="Enter regex pattern">
+                    <span class="regex-slash">/</span>
+                    <input type="text" id="flags" placeholder="flags" maxlength="5" style="width: 80px;">
+                </div>
+            </div>
+
+            <div class="test-string">
+                <label>Test String</label>
+                <textarea id="testString" placeholder="Enter text to test against regex..."></textarea>
+            </div>
+
+            <div class="results">
+                <h3>Results</h3>
+                <div id="matchResults"></div>
+            </div>
+
+            <div class="quick-patterns">
+                <h3>Quick Patterns</h3>
+                <div class="pattern-grid">
+                    <button onclick="setPattern('[a-zA-Z]+', 'g')">Letters</button>
+                    <button onclick="setPattern('\\d+', 'g')">Numbers</button>
+                    <button onclick="setPattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}', 'g')">Email</button>
+                    <button onclick="setPattern('https?://[^\\s]+', 'g')">URL</button>
+                    <button onclick="setPattern('\\b\\d{3}[-.]?\\d{3}[-.]?\\d{4}\\b', 'g')">Phone</button>
+                    <button onclick="setPattern('#[0-9A-Fa-f]{6}', 'g')">Hex Color</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

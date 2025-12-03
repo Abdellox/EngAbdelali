@@ -1,0 +1,150 @@
+.about-page {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.about-header {
+  background: linear-gradient(135deg, var(--basil-green) 0%, #238276 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.story-section {
+  padding: 80px 20px;
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-text h2 {
+  font-size: 36px;
+  color: var(--tomato-red);
+  margin-bottom: 20px;
+}
+
+.story-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: var(--dark-gray);
+}
+
+.story-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.values-section {
+  padding: 60px 20px;
+  background: var(--light-gray);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.value-card {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.value-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  font-size: 24px;
+  color: var(--tomato-red);
+  margin-bottom: 15px;
+}
+
+.value-card p {
+  font-size: 16px;
+  color: var(--dark-gray);
+  line-height: 1.6;
+}
+
+.team-section {
+  padding: 60px 20px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.chef-card {
+  text-align: center;
+  padding: 30px;
+}
+
+.chef-image {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.chef-card h3 {
+  font-size: 24px;
+  color: var(--tomato-red);
+  margin-bottom: 5px;
+}
+
+.chef-title {
+  font-weight: 600;
+  color: var(--basil-green);
+  margin-bottom: 10px;
+}
+
+.testimonials-section {
+  padding: 60px 20px;
+  background: var(--light-gray);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  padding: 30px;
+}
+
+.stars {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.testimonial-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.customer-name {
+  font-weight: 600;
+  color: var(--tomato-red);
+  font-style: normal !important;
+}
+
+@media (max-width: 768px) {
+  .story-content {
+    grid-template-columns: 1fr;
+  }
+}

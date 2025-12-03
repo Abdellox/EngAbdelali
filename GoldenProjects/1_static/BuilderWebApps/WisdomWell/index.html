@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WisdomWell - Life Lessons & Wisdom</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🌟 WisdomWell</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#wisdom">Wisdom</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#qa">Ask Us</a></li>
+                <li><a href="#favorites">Favorites</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h2 class="fade-in">Welcome to WisdomWell</h2>
+                <p class="subtitle fade-in">Where timeless wisdom meets modern life</p>
+                
+                <div class="characters">
+                    <div class="character old-man" id="oldMan">
+                        <div class="avatar">👴</div>
+                        <h3>Elder Thomas</h3>
+                        <p>Sharing 70 years of life experience</p>
+                        <button class="btn-primary" onclick="speakWithCharacter('thomas')">Talk with Thomas</button>
+                    </div>
+                    
+                    <div class="character old-woman" id="oldWoman">
+                        <div class="avatar">👵</div>
+                        <h3>Grandma Rose</h3>
+                        <p>Wisdom from a life well-lived</p>
+                        <button class="btn-primary" onclick="speakWithCharacter('rose')">Talk with Rose</button>
+                    </div>
+                </div>
+
+                <div class="daily-wisdom-card">
+                    <h3>✨ Daily Wisdom</h3>
+                    <div id="dailyWisdom" class="wisdom-content">
+                        <p class="quote"></p>
+                        <p class="author"></p>
+                    </div>
+                    <button class="btn-secondary" onclick="loadDailyWisdom()">Get New Wisdom</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wisdom Categories Section -->
+        <section id="wisdom" class="section">
+            <h2>Explore Wisdom by Category</h2>
+            <div class="categories-grid" id="categoriesGrid"></div>
+            <div id="categoryContent" class="category-content"></div>
+        </section>
+
+        <!-- Stories Section -->
+        <section id="stories" class="section">
+            <h2>Stories of Wisdom</h2>
+            <div class="stories-grid" id="storiesGrid"></div>
+        </section>
+
+        <!-- Q&A Section -->
+        <section id="qa" class="section">
+            <h2>Ask for Wisdom</h2>
+            <div class="qa-container">
+                <div class="question-form">
+                    <textarea id="userQuestion" placeholder="What wisdom do you seek today?" rows="4"></textarea>
+                    <button class="btn-primary" onclick="askQuestion()">Ask</button>
+                </div>
+                <div id="answerContainer" class="answer-container"></div>
+            </div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section id="favorites" class="section">
+            <h2>Your Saved Wisdom</h2>
+            <div id="favoritesContainer" class="favorites-container">
+                <p class="empty-state">You haven't saved any wisdom yet. Start exploring!</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Stories -->
+    <div id="storyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="storyTitle"></h2>
+            <div id="storyContent"></div>
+            <button class="btn-secondary" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Character Dialog Modal -->
+    <div id="dialogModal" class="modal">
+        <div class="modal-content dialog-modal">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <div class="dialog-header">
+                <div class="dialog-avatar" id="dialogAvatar"></div>
+                <h2 id="dialogName"></h2>
+            </div>
+            <div id="dialogContent" class="dialog-content"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 WisdomWell. Sharing wisdom, one lesson at a time.</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

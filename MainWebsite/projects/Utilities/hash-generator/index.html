@@ -1,0 +1,82 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🔒 Hash Generator</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="tool-box">
+            <h2>Generate Cryptographic Hashes</h2>
+            
+            <div class="input-section">
+                <label>Input Text</label>
+                <textarea id="input" placeholder="Enter text to hash..." rows="5"></textarea>
+            </div>
+
+            <button class="btn-generate" id="generateBtn">Generate All Hashes</button>
+
+            <div class="hash-results">
+                <div class="hash-item">
+                    <div class="hash-header">
+                        <h3>MD5 (Simulated)</h3>
+                        <button class="btn-copy" onclick="copyHash('md5')">Copy</button>
+                    </div>
+                    <input type="text" id="md5" readonly>
+                </div>
+
+                <div class="hash-item">
+                    <div class="hash-header">
+                        <h3>SHA-1</h3>
+                        <button class="btn-copy" onclick="copyHash('sha1')">Copy</button>
+                    </div>
+                    <input type="text" id="sha1" readonly>
+                </div>
+
+                <div class="hash-item">
+                    <div class="hash-header">
+                        <h3>SHA-256</h3>
+                        <button class="btn-copy" onclick="copyHash('sha256')">Copy</button>
+                    </div>
+                    <input type="text" id="sha256" readonly>
+                </div>
+
+                <div class="hash-item">
+                    <div class="hash-header">
+                        <h3>SHA-384</h3>
+                        <button class="btn-copy" onclick="copyHash('sha384')">Copy</button>
+                    </div>
+                    <input type="text" id="sha384" readonly>
+                </div>
+
+                <div class="hash-item">
+                    <div class="hash-header">
+                        <h3>SHA-512</h3>
+                        <button class="btn-copy" onclick="copyHash('sha512')">Copy</button>
+                    </div>
+                    <input type="text" id="sha512" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

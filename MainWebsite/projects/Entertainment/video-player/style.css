@@ -1,0 +1,138 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    background: #000;
+}
+
+#videoPlayer {
+    width: 100%;
+    display: block;
+}
+
+.controls {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.progress-container {
+    width: 100%;
+    height: 5px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #667eea;
+    border-radius: 5px;
+    width: 0;
+    transition: width 0.1s;
+}
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.control-btn:hover {
+    color: #667eea;
+    transform: scale(1.1);
+}
+
+.time-display {
+    color: white;
+    font-size: 0.9em;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.volume-slider {
+    width: 100px;
+}
+
+.file-input-container {
+    padding: 20px;
+    text-align: center;
+}
+
+#fileInput {
+    display: none;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.file-label:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .control-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .volume-container {
+        width: 100%;
+        margin-left: 0;
+    }
+}

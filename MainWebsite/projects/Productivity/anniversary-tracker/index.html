@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Tracker - Never Forget Important Dates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">💝 Anniversary Tracker</h1>
+            <a href="../../../index.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="tracker-box">
+            <div class="header">
+                <h2>Track Your Special Moments</h2>
+                <p>Never miss an important anniversary again</p>
+            </div>
+
+            <div class="add-form">
+                <h3>Add New Anniversary</h3>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="eventName">💑 Event Name</label>
+                        <input type="text" id="eventName" placeholder="Wedding, First Date, etc." required>
+                    </div>
+                    <div class="input-group">
+                        <label for="eventDate">📅 Date</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="eventCategory">🏷️ Category</label>
+                        <select id="eventCategory">
+                            <option value="relationship">💕 Relationship</option>
+                            <option value="wedding">💍 Wedding</option>
+                            <option value="birthday">🎂 Birthday</option>
+                            <option value="friendship">👥 Friendship</option>
+                            <option value="work">💼 Work</option>
+                            <option value="other">⭐ Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="eventNotes">📝 Notes (Optional)</label>
+                        <input type="text" id="eventNotes" placeholder="Special memories...">
+                    </div>
+                </div>
+                <button onclick="addAnniversary()" class="btn-add">
+                    <span>➕</span> Add Anniversary
+                </button>
+            </div>
+
+            <div class="anniversaries-section">
+                <div class="section-header">
+                    <h3>Your Anniversaries (<span id="anniversaryCount">0</span>)</h3>
+                    <div class="filter-buttons">
+                        <button onclick="filterAnniversaries('all')" class="filter-btn active" data-filter="all">All</button>
+                        <button onclick="filterAnniversaries('upcoming')" class="filter-btn" data-filter="upcoming">Upcoming</button>
+                        <button onclick="filterAnniversaries('past')" class="filter-btn" data-filter="past">Past</button>
+                    </div>
+                </div>
+                <div id="anniversariesList" class="anniversaries-list">
+                    <div class="no-anniversaries">
+                        <span class="icon">💝</span>
+                        <p>No anniversaries yet</p>
+                        <small>Add your first special date above</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

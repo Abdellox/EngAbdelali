@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🎨 CSS Generator</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="generator-box">
+            <div class="controls">
+                <h3>Box Shadow</h3>
+                <input type="range" id="shadowX" min="-50" max="50" value="10" oninput="generate()">
+                <input type="range" id="shadowY" min="-50" max="50" value="10" oninput="generate()">
+                <input type="range" id="shadowBlur" min="0" max="100" value="20" oninput="generate()">
+                <input type="color" id="shadowColor" value="#000000" oninput="generate()">
+                
+                <h3>Border Radius</h3>
+                <input type="range" id="borderRadius" min="0" max="50" value="10" oninput="generate()">
+                
+                <h3>Background</h3>
+                <input type="color" id="bgColor" value="#667eea" oninput="generate()">
+            </div>
+            
+            <div class="preview">
+                <div class="preview-box" id="previewBox"></div>
+            </div>
+            
+            <div class="code">
+                <textarea id="cssCode" readonly></textarea>
+                <button onclick="copy()" class="btn-copy">Copy CSS</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

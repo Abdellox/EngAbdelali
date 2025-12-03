@@ -1,0 +1,47 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diff checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🔍 Diff Checker</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Text Difference Checker</h1>
+        <div class="diff-container">
+            <div class="text-panel">
+                <h3>Original Text</h3>
+                <textarea id="text1" placeholder="Paste your original text here..."></textarea>
+            </div>
+            <div class="text-panel">
+                <h3>Modified Text</h3>
+                <textarea id="text2" placeholder="Paste your modified text here..."></textarea>
+            </div>
+        </div>
+        <div class="controls">
+            <button onclick="compareDiff()">Compare</button>
+            <button onclick="clearAll()">Clear All</button>
+        </div>
+        <div id="result" class="result">
+            <p style="text-align:center;color:#999;">Enter text in both panels to compare</p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

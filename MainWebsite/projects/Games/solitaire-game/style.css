@@ -1,0 +1,26 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+.navbar { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 15px 0; margin-bottom: 30px; border-radius: 10px; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.logo { color: white; font-size: 1.5em; }
+.back-link { color: white; text-decoration: none; padding: 8px 16px; background: rgba(255,255,255,0.2); border-radius: 5px; }
+.back-link:hover { background: rgba(255,255,255,0.3); }
+.container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center; }
+h1 { color: #667eea; margin-bottom: 20px; }
+.new-game-btn { padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 30px; }
+.new-game-btn:hover { background: #5568d3; }
+.board { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+.pile { display: flex; flex-direction: column; gap: 5px; min-width: 100px; }
+.card { width: 100px; height: 140px; background: white; border: 2px solid #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; cursor: pointer; }
+.card.red { color: #dc3545; }
+.card.black { color: #212529; }
+.card.back { background: #667eea; color: white; font-size: 48px; }
+.deck-pile { text-align: center; }

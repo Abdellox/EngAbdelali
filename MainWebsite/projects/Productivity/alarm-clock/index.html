@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock - Set Multiple Alarms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">⏰ Alarm Clock</h1>
+            <a href="../../../index.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="clock-box">
+            <div class="current-time-section">
+                <div class="time-display">
+                    <div class="time" id="currentTime">00:00:00</div>
+                    <div class="date" id="currentDate">Loading...</div>
+                </div>
+                <div class="timezone" id="timezone">UTC</div>
+            </div>
+
+            <div class="alarm-form">
+                <h3>Set New Alarm</h3>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="alarmTime">⏰ Time</label>
+                        <input type="time" id="alarmTime" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="alarmLabel">📝 Label</label>
+                        <input type="text" id="alarmLabel" placeholder="Wake up, Meeting, etc." maxlength="30">
+                    </div>
+                    <div class="input-group">
+                        <label for="alarmSound">🔔 Sound</label>
+                        <select id="alarmSound">
+                            <option value="beep">Beep</option>
+                            <option value="chime">Chime</option>
+                            <option value="bell">Bell</option>
+                            <option value="digital">Digital</option>
+                        </select>
+                    </div>
+                    <div class="input-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="alarmRepeat">
+                            <span>Repeat Daily</span>
+                        </label>
+                    </div>
+                </div>
+                <button onclick="setAlarm()" class="btn-set-alarm">
+                    <span>➕</span> Set Alarm
+                </button>
+            </div>
+
+            <div class="alarms-section">
+                <div class="section-header">
+                    <h3>Active Alarms (<span id="alarmCount">0</span>)</h3>
+                    <button onclick="clearAllAlarms()" class="btn-clear-all">Clear All</button>
+                </div>
+                <div id="alarmsList" class="alarms-list">
+                    <div class="no-alarms">
+                        <span class="icon">⏰</span>
+                        <p>No alarms set</p>
+                        <small>Create your first alarm above</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alarm Modal -->
+    <div class="alarm-modal" id="alarmModal">
+        <div class="modal-content">
+            <div class="modal-icon">⏰</div>
+            <h2>Alarm!</h2>
+            <p id="modalLabel">Wake Up!</p>
+            <p id="modalTime">00:00</p>
+            <div class="modal-buttons">
+                <button onclick="snoozeAlarm()" class="btn-snooze">Snooze (5 min)</button>
+                <button onclick="dismissAlarm()" class="btn-dismiss">Dismiss</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

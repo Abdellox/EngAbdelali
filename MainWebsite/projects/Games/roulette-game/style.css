@@ -1,0 +1,27 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+.navbar { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 15px 0; margin-bottom: 30px; border-radius: 10px; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; max-width: 700px; margin: 0 auto; padding: 0 20px; }
+.logo { color: white; font-size: 1.5em; }
+.back-link { color: white; text-decoration: none; padding: 8px 16px; background: rgba(255,255,255,0.2); border-radius: 5px; }
+.back-link:hover { background: rgba(255,255,255,0.3); }
+.container { max-width: 700px; margin: 0 auto; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center; }
+h1 { color: #667eea; margin-bottom: 30px; }
+.credits { font-size: 24px; font-weight: bold; color: #667eea; margin-bottom: 30px; }
+.bet-input { margin-bottom: 30px; }
+.bet-input input { padding: 10px; border: 2px solid #ddd; border-radius: 5px; width: 120px; text-align: center; }
+.bets { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 30px; }
+.bet-btn { padding: 20px; background: #667eea; color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 18px; font-weight: bold; }
+.bet-btn:hover { opacity: 0.9; }
+.bet-btn.red { background: #dc3545; }
+.bet-btn.black { background: #212529; }
+.result { font-size: 36px; font-weight: bold; color: #667eea; margin: 20px 0; min-height: 50px; }
+.message { font-size: 20px; font-weight: bold; min-height: 30px; }

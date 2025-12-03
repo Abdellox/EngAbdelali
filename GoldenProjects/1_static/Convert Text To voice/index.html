@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic Text to Speech - محول النص العربي إلى صوت</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Arabic TTS</h1>
+            <p>محول النص العربي إلى صوت</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="text-input-section">
+                <h2>أدخل النص العربي</h2>
+                <textarea id="text-input" placeholder="اكتب أو الصق النص العربي هنا..." dir="rtl"></textarea>
+                <div class="character-count">
+                    <span id="char-count">0</span> / 500 حرف
+                </div>
+            </div>
+
+            <div class="voice-selection-section">
+                <h2>اختر الصوت</h2>
+                <p class="voice-note">
+                    ملاحظة: كل صوت يمثل لهجة عربية مختلفة (مصرية، سعودية، إماراتية، مغربية)
+                    <br>
+                    <a href="compare_voices.html" style="color: white; text-decoration: underline;">
+                        🎧 قارن بين اللهجات - Compare Dialects
+                    </a>
+                </p>
+                <div class="voice-grid">
+                    <!-- Male Voices -->
+                    <div class="voice-category">
+                        <h3>أصوات رجالية</h3>
+                        <div class="voice-options">
+                            <div class="voice-option" data-voice="ahmed">
+                                <div class="voice-icon male"><i class="fas fa-user"></i></div>
+                                <div class="voice-info">
+                                    <span class="voice-name">أحمد - مصر</span>
+                                    <span class="voice-tag">صوت طبيعي</span>
+                                </div>
+                                <button class="preview-btn" title="استماع للعينة">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="voice-option" data-voice="khalid">
+                                <div class="voice-icon male"><i class="fas fa-user"></i></div>
+                                <div class="voice-info">
+                                    <span class="voice-name">خالد - السعودية</span>
+                                    <span class="voice-tag">صوت طبيعي</span>
+                                </div>
+                                <button class="preview-btn" title="استماع للعينة">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="voice-option" data-voice="omar">
+                                <div class="voice-icon male"><i class="fas fa-user"></i></div>
+                                <div class="voice-info">
+                                    <span class="voice-name">عمر - الإمارات</span>
+                                    <span class="voice-tag">صوت طبيعي</span>
+                                </div>
+                                <button class="preview-btn" title="استماع للعينة">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="voice-option" data-voice="ali">
+                                <div class="voice-icon male"><i class="fas fa-user"></i></div>
+                                <div class="voice-info">
+                                    <span class="voice-name">علي - المغرب</span>
+                                    <span class="voice-tag">صوت طبيعي</span>
+                                </div>
+                                <button class="preview-btn" title="استماع للعينة">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Female Voices -->
+                    <div class="voice-category">
+                        <h3>أصوات نسائية</h3>
+                        <div class="voice-options">
+                            <div class="voice-option" data-voice="fatima">
+                                <div class="voice-icon female"><i class="fas fa-user"></i></div>
+                                <div class="voice-info">
+                                    <span class="voice-name">فاطمة - مصر</span>
+                                    <span class="voice-tag">صوت طبيعي</span>
+                                </div>
+                                <button class="preview-btn" title="استماع للعينة">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="voice-option" data-voice="aisha">
+                                <div class="voice-icon female"><i class="fas fa-user"></i></div>
+                                <div class="voice-info">
+                                    <span class="voice-name">عائشة - السعودية</span>
+                                    <span class="voice-tag">صوت طبيعي</span>
+                                </div>
+                                <button class="preview-btn" title="استماع للعينة">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="voice-option" data-voice="layla">
+                                <div class="voice-icon female"><i class="fas fa-user"></i></div>
+                                <div class="voice-info">
+                                    <span class="voice-name">ليلى - الإمارات</span>
+                                    <span class="voice-tag">صوت طبيعي</span>
+                                </div>
+                                <button class="preview-btn" title="استماع للعينة">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="voice-option" data-voice="nour">
+                                <div class="voice-icon female"><i class="fas fa-user"></i></div>
+                                <div class="voice-info">
+                                    <span class="voice-name">نور - المغرب</span>
+                                    <span class="voice-tag">صوت طبيعي</span>
+                                </div>
+                                <button class="preview-btn" title="استماع للعينة">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <button id="generate-btn" class="primary-btn">
+                    <i class="fas fa-play"></i> توليد الصوت
+                </button>
+                <div class="audio-player" style="display: none;">
+                    <audio id="audio-player" controls></audio>
+                    <button id="download-btn" class="secondary-btn">
+                        <i class="fas fa-download"></i> تحميل الملف الصوتي
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Arabic TTS - مشروع مفتوح المصدر</p>
+            <p class="footer-subtitle">محول النص العربي إلى صوت طبيعي | Open Source Project</p>
+            <div class="footer-links">
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <span class="separator">|</span>
+                <span>مجاني للجميع</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

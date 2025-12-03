@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator - Calculate Your Exact Age</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🎂 Age Calculator</h1>
+            <a href="../../../index.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="calculator-box">
+            <div class="header">
+                <h2>Calculate Your Age</h2>
+                <p>Find out your exact age in years, months, and days</p>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="birthdate">📅 Date of Birth</label>
+                    <input type="date" id="birthdate" max="">
+                </div>
+
+                <div class="input-group">
+                    <label for="targetDate">🎯 Calculate Age On (Optional)</label>
+                    <input type="date" id="targetDate">
+                </div>
+
+                <button onclick="calculateAge()" class="calculate-btn">
+                    <span>🎂</span> Calculate Age
+                </button>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h3>Your Age</h3>
+                
+                <div class="age-display">
+                    <div class="age-card">
+                        <div class="age-number" id="years">0</div>
+                        <div class="age-label">Years</div>
+                    </div>
+                    <div class="age-card">
+                        <div class="age-number" id="months">0</div>
+                        <div class="age-label">Months</div>
+                    </div>
+                    <div class="age-card">
+                        <div class="age-number" id="days">0</div>
+                        <div class="age-label">Days</div>
+                    </div>
+                </div>
+
+                <div class="detailed-info">
+                    <h4>Detailed Information</h4>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-icon">📆</span>
+                            <div>
+                                <div class="info-label">Total Days</div>
+                                <div class="info-value" id="totalDays">0</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏰</span>
+                            <div>
+                                <div class="info-label">Total Hours</div>
+                                <div class="info-value" id="totalHours">0</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <div>
+                                <div class="info-label">Total Minutes</div>
+                                <div class="info-value" id="totalMinutes">0</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🎉</span>
+                            <div>
+                                <div class="info-label">Next Birthday</div>
+                                <div class="info-value" id="nextBirthday">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fun-facts">
+                    <h4>Fun Facts</h4>
+                    <div id="funFacts"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

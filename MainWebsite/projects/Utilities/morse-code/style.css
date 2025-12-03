@@ -1,0 +1,9 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh}.navbar{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:1rem 0}.container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}.logo{color:white;font-size:1.5rem}.back-link{color:white;text-decoration:none;font-weight:500}.morse-container{display:flex;justify-content:center;align-items:center;min-height:calc(100vh - 80px);padding:20px}.morse-box{background:white;border-radius:20px;padding:2rem;box-shadow:0 20px 60px rgba(0,0,0,0.3);width:100%;max-width:700px}.tabs{display:flex;gap:0.5rem;margin-bottom:1rem}.tab{flex:1;padding:0.75rem;background:#f8fafc;border:none;border-radius:8px;cursor:pointer;font-weight:600}.tab.active{background:#667eea;color:white}textarea{width:100%;min-height:150px;padding:1rem;border:2px solid #e2e8f0;border-radius:12px;margin:1rem 0;font-family:monospace;resize:vertical}button{width:100%;padding:1rem;background:#667eea;color:white;border:none;border-radius:12px;cursor:pointer;font-weight:600;margin:0.5rem 0}

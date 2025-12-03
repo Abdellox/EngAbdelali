@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game - Classic Puzzle Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🎮 2048 Game</h1>
+            <a href="../../../index.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="game-container">
+        <div class="game-box">
+            <div class="header">
+                <div class="title-section">
+                    <h2>2048</h2>
+                    <p class="subtitle">Join the tiles, get to 2048!</p>
+                </div>
+                <div class="score-section">
+                    <div class="score-box">
+                        <div class="score-label">SCORE</div>
+                        <div class="score-value" id="score">0</div>
+                    </div>
+                    <div class="score-box">
+                        <div class="score-label">BEST</div>
+                        <div class="score-value" id="best">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="new-game-btn" onclick="newGame()">
+                    <span>🎮</span> New Game
+                </button>
+                <button class="undo-btn" onclick="undo()" id="undoBtn" disabled>
+                    <span>↶</span> Undo
+                </button>
+            </div>
+
+            <div class="game-board">
+                <div class="grid-container" id="gridContainer">
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                </div>
+                <div class="tile-container" id="tileContainer"></div>
+            </div>
+
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <p><strong>Use arrow keys</strong> to move tiles. When two tiles with the same number touch, they <strong>merge into one!</strong></p>
+                <div class="key-hints">
+                    <span class="key">↑</span>
+                    <span class="key">↓</span>
+                    <span class="key">←</span>
+                    <span class="key">→</span>
+                </div>
+            </div>
+
+            <div class="game-message" id="gameMessage">
+                <div class="message-content">
+                    <h2 id="messageTitle">Game Over!</h2>
+                    <p id="messageText">Try again?</p>
+                    <button onclick="newGame()">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

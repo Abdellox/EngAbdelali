@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Best Electronics & Gadgets</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    <span>TechStore</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#deals">Deals</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+                    <a href="#" class="icon-link"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Latest Tech at Unbeatable Prices</h1>
+                <p>Discover the most popular phones, laptops, and electronics that everyone's buying</p>
+                <a href="#products" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Smartphones</h3>
+                    <p>Latest models</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Laptops</h3>
+                    <p>High performance</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-tablet-alt"></i>
+                    <h3>Tablets</h3>
+                    <p>Portable power</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-headphones"></i>
+                    <h3>Audio</h3>
+                    <p>Premium sound</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Trending Products</h2>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">Hot</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="iPhone 15 Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3>iPhone 15 Pro</h3>
+                        <p class="product-desc">Latest A17 Pro chip, titanium design</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(2.5k reviews)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">$999</span>
+                            <button class="btn btn-add-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400" alt="MacBook Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3>MacBook Pro 14"</h3>
+                        <p class="product-desc">M3 chip, 16GB RAM, 512GB SSD</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(1.8k reviews)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">$1,599 <span class="old-price">$1,999</span></span>
+                            <button class="btn btn-add-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400" alt="Samsung Galaxy S24">
+                    </div>
+                    <div class="product-info">
+                        <h3>Samsung Galaxy S24 Ultra</h3>
+                        <p class="product-desc">200MP camera, S Pen included</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(3.2k reviews)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">$1,199</span>
+                            <button class="btn btn-add-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" alt="Dell XPS 15">
+                    </div>
+                    <div class="product-info">
+                        <h3>Dell XPS 15</h3>
+                        <p class="product-desc">Intel i7, 32GB RAM, RTX 4060</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(1.5k reviews)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">$1,899</span>
+                            <button class="btn btn-add-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400" alt="AirPods Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3>AirPods Pro (2nd Gen)</h3>
+                        <p class="product-desc">Active noise cancellation, USB-C</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.1k reviews)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">$249</span>
+                            <button class="btn btn-add-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-badge sale">-20%</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400" alt="iPad Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3>iPad Pro 12.9"</h3>
+                        <p class="product-desc">M2 chip, 256GB, Wi-Fi + Cellular</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(2.9k reviews)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">$999 <span class="old-price">$1,249</span></span>
+                            <button class="btn btn-add-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="deals" id="deals">
+        <div class="container">
+            <h2 class="section-title">Limited Time Offers</h2>
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <div class="deal-content">
+                        <h3>Black Friday Sale</h3>
+                        <p>Up to 40% off on selected laptops</p>
+                        <a href="#" class="btn btn-secondary">Shop Deals</a>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-content">
+                        <h3>Bundle & Save</h3>
+                        <p>Buy phone + accessories, save $100</p>
+                        <a href="#" class="btn btn-secondary">View Bundles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Free Shipping</h3>
+                    <p>On orders over $50</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-undo"></i>
+                    <h3>30-Day Returns</h3>
+                    <p>Easy return policy</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Payment</h3>
+                    <p>100% protected</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Always here to help</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About TechStore</h4>
+                    <p>Your trusted source for the latest electronics and gadgets. We bring you the most popular products at competitive prices.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

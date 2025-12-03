@@ -1,0 +1,13 @@
+# robots.txt for Abdel Ali Portfolio
+
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /generate-codes.html
+Disallow: /js/admin-script.js
+
+# Sitemap
+Sitemap: https://abdelalii.github.io/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

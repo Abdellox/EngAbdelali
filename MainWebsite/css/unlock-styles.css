@@ -1,0 +1,163 @@
+/* Unlock System Styles */
+
+/* Locked Project Card */
+.golden-project-card.locked {
+  position: relative;
+  cursor: pointer;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.golden-project-card.locked:hover .lock-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lock-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: lockShake 2s ease-in-out infinite;
+}
+
+@keyframes lockShake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.lock-overlay p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.golden-project-image.blurred {
+  filter: blur(10px);
+  opacity: 0.5;
+}
+
+.unlock-btn {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%) !important;
+  color: #2d3748 !important;
+  border: none !important;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.unlock-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
+
+/* Unlock Banner */
+.unlock-banner {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.unlock-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+}
+
+.unlock-banner-icon {
+  font-size: 4rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.unlock-banner-text {
+  flex: 1;
+}
+
+.unlock-banner-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.unlock-banner-text p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.unlock-banner-btn {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #2d3748;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.unlock-banner-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .unlock-banner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .unlock-banner-icon {
+    font-size: 3rem;
+  }
+
+  .unlock-banner-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .unlock-banner-text p {
+    font-size: 1rem;
+  }
+
+  .unlock-banner-btn {
+    width: 100%;
+  }
+
+  .lock-icon {
+    font-size: 3rem;
+  }
+
+  .lock-overlay p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">Notes</div>
+      <div class="controls">
+        <input id="searchInput" class="search" type="search" placeholder="Search notes..." aria-label="Search notes" />
+        <select id="notebookFilter" class="select" aria-label="Filter by notebook">
+          <option value="">All notebooks</option>
+        </select>
+        <select id="sortSelect" class="select" aria-label="Sort notes">
+          <option value="updated_desc">Updated ↓</option>
+          <option value="updated_asc">Updated ↑</option>
+          <option value="title_asc">Title A→Z</option>
+          <option value="title_desc">Title Z→A</option>
+        </select>
+        <button id="filterPinnedToggle" class="btn" aria-pressed="false" aria-label="Toggle pinned filter">Pinned: Off</button>
+        <button id="themeToggle" class="btn" aria-label="Toggle dark mode">Dark: Off</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="composer" aria-label="Create note">
+        <form id="noteForm" class="note-form">
+          <input id="noteTitle" class="input" type="text" placeholder="Title (optional)" aria-label="Note title" />
+          <textarea id="noteContent" class="textarea" rows="4" placeholder="Write your note..." aria-label="Note content"></textarea>
+          <div class="composer-actions">
+            <label class="color-label" for="noteColor">Color</label>
+            <select id="noteColor" class="select" aria-label="Note color">
+              <option value="default">Default</option>
+              <option value="yellow">Yellow</option>
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+              <option value="pink">Pink</option>
+              <option value="purple">Purple</option>
+            </select>
+            <button type="submit" class="btn primary">Add Note</button>
+          </div>
+        </form>
+      </section>
+
+      <section aria-label="Notes list">
+        <div id="notesGrid" class="notes-grid"></div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <button id="exportBtn" class="btn" aria-label="Export notes to JSON">Export</button>
+      <button id="importBtn" class="btn" aria-label="Import notes from JSON">Import</button>
+      <input id="importFile" type="file" accept="application/json" hidden />
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

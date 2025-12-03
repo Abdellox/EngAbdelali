@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Template Generator - Free & Open Source</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎨 AI Template Generator</h1>
+            <p class="subtitle">Turn your ideas into beautiful templates - 100% FREE! No API keys needed! 🚀</p>
+        </header>
+
+        <main class="main-content">
+            <div class="generator-section">
+                <div class="input-area">
+                    <label for="description">Describe your template:</label>
+                    <textarea 
+                        id="description" 
+                        placeholder="Example: Create a modern landing page for a coffee shop with a hero section, menu showcase, and contact form. Use warm brown colors and elegant fonts."
+                        rows="6"
+                    ></textarea>
+                    
+                    <button id="generateBtn" class="generate-btn">
+                        <span class="btn-text">Generate Template ✨</span>
+                        <span class="btn-loader" style="display: none;">Generating...</span>
+                    </button>
+                </div>
+
+                <div class="output-area">
+                    <div class="tabs">
+                        <button class="tab active" data-tab="preview">Preview</button>
+                        <button class="tab" data-tab="html">HTML</button>
+                        <button class="tab" data-tab="css">CSS</button>
+                        <button class="tab" data-tab="js">JavaScript</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div id="preview" class="tab-pane active">
+                            <iframe id="previewFrame" title="Template Preview"></iframe>
+                        </div>
+                        <div id="html" class="tab-pane">
+                            <pre><code id="htmlCode"></code></pre>
+                        </div>
+                        <div id="css" class="tab-pane">
+                            <pre><code id="cssCode"></code></pre>
+                        </div>
+                        <div id="js" class="tab-pane">
+                            <pre><code id="jsCode"></code></pre>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button id="downloadBtn" class="action-btn" disabled>Download Template 📥</button>
+                        <button id="copyBtn" class="action-btn" disabled>Copy All Code 📋</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Made with ❤️ for the open-source community | <a href="https://github.com" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

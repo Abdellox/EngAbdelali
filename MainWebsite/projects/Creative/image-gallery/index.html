@@ -1,0 +1,42 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">📸 Image Gallery</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    
+    <div class="gallery-container">
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterImages('all')">All</button>
+            <button class="filter-btn" onclick="filterImages('nature')">Nature</button>
+            <button class="filter-btn" onclick="filterImages('city')">City</button>
+            <button class="filter-btn" onclick="filterImages('people')">People</button>
+            <button class="filter-btn" onclick="filterImages('food')">Food</button>
+        </div>
+        <div class="gallery-grid" id="gallery"></div>
+    </div>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close">×</span>
+        <img src="" alt="" id="lightboxImg">
+        <div class="lightbox-caption" id="caption"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

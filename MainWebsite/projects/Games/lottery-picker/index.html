@@ -1,0 +1,35 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">🎰 Lottery Picker</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Lottery Number Picker</h1>
+        <div class="controls">
+            <label>Numbers to pick: <input type="number" id="count" value="6" min="1" max="10"></label>
+            <label>Max number: <input type="number" id="max" value="49" min="10" max="100"></label>
+        </div>
+        <button onclick="pickNumbers()" class="pick-btn">Pick Numbers</button>
+        <div id="numbers" class="numbers"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

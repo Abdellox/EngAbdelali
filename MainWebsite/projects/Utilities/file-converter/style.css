@@ -1,0 +1,176 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.upload-area {
+    border: 3px dashed #667eea;
+    border-radius: 15px;
+    padding: 60px 20px;
+    text-align: center;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 30px;
+}
+
+.upload-area:hover {
+    background: #e9ecef;
+    border-color: #5568d3;
+}
+
+.upload-area.dragover {
+    background: #e7f0ff;
+    border-color: #667eea;
+}
+
+.upload-icon {
+    font-size: 4em;
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+#fileInput {
+    display: none;
+}
+
+.file-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.file-info.active {
+    display: block;
+}
+
+.file-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.file-size {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.converter-options {
+    margin-bottom: 30px;
+}
+
+.converter-options label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+#formatSelect {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+#convertBtn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+}
+
+#convertBtn:hover {
+    transform: scale(1.02);
+}
+
+#convertBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.result-area {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.result-area.active {
+    display: block;
+}
+
+#downloadBtn {
+    width: 100%;
+    padding: 15px;
+    background: #2ed573;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#downloadBtn:hover {
+    background: #26de81;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+}

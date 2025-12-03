@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🎠 Carousel</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="carousel-box">
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="prev()">‹</button>
+                <div class="carousel-track" id="track"></div>
+                <button class="carousel-btn next" onclick="next()">›</button>
+            </div>
+            <div class="carousel-dots" id="dots"></div>
+            <div class="carousel-controls">
+                <button onclick="toggleAutoplay()" id="autoplayBtn" class="btn">▶ Autoplay</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

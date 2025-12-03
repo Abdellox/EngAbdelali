@@ -1,0 +1,37 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toast Notifications</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="logo">🔔 Toast Notifications</h1>
+      <a href="../../../index.html" class="back-link">← Back</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h2>Toast Notifications</h2>
+    <p class="subtitle">Click buttons to show different toast notifications</p>
+    <div class="button-group">
+      <button class="btn btn-success" onclick="showToast('success')">Success</button>
+      <button class="btn btn-error" onclick="showToast('error')">Error</button>
+      <button class="btn btn-warning" onclick="showToast('warning')">Warning</button>
+      <button class="btn btn-info" onclick="showToast('info')">Info</button>
+    </div>
+  </div>
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="app.js"></script>
+</body>
+</html>

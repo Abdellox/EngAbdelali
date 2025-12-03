@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Unlock Codes - Admin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      color: #2d3748;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #718096;
+      margin-bottom: 2rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #f7fafc;
+      border-radius: 12px;
+    }
+
+    .section h2 {
+      color: #2d3748;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-bottom: 1rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    }
+
+    .code-display {
+      background: white;
+      border: 2px solid #667eea;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .code-display.active {
+      display: block;
+    }
+
+    .code-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem;
+      background: #f7fafc;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #667eea;
+    }
+
+    .copy-btn {
+      padding: 0.5rem 1rem;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .copy-btn:hover {
+      background: #5568d3;
+    }
+
+    .info-box {
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .input-group {
+      margin-bottom: 1rem;
+    }
+
+    .input-group label {
+      display: block;
+      color: #4a5568;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 2rem;
+      padding: 0.75rem;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .back-link:hover {
+      background: #f7fafc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔑 Unlock Code Generator</h1>
+    <p class="subtitle">Admin Tool - Generate codes for Ko-fi supporters</p>
+
+    <div class="warning-box">
+      ⚠️ <strong>Admin Only:</strong> Keep this page private. Share generated codes only with Ko-fi supporters.
+    </div>
+
+    <!-- Generate New Code -->
+    <div class="section">
+      <h2>Generate New Code</h2>
+      <button class="btn" onclick="generateNewCode()">🎲 Generate Random Code</button>
+      <div id="newCodeDisplay" class="code-display"></div>
+    </div>
+
+    <!-- Add Custom Code -->
+    <div class="section">
+      <h2>Add Custom Code</h2>
+      <div class="input-group">
+        <label for="customCode">Custom Code (8-20 characters):</label>
+        <input type="text" id="customCode" placeholder="GOLDEN2025" maxlength="20">
+      </div>
+      <button class="btn" onclick="addCustomCode()">➕ Add Custom Code</button>
+    </div>
+
+    <!-- View All Codes -->
+    <div class="section">
+      <h2>Active Unlock Codes</h2>
+      <button class="btn" onclick="viewAllCodes()">👁️ View All Active Codes</button>
+      <div id="allCodesDisplay" class="code-display"></div>
+    </div>
+
+    <div class="info-box">
+      💡 <strong>How it works:</strong><br>
+      1. Generate or add codes here<br>
+      2. Share codes with Ko-fi supporters<br>
+      3. Supporters enter codes on your portfolio<br>
+      4. Codes unlock all Golden Projects permanently
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+  </div>
+
+  <script src="js/unlock-system.js"></script>
+  <script>
+    function generateNewCode() {
+      const code = unlockSystem.generateRandomCode();
+      const codes = unlockSystem.getValidCodes();
+      codes.push(code);
+      localStorage.setItem('goldenUnlockCodes', JSON.stringify(codes));
+      
+      const display = document.getElementById('newCodeDisplay');
+      display.innerHTML = `
+        <div class="code-item">
+          <span>${code}</span>
+          <button class="copy-btn" onclick="copyCode('${code}')">📋 Copy</button>
+        </div>
+      `;
+      display.classList.add('active');
+      
+      alert(`✅ New code generated: ${code}\n\nShare this with your Ko-fi supporter!`);
+    }
+
+    function addCustomCode() {
+      const input = document.getElementById('customCode');
+      const code = input.value.trim().toUpperCase();
+      
+      if (!code) {
+        alert('❌ Please enter a code');
+        return;
+      }
+      
+      if (code.length < 8) {
+        alert('❌ Code must be at least 8 characters');
+        return;
+      }
+      
+      const codes = unlockSystem.getValidCodes();
+      
+      if (codes.includes(code)) {
+        alert('⚠️ This code already exists');
+        return;
+      }
+      
+      codes.push(code);
+      localStorage.setItem('goldenUnlockCodes', JSON.stringify(codes));
+      
+      alert(`✅ Custom code added: ${code}`);
+      input.value = '';
+      viewAllCodes();
+    }
+
+    function viewAllCodes() {
+      const codes = unlockSystem.getValidCodes();
+      const display = document.getElementById('allCodesDisplay');
+      
+      if (codes.length === 0) {
+        display.innerHTML = '<p style="text-align: center; color: #718096;">No codes yet. Generate one above!</p>';
+      } else {
+        display.innerHTML = codes.map(code => `
+          <div class="code-item">
+            <span>${code}</span>
+            <button class="copy-btn" onclick="copyCode('${code}')">📋 Copy</button>
+          </div>
+        `).join('');
+      }
+      
+      display.classList.add('active');
+    }
+
+    function copyCode(code) {
+      navigator.clipboard.writeText(code).then(() => {
+        alert(`✅ Code copied: ${code}`);
+      });
+    }
+
+    // Auto-generate initial codes if none exist
+    window.addEventListener('load', () => {
+      const codes = unlockSystem.getValidCodes();
+      if (codes.length === 0) {
+        generateNewCode();
+      }
+    });
+  </script>
+</body>
+</html>

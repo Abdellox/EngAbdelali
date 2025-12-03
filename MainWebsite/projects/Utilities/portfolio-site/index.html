@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Site Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🌐 Portfolio Builder</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="builder">
+            <div class="editor">
+                <h2>Build Your Portfolio</h2>
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="name" placeholder="John Doe" value="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="title" placeholder="Full Stack Developer" value="Full Stack Developer">
+                </div>
+                <div class="form-group">
+                    <label>About Me</label>
+                    <textarea id="about" rows="4" placeholder="Tell us about yourself...">Passionate developer with 5+ years of experience building web applications.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Skills (comma separated)</label>
+                    <input type="text" id="skills" value="HTML, CSS, JavaScript, React, Node.js">
+                </div>
+                <button onclick="updatePreview()" class="btn-update">Update Preview</button>
+            </div>
+            <div class="preview">
+                <h2>Live Preview</h2>
+                <div id="portfolioPreview" class="portfolio-preview"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

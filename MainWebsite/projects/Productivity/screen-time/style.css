@@ -1,0 +1,21 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+.navbar { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 15px 0; margin-bottom: 30px; border-radius: 10px; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 0 20px; }
+.logo { color: white; font-size: 1.5em; }
+.back-link { color: white; text-decoration: none; padding: 8px 16px; background: rgba(255,255,255,0.2); border-radius: 5px; }
+.back-link:hover { background: rgba(255,255,255,0.3); }
+.container { max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center; }
+h1 { color: #667eea; margin-bottom: 30px; }
+.time { font-size: 96px; font-weight: bold; color: #667eea; font-family: 'Courier New', monospace; margin: 60px 0; }
+button { padding: 15px 40px; background: #dc3545; color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 16px; }
+button:hover { background: #c82333; }
+.info { margin-top: 30px; color: #666; }

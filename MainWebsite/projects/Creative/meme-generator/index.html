@@ -1,0 +1,44 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">😂 Meme Generator</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+    
+    <div class="meme-container">
+        <div class="meme-box">
+            <div class="meme-canvas" id="memeCanvas">
+                <img src="" id="memeImage" alt="Meme">
+                <div class="top-text" id="topText">TOP TEXT</div>
+                <div class="bottom-text" id="bottomText">BOTTOM TEXT</div>
+            </div>
+            
+            <div class="controls">
+                <input type="text" id="topInput" placeholder="Top text">
+                <input type="text" id="bottomInput" placeholder="Bottom text">
+                <button onclick="randomMeme()">Random Meme</button>
+                <button onclick="downloadMeme()">Download</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
