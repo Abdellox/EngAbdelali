@@ -19,7 +19,8 @@ class UnlockSystem {
     return [
       'GOLDEN2025',
       'PREMIUM2025',
-      'SUPPORTER2025'
+      'SUPPORTER2025',
+      '7CAA255B'  // Test code - Generated for demo
       // Add your generated codes here
       // Example: 'ABC12345',
     ];
