@@ -208,7 +208,7 @@ function initializeDefaultData() {
   // Default Projects Data - ALL 193 PROJECTS
   if (!hasProjects) {
     const allProjects = [
-      // GAMES (35 projects)
+      // GAMES (31 projects)
       { id: 1, name: '2048 Game', category: 'games', tech: ['JavaScript', 'CSS3', 'HTML5'], folder: 'Games/2048-game' },
       { id: 2, name: 'Bingo Game', category: 'games', tech: ['JavaScript', 'Canvas'], folder: 'Games/bingo-game' },
       { id: 3, name: 'Blackjack Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/blackjack-game' },
@@ -221,10 +221,8 @@ function initializeDefaultData() {
       { id: 10, name: 'Hangman Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/hangman-game' },
       { id: 11, name: 'Lottery Picker', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/lottery-picker' },
       { id: 12, name: 'Mahjong Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/mahjong-game' },
-      { id: 13, name: 'Math Quiz', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/math-quiz' },
-      { id: 14, name: 'Memory Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/memory-game' },
-      { id: 15, name: 'Memory Match', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/memory-match' },
-      { id: 16, name: 'Number Guessing', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/number-guessing' },
+      { id: 13, name: 'Memory Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/memory-game' },
+      { id: 14, name: 'Number Guessing', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/number-guessing' },
       { id: 17, name: 'Poker Hand', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/poker-hand' },
       { id: 18, name: 'Pong Game', category: 'games', tech: ['JavaScript', 'Canvas'], folder: 'Games/pong-game' },
       { id: 19, name: 'Puzzle Slider', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/puzzle-slider' },
@@ -235,15 +233,13 @@ function initializeDefaultData() {
       { id: 24, name: 'Snake Game', category: 'games', tech: ['JavaScript', 'Canvas'], folder: 'Games/snake-game' },
       { id: 25, name: 'Solitaire Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/solitaire-game' },
       { id: 26, name: 'Space Invaders', category: 'games', tech: ['JavaScript', 'Canvas'], folder: 'Games/space-invaders' },
-      { id: 27, name: 'Speed Typing Test', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/speed-typing-test' },
+      { id: 27, name: 'Sudoku Solver', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/sudoku-solver' },
       { id: 28, name: 'Tetris Game', category: 'games', tech: ['JavaScript', 'Canvas'], folder: 'Games/tetris-game' },
       { id: 29, name: 'Tic Tac Toe', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/tic-tac-toe' },
       { id: 30, name: 'Trivia Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/trivia-game' },
       { id: 31, name: 'Typing Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/typing-game' },
-      { id: 32, name: 'Typing Speed', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/typing-speed' },
-      { id: 33, name: 'Whack A Mole', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/whack-a-mole' },
-      { id: 34, name: 'Wordle Clone', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/wordle-clone' },
-      { id: 35, name: 'Quiz App', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/quiz-app' },
+      { id: 32, name: 'Whack A Mole', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/whack-a-mole' },
+      { id: 33, name: 'Wordle Clone', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/wordle-clone' },
       
       // PRODUCTIVITY (23 projects)
       { id: 36, name: 'Todo Advanced', category: 'productivity', tech: ['JavaScript', 'LocalStorage'], folder: 'Productivity/todo-advanced' },
