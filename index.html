@@ -150,8 +150,8 @@
                 <div class="stat-label-compact">Projects</div>
               </div>
               <div class="stat-compact">
-                <div class="stat-number-compact gradient-text">22</div>
-                <div class="stat-label-compact">Golden Projects</div>
+                <div class="stat-number-compact gradient-text">175</div>
+                <div class="stat-label-compact">Total Projects</div>
               </div>
               <div class="stat-compact">
                 <div class="stat-number-compact gradient-text">20+</div>
@@ -582,45 +582,71 @@
       </div>
     </section>
 
-    <!-- Golden Projects Section -->
-    <section id="golden-projects" class="golden-projects">
-      <div class="container">
-        <div class="golden-header">
-          <div class="golden-icon">✨</div>
-          <h2 class="section-title golden-title">Golden Projects</h2>
-          <p class="section-subtitle golden-subtitle">Exceptional projects that showcase excellence and innovation</p>
-        </div>
-        <div class="golden-projects-grid" id="goldenProjectsGrid">
-          <!-- Golden projects will be loaded from admin dashboard -->
-          <div class="golden-empty-state">
-            <div class="golden-trophy">🏆</div>
-            <p>No golden projects yet. Add them from the admin dashboard!</p>
-            <a href="admin-dashboard.html" class="btn btn-golden">Go to Admin Dashboard</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Projects Section -->
-    <section id="projects" class="projects"></section>
+    <section id="projects" class="projects">
       <div class="container">
         <h2 class="section-title">My Projects Portfolio</h2>
-        <p class="section-subtitle">Explore 188 projects across different categories</p>
-        <div class="project-filters">
-          <button class="filter-btn active" data-category="all">All (188)</button>
-          <button class="filter-btn" data-category="games">🎮 Games (31)</button>
-          <button class="filter-btn" data-category="productivity">📋 Productivity (29)</button>
-          <button class="filter-btn" data-category="utilities">🔧 Utilities (45)</button>
-          <button class="filter-btn" data-category="developer">💻 Developer (19)</button>
-          <button class="filter-btn" data-category="creative">🎨 Creative (11)</button>
-          <button class="filter-btn" data-category="finance">💰 Finance (4)</button>
-          <button class="filter-btn" data-category="health">❤️ Health (2)</button>
-          <button class="filter-btn" data-category="ui-components">🧩 UI Components (29)</button>
-          <button class="filter-btn" data-category="entertainment">🎬 Entertainment (14)</button>
-          <button class="filter-btn" data-category="education">📚 Education (4)</button>
-        </div>
-        <div class="projects-grid" id="projectsGrid">
-          <!-- Project cards will be dynamically generated -->
+        <p class="section-subtitle">175 projects organized by skill level</p>
+        
+        <!-- Tier Navigation -->
+        <nav class="tier-navigation">
+          <button class="tier-btn active" data-tier="basic">
+            <span class="tier-icon">🌱</span>
+            <span class="tier-name">Basic Projects</span>
+            <span class="tier-badge" id="basicCount">20 FREE</span>
+          </button>
+          <button class="tier-btn" data-tier="intermediate">
+            <span class="tier-icon">🔒</span>
+            <span class="tier-name">Intermediate</span>
+            <span class="tier-badge" id="intermediateCount">85</span>
+          </button>
+          <button class="tier-btn" data-tier="professional">
+            <span class="tier-icon">🔐</span>
+            <span class="tier-name">Professional</span>
+            <span class="tier-badge" id="professionalCount">70</span>
+          </button>
+        </nav>
+
+        <!-- Projects Tier Wrapper -->
+        <div class="projects-tier-wrapper">
+          <!-- Basic Projects -->
+          <div class="projects-tier-section active" id="tier-basic">
+            <div class="tier-section-header">
+              <h3>Basic Projects - FREE ACCESS</h3>
+              <p>Perfect for learning fundamentals - No unlock required</p>
+            </div>
+            <div class="projects-grid" id="basicProjectsGrid">
+              <!-- Basic projects will be loaded here -->
+            </div>
+          </div>
+
+          <!-- Intermediate Projects -->
+          <div class="projects-tier-section" id="tier-intermediate">
+            <div class="tier-section-header">
+              <h3>Intermediate Projects</h3>
+              <p>🔒 Advanced projects with complex features</p>
+            </div>
+            <div class="projects-grid" id="intermediateProjectsGrid">
+              <!-- Intermediate projects will be loaded here -->
+            </div>
+            <button class="tier-unlock-btn" onclick="window.unlockSystem.openModal()">
+              🔓 Unlock Intermediate Projects
+            </button>
+          </div>
+
+          <!-- Professional Projects -->
+          <div class="projects-tier-section" id="tier-professional">
+            <div class="tier-section-header">
+              <h3>Professional Projects</h3>
+              <p>🔐 Premium projects with enterprise-level features</p>
+            </div>
+            <div class="projects-grid" id="professionalProjectsGrid">
+              <!-- Professional projects will be loaded here -->
+            </div>
+            <button class="tier-unlock-btn premium" onclick="window.unlockSystem.openModal()">
+              💎 Unlock Professional Projects
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -723,6 +749,7 @@
   <script src="js/portfolio-data-init.js"></script>
   <!-- <script src="js/golden-projects-data.js"></script> --> <!-- Disabled: Using admin-managed data from localStorage -->
   <script src="js/unlock-system.js"></script>
+  <script src="js/tier-projects.js"></script>
   <script src="js/script.js" defer></script>
   
   <!-- Optional: Uncomment to enable additional protection (right-click disable, etc.) -->

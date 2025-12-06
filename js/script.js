@@ -462,33 +462,27 @@ function generateProjectCards() {
       `<span class="tech-badge">${tech}</span>`
     ).join('');
     
-    if (isLocked) {
-      card.innerHTML = `
-        <div class="project-tag">${categoryLabel}</div>
-        <div class="lock-overlay">
-          <div class="lock-icon">🔒</div>
-          <p>Unlock to Access</p>
-        </div>
-        <h3 class="project-title">${project.name}</h3>
-        <div class="project-tech">${techBadges}</div>
-        <div class="project-links">
-          <button class="project-link unlock-btn" onclick="window.unlockSystem.openModal()">
-            🔓 Unlock All Projects
-          </button>
-        </div>
-      `;
-    } else {
-      card.innerHTML = `
-        <div class="project-tag">${categoryLabel} ${isFreeProject ? '(Free)' : ''}</div>
-        <h3 class="project-title">${project.name}</h3>
-        <div class="project-tech">${techBadges}</div>
-        <div class="project-links">
-          <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">
-            Demo Available After Support
-          </span>
-        </div>
-      `;
+    // Build project URL
+    let projectUrl = '';
+    if (project.folder) {
+      projectUrl = `projects/${project.folder}/index.html`;
     }
+    
+    card.innerHTML = `
+      <div class="project-tag">${categoryLabel} ${isFreeProject ? '(Free)' : isLocked ? '🔒' : ''}</div>
+      <h3 class="project-title">${project.name}</h3>
+      <div class="project-tech">${techBadges}</div>
+      <div class="project-links">
+        ${projectUrl ? `<a href="${projectUrl}" target="_blank" class="project-link">
+          🚀 View Demo
+        </a>` : `<span class="project-link" style="cursor: not-allowed; opacity: 0.6;">
+          Demo Coming Soon
+        </span>`}
+        ${isLocked ? `<button class="project-link unlock-btn" onclick="window.unlockSystem.openModal()">
+          🔓 Unlock All
+        </button>` : ''}
+      </div>
+    `;
     
     projectsGrid.appendChild(card);
   });
@@ -716,8 +710,8 @@ function initializePortfolio() {
   generateExperience();
   generateTestimonials();
   generateSkills();
-  generateProjectCards();
-  loadSavedFilter();
+  // generateProjectCards(); // Disabled: Using new 3-tier system (tier-projects.js)
+  // loadSavedFilter(); // Disabled: Using tier navigation instead
 }
 
 // Listen for data updates from admin dashboard
