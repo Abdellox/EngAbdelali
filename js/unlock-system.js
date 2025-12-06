@@ -97,14 +97,16 @@ class UnlockSystem {
           <h2>Unlock All Golden Projects</h2>
           <p class="unlock-description">
             Support me to unlock all 22 premium golden projects!<br>
-            Get instant access to my best work.
+            Get instant access to my best work and source code.
           </p>
 
           <div class="unlock-benefits">
             <div class="benefit-item">✅ Access to 22 premium projects</div>
+            <div class="benefit-item">✅ Full source code included</div>
             <div class="benefit-item">✅ Lifetime access (no subscription)</div>
             <div class="benefit-item">✅ Support independent development</div>
             <div class="benefit-item">✅ Unlock code works forever</div>
+            <div class="benefit-item">💡 Projects delivered via email/Ko-fi message</div>
           </div>
 
           <div class="unlock-tabs">
