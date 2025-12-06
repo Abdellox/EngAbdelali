@@ -209,7 +209,7 @@ function initializeDefaultData() {
   if (!hasProjects) {
     const allProjects = [
       // GAMES (35 projects)
-      { id: 1, name: '2048 Game', category: 'games', tech: ['JavaScript', 'CSS3', 'HTML5'], folder: 'Games/Games/2048-game' },
+      { id: 1, name: '2048 Game', category: 'games', tech: ['JavaScript', 'CSS3', 'HTML5'], folder: 'Games/2048-game' },
       { id: 2, name: 'Bingo Game', category: 'games', tech: ['JavaScript', 'Canvas'], folder: 'Games/bingo-game' },
       { id: 3, name: 'Blackjack Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/blackjack-game' },
       { id: 4, name: 'Breakout Game', category: 'games', tech: ['JavaScript', 'Canvas'], folder: 'Games/breakout-game' },
