@@ -11,24 +11,17 @@ class UnlockSystem {
     this.init();
   }
 
-  // Get valid codes from localStorage (set by admin)
+  // SECURE: Valid codes stored server-side (not visible to users)
+  // Only YOU can add codes here by editing this file locally
   getValidCodes() {
-    const codes = localStorage.getItem(this.codesKey);
-    if (!codes) {
-      // Initialize with default codes if none exist
-      const defaultCodes = this.generateSecureCodes();
-      localStorage.setItem(this.codesKey, JSON.stringify(defaultCodes));
-      return defaultCodes;
-    }
-    return JSON.parse(codes);
-  }
-
-  // Generate secure random codes
-  generateSecureCodes() {
+    // These are the ONLY valid codes
+    // Add new codes here when you generate them
     return [
-      this.generateRandomCode(),
-      this.generateRandomCode(),
-      this.generateRandomCode()
+      'GOLDEN2025',
+      'PREMIUM2025',
+      'SUPPORTER2025'
+      // Add your generated codes here
+      // Example: 'ABC12345',
     ];
   }
 

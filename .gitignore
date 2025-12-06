@@ -36,6 +36,12 @@ build/
 *.temp
 .cache/
 
-# Private admin files (keep local only)
+# Private admin files (keep local only - NEVER upload to GitHub)
+admin.html
+generate-codes.html
 test-admin.html
 admin-test.html
+
+# Secure codes file (if created)
+codes.json
+unlock-codes.json
