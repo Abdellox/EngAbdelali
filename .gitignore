@@ -45,3 +45,7 @@ admin-test.html
 # Secure codes file (if created)
 codes.json
 unlock-codes.json
+
+# PROTECT YOUR HARD WORK - Hide project source code from GitHub
+GoldenProjects/
+projects/
