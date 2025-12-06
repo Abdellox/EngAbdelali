@@ -32,10 +32,11 @@ Professional portfolio website for **Abdel Ali**, a passionate Software Engineer
 ## 📂 Project Structure
 
 ```
-MainWebsite/
+EngAbdelali/
 ├── index.html              # Main portfolio page
 ├── support.html            # Ko-fi support page
 ├── generate-codes.html     # Admin code generator
+├── admin.html              # Admin dashboard
 ├── css/
 │   ├── styles.css          # Main styles
 │   ├── unlock-styles.css   # Unlock modal styles
@@ -48,7 +49,9 @@ MainWebsite/
 ├── assets/
 │   ├── images/             # Project images
 │   └── Allouche_Resume_2026.pdf
-└── projects/               # 193 project folders
+├── projects/               # 193 project folders
+├── secondPortfolio/        # Alternative portfolio CV
+└── GoldenProjects/         # Premium projects collection
 ```
 
 ## 🎯 Golden Projects System
@@ -78,7 +81,7 @@ The portfolio features a unique monetization system where visitors can unlock pr
 git clone https://github.com/yourusername/portfolio.git
 
 # Navigate to project
-cd portfolio/MainWebsite
+cd portfolio
 
 # Open in browser
 # Simply open index.html in your browser
@@ -171,7 +174,7 @@ Your support helps me create more amazing projects and keep them free and open f
 ## 📝 Documentation
 
 - [How Ko-fi Unlock Works](HOW-KOFI-UNLOCK-WORKS.md)
-- [Unlock System Guide](MainWebsite/UNLOCK-SYSTEM-GUIDE.md)
+- [Unlock System Guide](UNLOCK-SYSTEM-GUIDE.md)
 
 ## ⚡ Performance
 
