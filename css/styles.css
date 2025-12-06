@@ -3277,3 +3277,61 @@ section {
 }
 
 /* End of Styles */
+
+
+/* Locked Project Cards */
+.project-card.locked {
+  position: relative;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.project-card.locked .lock-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.project-card.locked .lock-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  animation: lockPulse 2s ease-in-out infinite;
+}
+
+.project-card.locked:hover {
+  transform: translateY(-4px);
+  opacity: 0.9;
+}
+
+.project-card .unlock-btn {
+  background: var(--gradient);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.project-card .unlock-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+@keyframes lockPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}

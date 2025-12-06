@@ -443,9 +443,16 @@ function generateProjectCards() {
   
   projectsGrid.innerHTML = '';
   
+  // Check if user has unlocked
+  const isUnlocked = window.unlockSystem ? window.unlockSystem.isUnlocked() : false;
+  
   projects.forEach((project, index) => {
     const card = document.createElement('article');
-    card.className = 'project-card';
+    const isFreeProject = project.isFree === true;
+    const canAccess = isFreeProject || isUnlocked;
+    const isLocked = !canAccess;
+    
+    card.className = `project-card ${isLocked ? 'locked' : ''}`;
     card.setAttribute('data-category', project.category);
     card.style.animationDelay = `${index * 0.03}s`;
     
@@ -455,16 +462,33 @@ function generateProjectCards() {
       `<span class="tech-badge">${tech}</span>`
     ).join('');
     
-    card.innerHTML = `
-      <div class="project-tag">${categoryLabel}</div>
-      <h3 class="project-title">${project.name}</h3>
-      <div class="project-tech">${techBadges}</div>
-      <div class="project-links">
-        <a href="projects/${project.folder}/index.html" target="_blank" class="project-link">
-          Live Demo →
-        </a>
-      </div>
-    `;
+    if (isLocked) {
+      card.innerHTML = `
+        <div class="project-tag">${categoryLabel}</div>
+        <div class="lock-overlay">
+          <div class="lock-icon">🔒</div>
+          <p>Unlock to Access</p>
+        </div>
+        <h3 class="project-title">${project.name}</h3>
+        <div class="project-tech">${techBadges}</div>
+        <div class="project-links">
+          <button class="project-link unlock-btn" onclick="window.unlockSystem.openModal()">
+            🔓 Unlock All Projects
+          </button>
+        </div>
+      `;
+    } else {
+      card.innerHTML = `
+        <div class="project-tag">${categoryLabel} ${isFreeProject ? '(Free)' : ''}</div>
+        <h3 class="project-title">${project.name}</h3>
+        <div class="project-tech">${techBadges}</div>
+        <div class="project-links">
+          <span class="project-link" style="cursor: not-allowed; opacity: 0.6;">
+            Demo Available After Support
+          </span>
+        </div>
+      `;
+    }
     
     projectsGrid.appendChild(card);
   });
@@ -804,7 +828,10 @@ function loadGoldenProjects() {
   
   // Display golden projects with lock/unlock
   goldenProjectsGrid.innerHTML += goldenProjects.map((project, index) => {
-    const canAccess = window.unlockSystem ? window.unlockSystem.canAccessProject(index) : true;
+    // Check if project is free OR user has unlocked
+    const isUnlocked = window.unlockSystem ? window.unlockSystem.isUnlocked() : false;
+    const isFreeProject = project.isFree === true;
+    const canAccess = isFreeProject || isUnlocked;
     const isLocked = !canAccess;
     
     // Get the correct image URL - use project.image if available, otherwise use placeholder
@@ -847,7 +874,7 @@ function loadGoldenProjects() {
     
     return `
     <div class="golden-project-card ${isLocked ? 'locked' : ''}">
-      <span class="golden-badge">✨ Golden ${index === 0 ? '(Free)' : ''}</span>
+      <span class="golden-badge">✨ Golden ${isFreeProject ? '(Free Demo)' : ''}</span>
       ${isLocked ? '<div class="lock-overlay"><div class="lock-icon">🔒</div><p>Support to Unlock</p></div>' : ''}
       <img src="${imageUrl}" alt="${projectTitle}" class="golden-project-image ${isLocked ? 'blurred' : ''}" onerror="this.src='https://placehold.co/400x250/667eea/ffffff/png?text=Golden+Project'">
       <div class="golden-project-content">

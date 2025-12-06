@@ -219,9 +219,9 @@ function initializeDefaultData() {
   // Default Projects Data - ALL 193 PROJECTS
   if (!hasProjects) {
     const allProjects = [
-      // GAMES (31 projects)
-      { id: 1, name: '2048 Game', category: 'games', tech: ['JavaScript', 'CSS3', 'HTML5'], folder: 'Games/2048-game' },
-      { id: 2, name: 'Bingo Game', category: 'games', tech: ['JavaScript', 'Canvas'], folder: 'Games/bingo-game' },
+      // GAMES (31 projects) - 2 FREE, rest locked
+      { id: 1, name: '2048 Game', category: 'games', tech: ['JavaScript', 'CSS3', 'HTML5'], folder: 'Games/2048-game', isFree: true },
+      { id: 2, name: 'Bingo Game', category: 'games', tech: ['JavaScript', 'Canvas'], folder: 'Games/bingo-game', isFree: true },
       { id: 3, name: 'Blackjack Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/blackjack-game' },
       { id: 4, name: 'Breakout Game', category: 'games', tech: ['JavaScript', 'Canvas'], folder: 'Games/breakout-game' },
       { id: 5, name: 'Card Game', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/card-game' },
@@ -252,9 +252,9 @@ function initializeDefaultData() {
       { id: 32, name: 'Whack A Mole', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/whack-a-mole' },
       { id: 33, name: 'Wordle Clone', category: 'games', tech: ['JavaScript', 'CSS3'], folder: 'Games/wordle-clone' },
       
-      // PRODUCTIVITY (23 projects)
-      { id: 36, name: 'Todo Advanced', category: 'productivity', tech: ['JavaScript', 'LocalStorage'], folder: 'Productivity/todo-advanced' },
-      { id: 37, name: 'Notes App', category: 'productivity', tech: ['JavaScript', 'LocalStorage'], folder: 'Productivity/notes-app' },
+      // PRODUCTIVITY (23 projects) - 2 FREE, rest locked
+      { id: 36, name: 'Todo Advanced', category: 'productivity', tech: ['JavaScript', 'LocalStorage'], folder: 'Productivity/todo-advanced', isFree: true },
+      { id: 37, name: 'Notes App', category: 'productivity', tech: ['JavaScript', 'LocalStorage'], folder: 'Productivity/notes-app', isFree: true },
       { id: 38, name: 'Calendar App', category: 'productivity', tech: ['JavaScript', 'CSS3'], folder: 'Productivity/calendar-app' },
       { id: 39, name: 'Pomodoro Timer', category: 'productivity', tech: ['JavaScript', 'CSS3'], folder: 'Productivity/pomodoro-timer' },
       { id: 40, name: 'Habit Tracker', category: 'productivity', tech: ['JavaScript', 'LocalStorage'], folder: 'Productivity/habit-tracker' },
@@ -277,9 +277,9 @@ function initializeDefaultData() {
       { id: 57, name: 'Monthly Calendar', category: 'productivity', tech: ['JavaScript', 'CSS3'], folder: 'Productivity/monthly-calendar' },
       { id: 58, name: 'Year Planner', category: 'productivity', tech: ['JavaScript', 'CSS3'], folder: 'Productivity/year-planner' },
       
-      // UTILITIES (27 projects)
-      { id: 59, name: 'Calculator App', category: 'utilities', tech: ['JavaScript', 'CSS3'], folder: 'Utilities/calculator-app' },
-      { id: 60, name: 'Unit Converter', category: 'utilities', tech: ['JavaScript', 'CSS3'], folder: 'Utilities/unit-converter' },
+      // UTILITIES (27 projects) - 2 FREE, rest locked
+      { id: 59, name: 'Calculator App', category: 'utilities', tech: ['JavaScript', 'CSS3'], folder: 'Utilities/calculator-app', isFree: true },
+      { id: 60, name: 'Unit Converter', category: 'utilities', tech: ['JavaScript', 'CSS3'], folder: 'Utilities/unit-converter', isFree: true },
       { id: 61, name: 'Currency Converter', category: 'utilities', tech: ['JavaScript', 'API'], folder: 'Utilities/currency-converter' },
       { id: 62, name: 'BMI Calculator', category: 'utilities', tech: ['JavaScript', 'CSS3'], folder: 'Utilities/bmi-calculator' },
       { id: 63, name: 'Tip Calculator', category: 'utilities', tech: ['JavaScript', 'CSS3'], folder: 'Utilities/tip-calculator' },
@@ -306,9 +306,9 @@ function initializeDefaultData() {
       { id: 84, name: 'Phone Formatter', category: 'utilities', tech: ['JavaScript', 'CSS3'], folder: 'Utilities/phone-formatter' },
       { id: 85, name: 'Email Validator', category: 'utilities', tech: ['JavaScript', 'Regex'], folder: 'Utilities/email-validator' },
       
-      // DEVELOPER TOOLS (24 projects)
-      { id: 86, name: 'Code Editor', category: 'developer', tech: ['JavaScript', 'CodeMirror'], folder: 'Developer/code-editor' },
-      { id: 87, name: 'Code Beautifier', category: 'developer', tech: ['JavaScript', 'CSS3'], folder: 'Developer/code-beautifier' },
+      // DEVELOPER TOOLS (24 projects) - 2 FREE, rest locked
+      { id: 86, name: 'Code Editor', category: 'developer', tech: ['JavaScript', 'CodeMirror'], folder: 'Developer/code-editor', isFree: true },
+      { id: 87, name: 'Code Beautifier', category: 'developer', tech: ['JavaScript', 'CSS3'], folder: 'Developer/code-beautifier', isFree: true },
       { id: 88, name: 'JSON Formatter', category: 'developer', tech: ['JavaScript', 'CSS3'], folder: 'Developer/json-formatter' },
       { id: 89, name: 'JSON Viewer', category: 'developer', tech: ['JavaScript', 'CSS3'], folder: 'Developer/json-viewer' },
       { id: 90, name: 'XML Formatter', category: 'developer', tech: ['JavaScript', 'CSS3'], folder: 'Developer/xml-formatter' },
@@ -332,9 +332,9 @@ function initializeDefaultData() {
       { id: 108, name: 'API Demo', category: 'developer', tech: ['JavaScript', 'Fetch API'], folder: 'Developer/api-demo' },
       { id: 109, name: 'GitHub Profile', category: 'developer', tech: ['JavaScript', 'GitHub API'], folder: 'Developer/github-profile' },
       
-      // CREATIVE (13 projects)
-      { id: 110, name: 'Drawing App', category: 'creative', tech: ['JavaScript', 'Canvas'], folder: 'Creative/drawing-app' },
-      { id: 111, name: 'Pixel Art', category: 'creative', tech: ['JavaScript', 'Canvas'], folder: 'Creative/pixel-art' },
+      // CREATIVE (13 projects) - 2 FREE, rest locked
+      { id: 110, isFree: true, name: 'Drawing App', category: 'creative', tech: ['JavaScript', 'Canvas'], folder: 'Creative/drawing-app' },
+      { id: 111, name: 'Pixel Art', isFree: true, category: 'creative', tech: ['JavaScript', 'Canvas'], folder: 'Creative/pixel-art' },
       { id: 112, name: 'Color Palette', category: 'creative', tech: ['JavaScript', 'CSS3'], folder: 'Creative/color-palette' },
       { id: 113, name: 'Color Flipper', category: 'creative', tech: ['JavaScript', 'CSS3'], folder: 'Creative/color-flipper' },
       { id: 114, name: 'Audio Visualizer', category: 'creative', tech: ['JavaScript', 'Web Audio'], folder: 'Creative/audio-visualizer' },
@@ -347,19 +347,19 @@ function initializeDefaultData() {
       { id: 121, name: 'Lightbox', category: 'creative', tech: ['JavaScript', 'CSS3'], folder: 'Creative/lightbox' },
       { id: 122, name: 'Video Player', category: 'creative', tech: ['JavaScript', 'HTML5 Video'], folder: 'Creative/video-player' },
       
-      // FINANCE (4 projects)
-      { id: 123, name: 'Budget Planner', category: 'finance', tech: ['JavaScript', 'LocalStorage'], folder: 'Finance/budget-planner' },
+      // FINANCE (4 projects) - 1 FREE, rest locked
+      { id: 123, name: 'Budget Planner', category: 'finance', tech: ['JavaScript', 'LocalStorage'], folder: 'Finance/budget-planner', isFree: true },
       { id: 124, name: 'Expense Tracker', category: 'finance', tech: ['JavaScript', 'Charts'], folder: 'Finance/expense-tracker' },
       { id: 125, name: 'Invoice Generator', category: 'finance', tech: ['JavaScript', 'PDF'], folder: 'Finance/invoice-generator' },
       { id: 126, name: 'Crypto Tracker', category: 'finance', tech: ['JavaScript', 'API'], folder: 'Finance/crypto-tracker' },
       
-      // HEALTH (2 projects)
-      { id: 127, name: 'Fitness Tracker', category: 'health', tech: ['JavaScript', 'LocalStorage'], folder: 'Health/fitness-tracker' },
+      // HEALTH (2 projects) - 1 FREE, rest locked
+      { id: 127, name: 'Fitness Tracker', category: 'health', tech: ['JavaScript', 'LocalStorage'], folder: 'Health/fitness-tracker', isFree: true },
       { id: 128, name: 'Meditation Timer', category: 'health', tech: ['JavaScript', 'Audio'], folder: 'Health/meditation-timer' },
       
-      // UI COMPONENTS (29 projects)
-      { id: 129, name: '404 Page', category: 'ui-components', tech: ['HTML5', 'CSS3'], folder: 'UI-Components/404-page' },
-      { id: 130, name: 'Accordion', category: 'ui-components', tech: ['JavaScript', 'CSS3'], folder: 'UI-Components/accordion' },
+      // UI COMPONENTS (29 projects) - 2 FREE, rest locked
+      { id: 129, name: '404 Page', category: 'ui-components', tech: ['HTML5', 'CSS3'], folder: 'UI-Components/404-page', isFree: true },
+      { id: 130, name: 'Accordion', category: 'ui-components', tech: ['JavaScript', 'CSS3'], folder: 'UI-Components/accordion', isFree: true },
       { id: 131, name: 'Breadcrumb', category: 'ui-components', tech: ['JavaScript', 'CSS3'], folder: 'UI-Components/breadcrumb' },
       { id: 132, name: 'Carousel', category: 'ui-components', tech: ['JavaScript', 'CSS3'], folder: 'UI-Components/carousel' },
       { id: 133, name: 'Coming Soon', category: 'ui-components', tech: ['HTML5', 'CSS3'], folder: 'UI-Components/coming-soon' },
@@ -388,9 +388,9 @@ function initializeDefaultData() {
       { id: 156, name: 'Toast Notification', category: 'ui-components', tech: ['JavaScript', 'CSS3'], folder: 'UI-Components/toast-notification' },
       { id: 157, name: 'Tooltip', category: 'ui-components', tech: ['JavaScript', 'CSS3'], folder: 'UI-Components/tooltip' },
       
-      // ENTERTAINMENT (14 projects)
-      { id: 158, name: 'Dictionary App', category: 'entertainment', tech: ['JavaScript', 'API'], folder: 'Entertainment/dictionary-app' },
-      { id: 159, name: 'Joke Generator', category: 'entertainment', tech: ['JavaScript', 'API'], folder: 'Entertainment/joke-generator' },
+      // ENTERTAINMENT (14 projects) - 2 FREE, rest locked
+      { id: 158, name: 'Dictionary App', category: 'entertainment', tech: ['JavaScript', 'API'], folder: 'Entertainment/dictionary-app', isFree: true },
+      { id: 159, name: 'Joke Generator', category: 'entertainment', tech: ['JavaScript', 'API'], folder: 'Entertainment/joke-generator', isFree: true },
       { id: 160, name: 'Lorem Generator', category: 'entertainment', tech: ['JavaScript', 'CSS3'], folder: 'Entertainment/lorem-generator' },
       { id: 161, name: 'Lorem Ipsum', category: 'entertainment', tech: ['JavaScript', 'CSS3'], folder: 'Entertainment/lorem-ipsum' },
       { id: 162, name: 'Movie Search', category: 'entertainment', tech: ['JavaScript', 'OMDB API'], folder: 'Entertainment/movie-search' },
@@ -404,9 +404,9 @@ function initializeDefaultData() {
       { id: 170, name: 'Speech to Text', category: 'entertainment', tech: ['JavaScript', 'Web Speech'], folder: 'Entertainment/speech-to-text' },
       { id: 171, name: 'Text to Speech', category: 'entertainment', tech: ['JavaScript', 'Web Speech'], folder: 'Entertainment/text-to-speech' },
       
-      // EDUCATION (4 projects)
-      { id: 172, name: 'Math Quiz', category: 'education', tech: ['JavaScript', 'CSS3'], folder: 'Education/math-quiz' },
-      { id: 173, name: 'Quiz App', category: 'education', tech: ['JavaScript', 'CSS3'], folder: 'Education/quiz-app' },
+      // EDUCATION (4 projects) - 2 FREE, rest locked
+      { id: 172, name: 'Math Quiz', category: 'education', tech: ['JavaScript', 'CSS3'], folder: 'Education/math-quiz', isFree: true },
+      { id: 173, name: 'Quiz App', category: 'education', tech: ['JavaScript', 'CSS3'], folder: 'Education/quiz-app', isFree: true },
       { id: 174, name: 'Typing Speed', category: 'education', tech: ['JavaScript', 'CSS3'], folder: 'Education/typing-speed' },
       { id: 175, name: 'Word Counter', category: 'education', tech: ['JavaScript', 'CSS3'], folder: 'Education/word-counter' }
     ];
@@ -426,4 +426,5 @@ function initializeDefaultData() {
 
 // Run initialization
 initializeDefaultData();
+
 
