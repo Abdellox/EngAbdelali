@@ -6,6 +6,17 @@
  */
 
 function initializeDefaultData() {
+  // Version control - force reload if data structure changed
+  const DATA_VERSION = '2.0';
+  const currentVersion = localStorage.getItem('portfolioDataVersion');
+  
+  // Force reload if version mismatch
+  if (currentVersion !== DATA_VERSION) {
+    localStorage.clear();
+    localStorage.setItem('portfolioDataVersion', DATA_VERSION);
+    console.log('🔄 Portfolio data updated to version ' + DATA_VERSION);
+  }
+  
   const hasExperience = localStorage.getItem('portfolioExperience');
   const hasTestimonials = localStorage.getItem('portfolioTestimonials');
   const hasServices = localStorage.getItem('portfolioServices');
