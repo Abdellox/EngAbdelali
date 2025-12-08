@@ -70,7 +70,7 @@ function renderProjectCard(project, tier, isUnlocked) {
   // Build project URL
   let projectUrl = '';
   if (project.folder) {
-    projectUrl = `projects/${project.folder}/index.html`;
+    projectUrl = `Projects/${project.folder}/index.html`;
   }
   
   // Tier label
