@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Not a Robot - CAPTCHA Verification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 CAPTCHA Verification Center</h1>
+            <p>Prove you're human with our interactive challenges</p>
+        </header>
+
+        <div class="main-layout">
+            <!-- Left Column - CAPTCHA Types -->
+            <div class="left-column">
+                <h2>Select Challenge Type</h2>
+                <div class="captcha-selector">
+                    <button class="selector-btn active" data-type="checkbox">
+                        <span class="btn-icon">✓</span>
+                        <span class="btn-text">Checkbox</span>
+                    </button>
+                    <button class="selector-btn" data-type="image">
+                        <span class="btn-icon">🖼️</span>
+                        <span class="btn-text">Image Grid</span>
+                    </button>
+                    <button class="selector-btn" data-type="text">
+                        <span class="btn-icon">🔤</span>
+                        <span class="btn-text">Text Code</span>
+                    </button>
+                    <button class="selector-btn" data-type="slider">
+                        <span class="btn-icon">🧩</span>
+                        <span class="btn-text">Slider Puzzle</span>
+                    </button>
+                    <button class="selector-btn" data-type="math">
+                        <span class="btn-icon">➕</span>
+                        <span class="btn-text">Math Problem</span>
+                    </button>
+                    <button class="selector-btn" data-type="pattern">
+                        <span class="btn-icon">🎯</span>
+                        <span class="btn-text">Pattern Match</span>
+                    </button>
+                    <button class="selector-btn" data-type="audio">
+                        <span class="btn-icon">🔊</span>
+                        <span class="btn-text">Audio Code</span>
+                    </button>
+                    <button class="selector-btn" data-type="rotate">
+                        <span class="btn-icon">🔄</span>
+                        <span class="btn-text">Rotate Image</span>
+                    </button>
+                    <button class="selector-btn" data-type="sequence">
+                        <span class="btn-icon">🔢</span>
+                        <span class="btn-text">Sequence</span>
+                    </button>
+                    <button class="selector-btn" data-type="color">
+                        <span class="btn-icon">🎨</span>
+                        <span class="btn-text">Color Picker</span>
+                    </button>
+                </div>
+                
+                <div class="stats-panel">
+                    <h3>Your Stats</h3>
+                    <div class="stat-item">
+                        <span>Attempts:</span>
+                        <span id="stat-attempts">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Success:</span>
+                        <span id="stat-success">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Success Rate:</span>
+                        <span id="stat-rate">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - CAPTCHA Display -->
+            <div class="right-column">
+
+                <div class="captcha-container">
+            <!-- Checkbox CAPTCHA -->
+            <div class="captcha-box active" id="checkbox-captcha">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="robot-check" class="captcha-checkbox">
+                    <label for="robot-check" class="checkbox-label">
+                        <span class="checkbox-text">I'm not a robot</span>
+                        <div class="captcha-logo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </label>
+                    <div class="verification-status"></div>
+                </div>
+            </div>
+
+            <!-- Image Grid CAPTCHA -->
+            <div class="captcha-box" id="image-captcha">
+                <div class="image-challenge">
+                    <h3>Select all images with <span id="target-object">cars</span></h3>
+                    <div class="image-grid" id="image-grid"></div>
+                    <button class="verify-btn" id="verify-images">Verify</button>
+                </div>
+            </div>
+
+            <!-- Text Code CAPTCHA -->
+            <div class="captcha-box" id="text-captcha">
+                <div class="text-challenge">
+                    <canvas id="captcha-canvas" width="300" height="100"></canvas>
+                    <button class="refresh-btn" id="refresh-text">🔄 Refresh</button>
+                    <input type="text" id="captcha-input" placeholder="Enter the code above" maxlength="6">
+                    <button class="verify-btn" id="verify-text">Verify</button>
+                </div>
+            </div>
+
+            <!-- Slider Puzzle CAPTCHA -->
+            <div class="captcha-box" id="slider-captcha">
+                <div class="slider-challenge">
+                    <h3>Slide to complete the puzzle</h3>
+                    <div class="puzzle-container">
+                        <canvas id="puzzle-canvas" width="400" height="250"></canvas>
+                        <canvas id="puzzle-piece" width="60" height="250"></canvas>
+                    </div>
+                    <div class="slider-track">
+                        <div class="slider-button" id="slider-btn">
+                            <span>→</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Math Problem CAPTCHA -->
+            <div class="captcha-box" id="math-captcha">
+                <div class="math-challenge">
+                    <h3>Solve the math problem</h3>
+                    <div class="math-problem" id="math-problem"></div>
+                    <input type="number" id="math-input" placeholder="Enter your answer">
+                    <button class="verify-btn" id="verify-math">Verify</button>
+                    <button class="refresh-btn" id="refresh-math">🔄 New Problem</button>
+                </div>
+            </div>
+
+            <!-- Pattern Match CAPTCHA -->
+            <div class="captcha-box" id="pattern-captcha">
+                <div class="pattern-challenge">
+                    <h3>Select the matching pattern</h3>
+                    <div class="pattern-target" id="pattern-target"></div>
+                    <p>Find the matching pattern below:</p>
+                    <div class="pattern-options" id="pattern-options"></div>
+                </div>
+            </div>
+
+            <!-- Audio Code CAPTCHA -->
+            <div class="captcha-box" id="audio-captcha">
+                <div class="audio-challenge">
+                    <h3>Listen and type the code</h3>
+                    <div class="audio-player">
+                        <button class="audio-btn" id="play-audio">🔊 Play Audio</button>
+                        <button class="audio-btn" id="replay-audio">🔁 Replay</button>
+                    </div>
+                    <div class="audio-visualizer" id="audio-visualizer"></div>
+                    <input type="text" id="audio-input" placeholder="Enter what you hear" maxlength="6">
+                    <button class="verify-btn" id="verify-audio">Verify</button>
+                </div>
+            </div>
+
+            <!-- Rotate Image CAPTCHA -->
+            <div class="captcha-box" id="rotate-captcha">
+                <div class="rotate-challenge">
+                    <h3>Rotate the image to upright position</h3>
+                    <canvas id="rotate-canvas" width="300" height="300"></canvas>
+                    <div class="rotation-controls">
+                        <button class="rotate-control-btn" id="rotate-left">↶ Left</button>
+                        <span id="rotation-angle">0°</span>
+                        <button class="rotate-control-btn" id="rotate-right">↷ Right</button>
+                    </div>
+                    <button class="verify-btn" id="verify-rotation">Verify Position</button>
+                </div>
+            </div>
+
+            <!-- Sequence CAPTCHA -->
+            <div class="captcha-box" id="sequence-captcha">
+                <div class="sequence-challenge">
+                    <h3>Click the items in order</h3>
+                    <p class="sequence-instruction" id="sequence-instruction"></p>
+                    <div class="sequence-grid" id="sequence-grid"></div>
+                    <button class="verify-btn" id="reset-sequence">Reset</button>
+                </div>
+            </div>
+
+            <!-- Color Picker CAPTCHA -->
+            <div class="captcha-box" id="color-captcha">
+                <div class="color-challenge">
+                    <h3>Select the color: <span id="color-name"></span></h3>
+                    <div class="color-options" id="color-options"></div>
+                    <button class="verify-btn" id="verify-color">Verify</button>
+                    <button class="refresh-btn" id="refresh-color">🔄 New Color</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="result-message" id="result-message"></div>
+            </div>
+        </div>
+
+        <!-- Verification Status Bar -->
+        <div class="verification-bar" id="verification-bar">
+            <div class="verification-content">
+                <div class="verification-icon" id="verification-icon">🔒</div>
+                <div class="verification-text">
+                    <strong id="verification-status">Not Verified</strong>
+                    <p id="verification-message">Complete a CAPTCHA challenge to verify</p>
+                </div>
+                <button class="action-btn" id="action-btn" disabled>Submit Form</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

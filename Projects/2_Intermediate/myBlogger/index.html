@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern blog featuring tech tutorials, lifestyle tips, and personal insights. Stay updated with our latest articles.">
+    <meta name="keywords" content="blog, tech, lifestyle, tutorials, articles">
+    <meta property="og:title" content="TechLife Blog - Modern Insights & Tutorials">
+    <meta property="og:description" content="Discover engaging articles on technology, lifestyle, and more">
+    <meta property="og:type" content="website">
+    <title>TechLife Blog - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">TechLife<span>Blog</span></a>
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="category-tech.html">Tech</a></li>
+                        <li><a href="category-lifestyle.html">Lifestyle</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="features.html">Features ⭐</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <button class="search-toggle" id="searchToggle">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Search Bar -->
+        <div class="search-bar" id="searchBar">
+            <div class="container">
+                <form class="search-form">
+                    <input type="text" placeholder="Search articles..." class="search-input">
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Slider -->
+    <section class="featured-slider">
+        <div class="container">
+            <div class="slider-wrapper">
+                <div class="slide active">
+                    <img src="images/featured-1.svg" alt="AI Revolution 2024">
+                    <div class="slide-content">
+                        <span class="category-badge">Tech</span>
+                        <h2>The AI Revolution: How Machine Learning is Transforming Our World</h2>
+                        <p>Explore the latest breakthroughs in artificial intelligence and their impact on everyday life</p>
+                        <a href="post-ai-revolution.html" class="btn-primary">Read More</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/featured-2.svg" alt="Productivity Tips">
+                    <div class="slide-content">
+                        <span class="category-badge">Lifestyle</span>
+                        <h2>10 Productivity Hacks That Actually Work</h2>
+                        <p>Boost your efficiency with these proven strategies from successful entrepreneurs</p>
+                        <a href="post-productivity.html" class="btn-primary">Read More</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="images/featured-3.svg" alt="Web Development">
+                    <div class="slide-content">
+                        <span class="category-badge">Tech</span>
+                        <h2>Modern Web Development: A Complete Guide for 2024</h2>
+                        <p>Master the latest frameworks, tools, and best practices in web development</p>
+                        <a href="post-web-dev.html" class="btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots" id="sliderDots"></div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Blog Posts -->
+                <div class="posts-section">
+                    <h2 class="section-title">Latest Articles</h2>
+                    
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="images/post-1.svg" alt="AI Revolution">
+                            <span class="category-badge">Tech</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> Nov 20, 2024</span>
+                                <span><i class="far fa-user"></i> John Doe</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                            <h3><a href="post-ai-revolution.html">The AI Revolution: How Machine Learning is Transforming Our World</a></h3>
+                            <p>Artificial intelligence is no longer science fiction. From voice assistants to self-driving cars, AI is reshaping every aspect of our daily lives...</p>
+                            <a href="post-ai-revolution.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="images/post-2.svg" alt="Productivity Hacks">
+                            <span class="category-badge">Lifestyle</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> Nov 18, 2024</span>
+                                <span><i class="far fa-user"></i> Jane Smith</span>
+                                <span><i class="far fa-clock"></i> 7 min read</span>
+                            </div>
+                            <h3><a href="post-productivity.html">10 Productivity Hacks That Actually Work</a></h3>
+                            <p>Tired of productivity advice that doesn't deliver? These 10 proven strategies will help you accomplish more in less time...</p>
+                            <a href="post-productivity.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="images/post-3.svg" alt="Web Development">
+                            <span class="category-badge">Tech</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> Nov 15, 2024</span>
+                                <span><i class="far fa-user"></i> Mike Johnson</span>
+                                <span><i class="far fa-clock"></i> 10 min read</span>
+                            </div>
+                            <h3><a href="post-web-dev.html">Modern Web Development: A Complete Guide for 2024</a></h3>
+                            <p>The web development landscape is constantly evolving. Learn about the latest frameworks, tools, and best practices...</p>
+                            <a href="post-web-dev.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="images/post-4.svg" alt="Mindfulness">
+                            <span class="category-badge">Lifestyle</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> Nov 12, 2024</span>
+                                <span><i class="far fa-user"></i> Sarah Williams</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                            <h3><a href="post-mindfulness.html">The Power of Mindfulness in a Digital Age</a></h3>
+                            <p>In our hyper-connected world, finding moments of peace is more important than ever. Discover how mindfulness can transform your life...</p>
+                            <a href="post-mindfulness.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="images/post-5.svg" alt="Cybersecurity">
+                            <span class="category-badge">Tech</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> Nov 10, 2024</span>
+                                <span><i class="far fa-user"></i> Alex Chen</span>
+                                <span><i class="far fa-clock"></i> 8 min read</span>
+                            </div>
+                            <h3><a href="post-cybersecurity.html">Essential Cybersecurity Tips for Remote Workers</a></h3>
+                            <p>Working from home? Protect yourself from cyber threats with these essential security practices every remote worker should know...</p>
+                            <a href="post-cybersecurity.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Newsletter -->
+                    <div class="widget newsletter-widget">
+                        <h3>Subscribe to Newsletter</h3>
+                        <p>Get the latest articles delivered to your inbox</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="widget">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="category-tech.html"><i class="fas fa-laptop-code"></i> Technology <span>(15)</span></a></li>
+                            <li><a href="category-lifestyle.html"><i class="fas fa-heart"></i> Lifestyle <span>(12)</span></a></li>
+                            <li><a href="category-tutorials.html"><i class="fas fa-book"></i> Tutorials <span>(8)</span></a></li>
+                            <li><a href="category-news.html"><i class="fas fa-newspaper"></i> News <span>(10)</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="widget">
+                        <h3>Popular Posts</h3>
+                        <div class="popular-posts">
+                            <article class="mini-post">
+                                <img src="images/thumb-1.svg" alt="AI Revolution">
+                                <div>
+                                    <h4><a href="post-ai-revolution.html">The AI Revolution</a></h4>
+                                    <span class="date">Nov 20, 2024</span>
+                                </div>
+                            </article>
+                            <article class="mini-post">
+                                <img src="images/thumb-2.svg" alt="Productivity">
+                                <div>
+                                    <h4><a href="post-productivity.html">10 Productivity Hacks</a></h4>
+                                    <span class="date">Nov 18, 2024</span>
+                                </div>
+                            </article>
+                            <article class="mini-post">
+                                <img src="images/thumb-3.svg" alt="Web Dev">
+                                <div>
+                                    <h4><a href="post-web-dev.html">Modern Web Development</a></h4>
+                                    <span class="date">Nov 15, 2024</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="widget">
+                        <h3>Popular Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag">AI</a>
+                            <a href="#" class="tag">Web Development</a>
+                            <a href="#" class="tag">Productivity</a>
+                            <a href="#" class="tag">Lifestyle</a>
+                            <a href="#" class="tag">Technology</a>
+                            <a href="#" class="tag">Tutorials</a>
+                            <a href="#" class="tag">Cybersecurity</a>
+                            <a href="#" class="tag">Mindfulness</a>
+                        </div>
+                    </div>
+
+                    <!-- Ad Space -->
+                    <div class="widget ad-widget">
+                        <p class="ad-label">Advertisement</p>
+                        <div class="ad-placeholder">
+                            <!-- Google AdSense code goes here -->
+                            <p>Ad Space<br>300x250</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About TechLife Blog</h4>
+                    <p>Your source for insightful articles on technology, lifestyle, and personal growth. Join our community of curious minds.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="category-tech.html">Technology</a></li>
+                        <li><a href="category-lifestyle.html">Lifestyle</a></li>
+                        <li><a href="category-tutorials.html">Tutorials</a></li>
+                        <li><a href="category-news.html">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for weekly updates</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechLife Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

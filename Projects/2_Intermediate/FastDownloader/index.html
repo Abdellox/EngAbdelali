@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Media Downloader - Free & Open Source</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Universal Media Downloader</h1>
+            <p class="subtitle">Download videos, playlists, and media from any platform - Free & Open Source</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <input 
+                    type="text" 
+                    id="urlInput" 
+                    placeholder="Paste any video URL (YouTube, Vimeo, Twitter, etc.)"
+                    autocomplete="off"
+                >
+                <button id="downloadBtn" class="btn-primary">
+                    <span class="btn-text">Download</span>
+                    <span class="btn-loader" style="display: none;">⏳</span>
+                </button>
+            </div>
+
+            <div class="options">
+                <label>
+                    <input type="checkbox" id="audioOnly" />
+                    Audio Only (MP3)
+                </label>
+                <label>
+                    <input type="checkbox" id="playlist" />
+                    Download Entire Playlist
+                </label>
+            </div>
+
+            <div id="status" class="status"></div>
+            <div id="results" class="results"></div>
+        </main>
+
+        <section class="features">
+            <h2>✨ Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>🎬 Multi-Platform</h3>
+                    <p>YouTube, Vimeo, Twitter, Facebook, Instagram, TikTok & more</p>
+                </div>
+                <div class="feature">
+                    <h3>📦 Playlists</h3>
+                    <p>Download entire playlists and collections</p>
+                </div>
+                <div class="feature">
+                    <h3>🎵 Audio Extract</h3>
+                    <p>Extract audio as MP3 from any video</p>
+                </div>
+                <div class="feature">
+                    <h3>⚡ Fast & Free</h3>
+                    <p>No limits, no registration, completely free</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Open Source Project | <a href="https://github.com" target="_blank">View on GitHub</a></p>
+            <p class="disclaimer">For personal use only. Respect copyright laws.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

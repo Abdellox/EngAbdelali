@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube to Transcript - Free YouTube Transcript Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>🎬 YouTube to Transcript</h1>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <p class="tagline">Generate YouTube transcripts instantly - Free, Fast, and Easy</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="videoUrl" 
+                        placeholder="Paste YouTube URL here (e.g., https://youtube.com/watch?v=...)"
+                        autocomplete="off"
+                    >
+                    <button id="generateBtn" class="btn-primary">
+                        <span class="btn-text">Generate Transcript</span>
+                        <span class="loader"></span>
+                    </button>
+                </div>
+                <div class="features">
+                    <span class="feature">✓ All Languages</span>
+                    <span class="feature">✓ Translate to 125+ Languages</span>
+                    <span class="feature">✓ Easy Copy & Edit</span>
+                </div>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+
+            <div id="transcriptSection" class="transcript-section hidden">
+                <div class="video-info">
+                    <img id="videoThumbnail" src="" alt="Video thumbnail">
+                    <div class="video-details">
+                        <h2 id="videoTitle"></h2>
+                        <p id="videoChannel"></p>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="language-selector">
+                        <label for="languageSelect">Transcript Language:</label>
+                        <select id="languageSelect"></select>
+                    </div>
+                    
+                    <div class="translate-selector">
+                        <label for="translateSelect">Translate to:</label>
+                        <select id="translateSelect">
+                            <option value="">No translation</option>
+                        </select>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="copyBtn" class="btn-secondary">📋 Copy</button>
+                        <button id="downloadBtn" class="btn-secondary">⬇️ Download</button>
+                        <button id="selectAllBtn" class="btn-secondary">✓ Select All</button>
+                        <label class="toggle">
+                            <input type="checkbox" id="timestampToggle" checked>
+                            <span>Show Timestamps</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="transcript-stats">
+                    <span id="transcriptStats" class="stats-text"></span>
+                </div>
+
+                <div class="transcript-container">
+                    <div id="transcriptText" class="transcript-text"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Free YouTube Transcript Generator | No registration required</p>
+        </footer>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathMaster - Learn Math from Zero to Hero</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 MathMaster</h1>
+            <p class="tagline">Your Journey from Zero to Math Hero - Free & Open Source</p>
+            <div class="global-stats">
+                <span>📊 Total Questions: <strong id="totalQuestions">0</strong></span>
+                <span>🔥 Best Streak: <strong id="bestStreakGlobal">0</strong></span>
+            </div>
+        </header>
+
+        <!-- Level Selection Screen -->
+        <div id="levelSelection" class="screen active">
+            <h2>Choose Your Level</h2>
+            <div class="level-grid">
+                <div class="level-card" data-level="0">
+                    <div class="level-icon">🌱</div>
+                    <h3>Level 0</h3>
+                    <p>Basic Counting & Numbers</p>
+                    <span class="difficulty">Beginner</span>
+                    <div class="level-topics">Counting, Comparing, Sequences</div>
+                </div>
+                <div class="level-card" data-level="1">
+                    <div class="level-icon">➕</div>
+                    <h3>Level 1</h3>
+                    <p>Addition & Subtraction</p>
+                    <span class="difficulty">Elementary</span>
+                    <div class="level-topics">Single & Double Digit, Word Problems</div>
+                </div>
+                <div class="level-card" data-level="2">
+                    <div class="level-icon">✖️</div>
+                    <h3>Level 2</h3>
+                    <p>Multiplication & Division</p>
+                    <span class="difficulty">Intermediate</span>
+                    <div class="level-topics">Times Tables, Division, Squares</div>
+                </div>
+                <div class="level-card" data-level="3">
+                    <div class="level-icon">📐</div>
+                    <h3>Level 3</h3>
+                    <p>Fractions & Decimals</p>
+                    <span class="difficulty">Advanced</span>
+                    <div class="level-topics">Fractions, Decimals, Percentages</div>
+                </div>
+                <div class="level-card" data-level="4">
+                    <div class="level-icon">📊</div>
+                    <h3>Level 4</h3>
+                    <p>Algebra & Equations</p>
+                    <span class="difficulty">Expert</span>
+                    <div class="level-topics">Linear, Quadratic, Word Problems</div>
+                </div>
+                <div class="level-card" data-level="5">
+                    <div class="level-icon">🏆</div>
+                    <h3>Level 5</h3>
+                    <p>Advanced Math & Calculus</p>
+                    <span class="difficulty">Master</span>
+                    <div class="level-topics">Exponents, Logs, Derivatives, Sequences</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-header">
+                <button id="backBtn" class="btn-back">← Back to Levels</button>
+                <div class="progress-info">
+                    <span id="currentLevel">Level 0</span>
+                    <span id="score">Score: 0/0</span>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <div class="question-card">
+                    <div class="question-number">Question <span id="questionNum">1</span></div>
+                    <div class="question-text" id="questionText"></div>
+                    
+                    <div class="answer-section">
+                        <input type="text" id="answerInput" placeholder="Enter your answer" autocomplete="off">
+                        <button id="submitBtn" class="btn-primary">Check Answer</button>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="hintBtn" class="btn-hint">💡 Hint</button>
+                        <button id="skipBtn" class="btn-skip">⏭️ Skip</button>
+                    </div>
+
+                    <div id="hintText" class="hint-box hidden"></div>
+                    <div id="feedback" class="feedback hidden"></div>
+                    <div id="explanation" class="explanation hidden"></div>
+
+                    <button id="nextBtn" class="btn-next hidden">Next Question →</button>
+                </div>
+
+                <div class="stats-panel">
+                    <h3>📈 Session Stats</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">✓ Correct</span>
+                        <span class="stat-value correct-color" id="correctCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">✗ Wrong</span>
+                        <span class="stat-value wrong-color" id="wrongCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">🎯 Accuracy</span>
+                        <span class="stat-value" id="accuracy">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">🔥 Streak</span>
+                        <span class="stat-value streak-color" id="streakCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made with ❤️ for learners worldwide | Open Source & Free Forever</p>
+        <p><a href="https://github.com" target="_blank">Contribute on GitHub</a></p>
+    </footer>
+
+    <script src="script-enhanced.js"></script>
+</body>
+</html>

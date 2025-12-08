@@ -1,0 +1,73 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🌤️ Weather App</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="city" placeholder="Enter city name (e.g., New York, London, Tokyo)">
+            <button onclick="searchWeather()" class="search-btn">Search</button>
+            <button onclick="getLocation()" class="location-btn">📍 My Location</button>
+        </div>
+
+        <div class="weather-display" id="weatherDisplay" style="display: none;">
+            <div class="weather-card">
+                <div class="city-name" id="cityName">New York</div>
+                <div class="weather-icon" id="weatherIcon">☀️</div>
+                <div class="temperature"><span id="temperature">22</span>°C</div>
+                <div class="description" id="condition">Sunny</div>
+                
+                <div class="details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💧</span>
+                        <div>
+                            <div class="detail-label">Humidity</div>
+                            <div class="detail-value"><span id="humidity">65</span>%</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">💨</span>
+                        <div>
+                            <div class="detail-label">Wind Speed</div>
+                            <div class="detail-value"><span id="wind">12</span> km/h</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-grid" id="forecast"></div>
+            </div>
+        </div>
+
+        <div class="welcome-message" id="welcomeMessage">
+            <div class="welcome-icon">🌍</div>
+            <h2>Welcome to Weather App</h2>
+            <p>Enter a city name to check the weather</p>
+            <p class="suggestions">Try: New York, London, Tokyo, Paris, Sydney</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

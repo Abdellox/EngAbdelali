@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Interview Prep - Free Interview Questions & Answers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>🎯 Job Interview Prep</h1>
+                    <p class="tagline">Free interview questions and answers for every career path</p>
+                </div>
+                <div class="translate-widget">
+                    <div id="google_translate_element"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-section">
+            <input type="text" id="searchInput" placeholder="Search for a job role..." />
+        </div>
+
+        <div id="categoryGrid" class="category-grid"></div>
+
+        <div id="jobList" class="job-list hidden"></div>
+
+        <!-- Mode Selection -->
+        <div id="modeSelection" class="mode-selection hidden">
+            <button id="backToJobsBtn" class="back-btn">← Back to Jobs</button>
+            <h2 id="modeJobTitle"></h2>
+            <div class="mode-cards">
+                <div class="mode-card" id="practiceMode">
+                    <div class="mode-icon">📚</div>
+                    <h3>Practice Mode</h3>
+                    <p>Study questions and answers at your own pace. See answers immediately.</p>
+                    <button class="mode-btn">Start Practice</button>
+                </div>
+                <div class="mode-card" id="examMode">
+                    <div class="mode-icon">🎯</div>
+                    <h3>Exam Mode</h3>
+                    <p>Test your knowledge! Answer questions and get scored. Timer included.</p>
+                    <button class="mode-btn">Start Exam</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practice View -->
+        <div id="questionView" class="question-view hidden">
+            <button id="backBtn" class="back-btn">← Back to Mode Selection</button>
+            <h2 id="jobTitle"></h2>
+            <div class="question-controls">
+                <button id="prevBtn" class="nav-btn">← Previous</button>
+                <span id="questionCounter"></span>
+                <button id="nextBtn" class="nav-btn">Next →</button>
+            </div>
+            <div id="questionCard" class="question-card"></div>
+        </div>
+
+        <!-- Exam View -->
+        <div id="examView" class="exam-view hidden">
+            <div class="exam-header">
+                <button id="exitExamBtn" class="back-btn">← Exit Exam</button>
+                <h2 id="examJobTitle"></h2>
+                <div class="exam-info">
+                    <div class="timer" id="timer">⏱️ <span id="timeDisplay">00:00</span></div>
+                    <div class="progress-info">Question <span id="currentQ">1</span> of <span id="totalQ">10</span></div>
+                </div>
+            </div>
+            <div id="examQuestionCard" class="exam-question-card"></div>
+            <div class="exam-navigation">
+                <button id="examPrevBtn" class="nav-btn">← Previous</button>
+                <button id="submitExamBtn" class="submit-btn">Submit Exam</button>
+                <button id="examNextBtn" class="nav-btn">Next →</button>
+            </div>
+        </div>
+
+        <!-- Results View -->
+        <div id="resultsView" class="results-view hidden">
+            <div class="results-container">
+                <div class="results-header">
+                    <div class="score-circle" id="scoreCircle">
+                        <div class="score-value" id="scoreValue">0%</div>
+                    </div>
+                    <h2 id="resultsTitle">Exam Complete!</h2>
+                    <p id="resultsMessage"></p>
+                </div>
+                <div class="results-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="correctAnswers">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="wrongAnswers">0</div>
+                        <div class="stat-label">Wrong</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="timeTaken">0:00</div>
+                        <div class="stat-label">Time</div>
+                    </div>
+                </div>
+                <div id="reviewSection" class="review-section"></div>
+                <div class="results-actions">
+                    <button id="retakeExamBtn" class="action-btn primary">Retake Exam</button>
+                    <button id="backToCategoriesBtn" class="action-btn">Back to Categories</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>A free gift to the world 🌍 | Help people prepare for their dream jobs</p>
+        </div>
+    </footer>
+
+    <!-- Welcome Language Modal -->
+    <div id="languageModal" class="language-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🌍 Welcome! Choose Your Language</h2>
+                <p class="modal-subtitle">Select your preferred language to continue</p>
+            </div>
+            <div class="modal-body">
+                <div class="language-grid">
+                    <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+                    <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+                    <button class="lang-btn" data-lang="fr">🇫🇷 Français</button>
+                    <button class="lang-btn" data-lang="de">🇩🇪 Deutsch</button>
+                    <button class="lang-btn" data-lang="zh-CN">🇨🇳 中文</button>
+                    <button class="lang-btn" data-lang="ar">🇸🇦 العربية</button>
+                    <button class="lang-btn" data-lang="hi">🇮🇳 हिन्दी</button>
+                    <button class="lang-btn" data-lang="pt">🇵🇹 Português</button>
+                    <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+                    <button class="lang-btn" data-lang="ja">🇯🇵 日本語</button>
+                    <button class="lang-btn" data-lang="ko">🇰🇷 한국어</button>
+                    <button class="lang-btn" data-lang="it">🇮🇹 Italiano</button>
+                    <button class="lang-btn" data-lang="tr">🇹🇷 Türkçe</button>
+                    <button class="lang-btn" data-lang="nl">🇳🇱 Nederlands</button>
+                    <button class="lang-btn" data-lang="pl">🇵🇱 Polski</button>
+                    <button class="lang-btn" data-lang="vi">🇻🇳 Tiếng Việt</button>
+                    <button class="lang-btn" data-lang="th">🇹🇭 ไทย</button>
+                    <button class="lang-btn" data-lang="id">🇮🇩 Indonesia</button>
+                    <button class="lang-btn" data-lang="uk">🇺🇦 Українська</button>
+                    <button class="lang-btn" data-lang="ro">🇷🇴 Română</button>
+                </div>
+                <button id="moreLanguages" class="more-lang-btn">+ More Languages</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'ar,zh-CN,zh-TW,nl,en,fr,de,hi,id,it,ja,ko,pt,ru,es,th,tr,vi,pl,uk,ro,el,cs,sv,hu,fi,da,no,he,fa,bn,ur,ta,te,mr,gu,kn,ml,pa,sw,am,my,km,lo,si,ne,ms,tl,jv,su',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script>
+        // ULTRA SIMPLE APPROACH - Just use cookies properly
+        (function() {
+            const modal = document.getElementById('languageModal');
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const moreLanguagesBtn = document.getElementById('moreLanguages');
+            const hasSelectedLanguage = localStorage.getItem('languageSelected');
+            const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
+            
+            // Simple translation function
+            function doTranslate(lang) {
+                if (lang === 'en') {
+                    localStorage.setItem('languageSelected', 'true');
+                    return;
+                }
+                
+                // Set the cookie that Google Translate uses
+                const cookieValue = '/en/' + lang;
+                document.cookie = 'googtrans=' + cookieValue + '; path=/';
+                
+                // Also try with domain
+                if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+                    document.cookie = 'googtrans=' + cookieValue + '; path=/; domain=' + window.location.hostname;
+                }
+                
+                localStorage.setItem('languageSelected', 'true');
+                
+                // Reload to apply
+                location.reload();
+            }
+            
+            // Show modal on first visit
+            if (!hasSelectedLanguage) {
+                setTimeout(() => {
+                    modal.style.display = 'flex';
+                    const detectedBtn = document.querySelector(`[data-lang="${userLang}"]`);
+                    if (detectedBtn && !detectedBtn.innerHTML.includes('Recommended')) {
+                        detectedBtn.classList.add('recommended');
+                        detectedBtn.innerHTML += ' <span class="badge">Recommended</span>';
+                    }
+                }, 1000);
+            }
+            
+            // Language selection
+            langButtons.forEach(btn => {
+                btn.onclick = () => {
+                    const lang = btn.getAttribute('data-lang');
+                    modal.style.display = 'none';
+                    doTranslate(lang);
+                };
+            });
+            
+            // More languages button
+            moreLanguagesBtn.onclick = () => {
+                modal.style.display = 'none';
+                localStorage.setItem('languageSelected', 'true');
+                document.querySelector('.translate-widget').style.display = 'flex';
+                document.querySelector('.translate-widget').scrollIntoView({ behavior: 'smooth' });
+            };
+            
+            // Reset button
+            const resetBtn = document.createElement('button');
+            resetBtn.innerHTML = '🔄';
+            resetBtn.title = 'Reset Language';
+            resetBtn.style.cssText = 'position:fixed;bottom:20px;left:20px;width:50px;height:50px;background:white;color:#667eea;border:2px solid #667eea;border-radius:50%;cursor:pointer;z-index:9999;font-size:20px;box-shadow:0 4px 15px rgba(0,0,0,0.2);transition:all 0.3s;';
+            resetBtn.onmouseover = () => resetBtn.style.transform = 'scale(1.1)';
+            resetBtn.onmouseout = () => resetBtn.style.transform = 'scale(1)';
+            resetBtn.onclick = () => {
+                localStorage.clear();
+                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                location.reload();
+            };
+            document.body.appendChild(resetBtn);
+        })();
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="data.js"></script>
+    <script src="search-api.js"></script>
+    <script src="app.js"></script>
+    <script src="exam.js"></script>
+</body>
+</html>

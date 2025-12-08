@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Data Generator - Developer Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎲 Fake Data Generator</h1>
+            <p>Generate realistic fake data for testing and development</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="dataType">Data Type:</label>
+                <select id="dataType">
+                    <option value="person">🧑 Full Person (All Data)</option>
+                    <option value="name">👤 Name Only</option>
+                    <option value="email">📧 Email Only</option>
+                    <option value="phone">📱 Phone Only</option>
+                    <option value="username">🔐 Username & Password</option>
+                    <option value="address">🏠 Address Only</option>
+                    <option value="company">🏢 Company & Job</option>
+                    <option value="creditcard">💳 Credit Card</option>
+                    <option value="identity">🆔 Identity (SSN, Age, DOB)</option>
+                    <option value="internet">🌐 Internet (IP, MAC, Website)</option>
+                    <option value="vehicle">🚗 Vehicle Information</option>
+                    <option value="bank">🏦 Bank Account</option>
+                    <option value="biometric">🧬 Biometric Data</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="count">Count:</label>
+                <input type="number" id="count" min="1" max="100" value="1">
+            </div>
+
+            <button id="generateBtn" class="btn-primary">Generate Data</button>
+            <button id="copyBtn" class="btn-secondary">Copy to Clipboard</button>
+        </div>
+
+        <div class="output-section">
+            <div class="output-header">
+                <h2>Generated Data</h2>
+                <div class="format-toggle">
+                    <button class="format-btn active" data-format="json">JSON</button>
+                    <button class="format-btn" data-format="table">Cards</button>
+                </div>
+            </div>
+            <div id="output" class="output"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

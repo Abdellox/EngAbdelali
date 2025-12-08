@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse all technology articles on TechLife Blog. Stay updated with the latest tech news, tutorials, and insights.">
+    <title>Technology Articles | TechLife Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">TechLife<span>Blog</span></a>
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="category-tech.html" class="active">Tech</a></li>
+                        <li><a href="category-lifestyle.html">Lifestyle</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <button class="search-toggle" id="searchToggle">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="search-bar" id="searchBar">
+            <div class="container">
+                <form class="search-form">
+                    <input type="text" placeholder="Search articles..." class="search-input">
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="category-header">
+                <h1><i class="fas fa-laptop-code"></i> Technology</h1>
+                <p>Explore the latest in tech, from AI and machine learning to web development and cybersecurity</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="posts-section">
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="images/post-1.svg" alt="AI Revolution">
+                            <span class="category-badge">Tech</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> Nov 20, 2024</span>
+                                <span><i class="far fa-user"></i> John Doe</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                            <h3><a href="post-ai-revolution.html">The AI Revolution: How Machine Learning is Transforming Our World</a></h3>
+                            <p>Artificial intelligence is no longer science fiction. From voice assistants to self-driving cars, AI is reshaping every aspect of our daily lives...</p>
+                            <a href="post-ai-revolution.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="images/post-3.svg" alt="Web Development">
+                            <span class="category-badge">Tech</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> Nov 15, 2024</span>
+                                <span><i class="far fa-user"></i> Mike Johnson</span>
+                                <span><i class="far fa-clock"></i> 10 min read</span>
+                            </div>
+                            <h3><a href="post-web-dev.html">Modern Web Development: A Complete Guide for 2024</a></h3>
+                            <p>The web development landscape is constantly evolving. Learn about the latest frameworks, tools, and best practices...</p>
+                            <a href="post-web-dev.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">
+                            <img src="images/post-5.svg" alt="Cybersecurity">
+                            <span class="category-badge">Tech</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> Nov 10, 2024</span>
+                                <span><i class="far fa-user"></i> Alex Chen</span>
+                                <span><i class="far fa-clock"></i> 8 min read</span>
+                            </div>
+                            <h3><a href="post-cybersecurity.html">Essential Cybersecurity Tips for Remote Workers</a></h3>
+                            <p>Working from home? Protect yourself from cyber threats with these essential security practices every remote worker should know...</p>
+                            <a href="post-cybersecurity.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <div class="pagination">
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link">Next <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="widget newsletter-widget">
+                        <h3>Subscribe</h3>
+                        <p>Get tech updates weekly</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit" class="btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <div class="widget">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="category-tech.html" class="active-cat"><i class="fas fa-laptop-code"></i> Technology <span>(15)</span></a></li>
+                            <li><a href="category-lifestyle.html"><i class="fas fa-heart"></i> Lifestyle <span>(12)</span></a></li>
+                            <li><a href="category-tutorials.html"><i class="fas fa-book"></i> Tutorials <span>(8)</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="widget ad-widget">
+                        <p class="ad-label">Advertisement</p>
+                        <div class="ad-placeholder">
+                            <p>Ad Space<br>300x250</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About TechLife Blog</h4>
+                    <p>Your source for insightful articles on technology, lifestyle, and personal growth.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="category-tech.html">Technology</a></li>
+                        <li><a href="category-lifestyle.html">Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechLife Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

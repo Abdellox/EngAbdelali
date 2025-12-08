@@ -48,4 +48,4 @@ unlock-codes.json
 
 # PROTECT YOUR HARD WORK - Hide project source code from GitHub
 GoldenProjects/
-projects/
+# Note: Projects/ folder (capital P) is NOT ignored - it contains the portfolio projects

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #764ba2;
+        }
+        #status {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Google Translate Test Page</h1>
+    
+    <div class="test-section">
+        <h2>Google Translate Widget</h2>
+        <div id="google_translate_element"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Quick Language Selection</h2>
+        <button onclick="testTranslate('es')">🇪🇸 Spanish</button>
+        <button onclick="testTranslate('fr')">🇫🇷 French</button>
+        <button onclick="testTranslate('de')">🇩🇪 German</button>
+        <button onclick="testTranslate('zh-CN')">🇨🇳 Chinese</button>
+        <button onclick="testTranslate('ar')">🇸🇦 Arabic</button>
+        <button onclick="testTranslate('hi')">🇮🇳 Hindi</button>
+        <button onclick="testTranslate('en')">🇬🇧 English (Reset)</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Content</h2>
+        <p>Hello, this is a test paragraph. If translation works, this text should change to your selected language.</p>
+        <p>Welcome to the job interview preparation website. This is a free gift to help people around the world.</p>
+        <ul>
+            <li>Administrative Assistant</li>
+            <li>Software Developer</li>
+            <li>Customer Service Representative</li>
+            <li>Sales Manager</li>
+        </ul>
+    </div>
+
+    <div id="status">
+        <h3>Status Log:</h3>
+        <div id="log"></div>
+    </div>
+
+    <script type="text/javascript">
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('log');
+            const time = new Date().toLocaleTimeString();
+            logDiv.innerHTML += `<div class="${type}">[${time}] ${message}</div>`;
+            console.log(message);
+        }
+
+        function googleTranslateElementInit() {
+            log('Google Translate initializing...', 'info');
+            try {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'ar,zh-CN,zh-TW,nl,en,fr,de,hi,id,it,ja,ko,pt,ru,es,th,tr,vi,pl,uk,ro',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+                log('Google Translate initialized successfully!', 'success');
+            } catch (e) {
+                log('Error initializing Google Translate: ' + e.message, 'error');
+            }
+        }
+
+        function testTranslate(langCode) {
+            log(`Attempting to translate to: ${langCode}`, 'info');
+            
+            // Method 1: Try direct select element
+            function tryMethod1() {
+                const select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    log(`Method 1: Found select element`, 'success');
+                    select.value = langCode;
+                    select.dispatchEvent(new Event('change'));
+                    return true;
+                }
+                return false;
+            }
+            
+            // Method 2: Try finding in iframe
+            function tryMethod2() {
+                const iframe = document.querySelector('.goog-te-menu-frame');
+                if (iframe && iframe.contentDocument) {
+                    log(`Method 2: Found iframe`, 'info');
+                    const select = iframe.contentDocument.querySelector('.goog-te-combo');
+                    if (select) {
+                        log(`Method 2: Found select in iframe`, 'success');
+                        select.value = langCode;
+                        select.dispatchEvent(new Event('change'));
+                        return true;
+                    }
+                }
+                return false;
+            }
+            
+            // Method 3: Use cookie method (most reliable)
+            function tryMethod3() {
+                log(`Method 3: Using cookie method`, 'info');
+                const domain = window.location.hostname;
+                document.cookie = `googtrans=/en/${langCode}; path=/; domain=${domain}`;
+                document.cookie = `googtrans=/en/${langCode}; path=/`;
+                log(`Method 3: Cookie set, reloading page...`, 'success');
+                setTimeout(function() {
+                    location.reload();
+                }, 500);
+                return true;
+            }
+            
+            // Try methods in order
+            let attempts = 0;
+            const maxAttempts = 15;
+            
+            const tryTranslate = setInterval(function() {
+                attempts++;
+                log(`Attempt ${attempts}...`, 'info');
+                
+                if (tryMethod1() || tryMethod2()) {
+                    log(`Translation triggered successfully!`, 'success');
+                    clearInterval(tryTranslate);
+                } else if (attempts >= maxAttempts) {
+                    log(`Direct methods failed, using cookie method...`, 'info');
+                    tryMethod3();
+                    clearInterval(tryTranslate);
+                }
+            }, 300);
+        }
+
+        // Log when page loads
+        window.addEventListener('load', function() {
+            log('Page loaded', 'success');
+            
+            // Check if Google Translate script loaded
+            setTimeout(function() {
+                if (typeof google !== 'undefined' && google.translate) {
+                    log('Google Translate API is available', 'success');
+                } else {
+                    log('Google Translate API not found!', 'error');
+                }
+            }, 2000);
+        });
+    </script>
+    
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

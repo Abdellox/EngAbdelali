@@ -1,0 +1,79 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════╗
+║  © 2025 Abdel Ali - All Rights Reserved                              ║
+║  This project is part of Abdel Ali's portfolio                       ║
+║  Unauthorized copying or distribution is prohibited                  ║
+║  Contact: abdel.ali@example.com                                      ║
+╚═══════════════════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🎨 Gradient Generator</h1>
+            <a href="../../../index.html" class="back-link">← Back</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="generator-box">
+            <div class="preview" id="preview"></div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label>Gradient Type</label>
+                    <select id="gradientType">
+                        <option value="linear">Linear</option>
+                        <option value="radial">Radial</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Direction (Linear) / Shape (Radial)</label>
+                    <select id="direction">
+                        <option value="to right">To Right</option>
+                        <option value="to left">To Left</option>
+                        <option value="to bottom">To Bottom</option>
+                        <option value="to top">To Top</option>
+                        <option value="to bottom right">To Bottom Right</option>
+                        <option value="to bottom left">To Bottom Left</option>
+                        <option value="135deg">135deg</option>
+                        <option value="45deg">45deg</option>
+                    </select>
+                </div>
+
+                <div class="colors-section">
+                    <h3>Colors</h3>
+                    <div id="colorStops"></div>
+                    <button class="btn-add" id="addColorBtn">+ Add Color</button>
+                </div>
+
+                <div class="presets">
+                    <h3>Presets</h3>
+                    <div class="preset-grid">
+                        <div class="preset" onclick="applyPreset('sunset')">Sunset</div>
+                        <div class="preset" onclick="applyPreset('ocean')">Ocean</div>
+                        <div class="preset" onclick="applyPreset('forest')">Forest</div>
+                        <div class="preset" onclick="applyPreset('purple')">Purple</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-section">
+                <h3>CSS Code</h3>
+                <textarea id="cssCode" readonly></textarea>
+                <button class="btn-copy" onclick="copyCode()">Copy CSS</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

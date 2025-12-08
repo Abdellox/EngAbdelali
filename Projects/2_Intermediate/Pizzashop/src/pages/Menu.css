@@ -1,0 +1,97 @@
+.menu-page {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.menu-header {
+  background: linear-gradient(135deg, var(--basil-green) 0%, #238276 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.menu-header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.menu-header p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-filters {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: white;
+  color: var(--basil-green);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover {
+  background: var(--cheese-yellow);
+  color: var(--charcoal-black);
+}
+
+.filter-btn.active {
+  background: var(--tomato-red);
+  color: white;
+}
+
+.menu-section {
+  margin: 60px 0;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.menu-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.menu-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--tomato-red);
+}
+
+.menu-item .price {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--basil-green);
+  margin-bottom: 15px;
+}

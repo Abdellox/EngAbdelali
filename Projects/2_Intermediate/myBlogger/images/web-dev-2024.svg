@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs>
+    <linearGradient id="webDevGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#webDevGrad)"/>
+  <circle cx="900" cy="315" r="200" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="300" cy="150" r="100" fill="rgba(255,255,255,0.05)"/>
+  <text x="50%" y="45%" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="white" text-anchor="middle">Web Development</text>
+  <text x="50%" y="55%" font-family="Arial, sans-serif" font-size="32" fill="rgba(255,255,255,0.8)" text-anchor="middle">2024</text>
+</svg>

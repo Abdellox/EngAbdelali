@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600">
+  <defs>
+    <linearGradient id="featGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#featGrad3)"/>
+  <circle cx="600" cy="300" r="180" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="150" cy="150" r="90" fill="rgba(255,255,255,0.05)"/>
+  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="white" text-anchor="middle">Web Development</text>
+</svg>

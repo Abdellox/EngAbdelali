@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round Table - Problem Solver</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="problems-data.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Round Table</h1>
+            <p>Gather wisdom, vote for the best solution</p>
+        </header>
+
+        <!-- Visitor Mode -->
+        <div class="visitor-content" id="visitorContent">
+            <div class="visitor-banner">
+                <p>🔥 Browsing as visitor - <button onclick="showAuthModal()" class="btn-join-inline">Join to vote and comment</button></p>
+            </div>
+
+            <!-- Hot Topics Section -->
+            <div class="hot-topics-section">
+                <h2>🔥 Hot Topics Right Now</h2>
+                <div id="hotTopicsContainer"></div>
+            </div>
+
+            <!-- Categories -->
+            <div class="categories-section">
+                <h2>Browse by Category</h2>
+                <div class="categories-grid" id="visitorCategoriesGrid"></div>
+            </div>
+
+            <!-- All Problems -->
+            <div class="problems-list">
+                <div class="filter-section">
+                    <h2>All Discussions</h2>
+                    <select id="visitorFilterCategory" onchange="filterVisitorProblems()" class="category-select">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+                <div id="visitorProblemsContainer"></div>
+            </div>
+        </div>
+
+        <!-- Auth Modal -->
+        <div class="auth-modal" id="authModal" style="display: none;">
+            <div class="auth-modal-content">
+                <button class="close-modal" onclick="closeAuthModal()">×</button>
+                <h2>Join Round Table</h2>
+                <p>Register to vote, comment, and create discussions</p>
+                <input type="email" id="userEmail" placeholder="Enter your email">
+                <button onclick="register()" class="btn-primary">Join Now</button>
+                <p class="visitor-link">or <a href="#" onclick="closeAuthModal(); return false;">continue browsing</a></p>
+            </div>
+        </div>
+
+        <div class="main-content" id="mainContent" style="display: none;">
+            <!-- User Info -->
+            <div class="user-info">
+                <span>👤 <span id="userEmailDisplay"></span></span>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+
+            <!-- Categories -->
+            <div class="categories-section">
+                <h2>Browse by Category</h2>
+                <div class="categories-grid" id="categoriesGrid"></div>
+            </div>
+
+            <!-- Create New Problem -->
+            <div class="create-section" id="createSection">
+                <h2>Start a New Round Table</h2>
+                <select id="problemCategory" class="category-select">
+                    <option value="">Select Category</option>
+                </select>
+                <input type="text" id="problemTitle" placeholder="What's the problem or question?" maxlength="100">
+                <textarea id="problemDesc" placeholder="Add more details (optional)..." rows="3"></textarea>
+                <div style="display: flex; gap: 10px;">
+                    <button onclick="createProblem()" class="btn-primary">Create Table</button>
+                    <button onclick="addRandomProblem()" class="btn-secondary">🎲 Add Random Problem</button>
+                </div>
+            </div>
+
+            <!-- Problems List -->
+            <div class="problems-list" id="problemsList">
+                <div class="filter-section">
+                    <h2>Active Tables</h2>
+                    <select id="filterCategory" onchange="filterByCategory()" class="category-select">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+                <div id="problemsContainer"></div>
+            </div>
+
+            <!-- Round Table View -->
+            <div class="round-table-view" id="roundTableView" style="display: none;">
+                <button onclick="backToList()" class="btn-back">← Back to Tables</button>
+                
+                <div class="split-view-container">
+                    <!-- Left Side - Problem -->
+                    <div class="problem-side">
+                        <div class="problem-content">
+                            <div class="problem-icon">👤</div>
+                            <h2 id="centerTitle"></h2>
+                            <p id="centerDesc"></p>
+                            <div class="problem-meta">
+                                <span id="problemSolutionCount">💬 0 solutions</span>
+                                <span id="problemTopVotes">🔥 0 votes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Solutions -->
+                    <div class="solutions-side">
+                        <div class="solutions-header">
+                            <h3>Solutions & Advice</h3>
+                            <p class="solutions-count" id="solutionsCount">Vote for the best solution</p>
+                        </div>
+                        
+                        <div class="solutions-orbit" id="solutionsOrbit"></div>
+
+                        <div class="add-solution-section">
+                            <h3>💡 Share Your Solution</h3>
+                            <textarea id="solutionText" placeholder="What's your advice or solution to this problem?" rows="3"></textarea>
+                            <button onclick="addSolution()" class="btn-primary">Submit Solution</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visitor Round Table View -->
+            <div class="round-table-view" id="visitorRoundTableView" style="display: none;">
+                <button onclick="backToVisitorList()" class="btn-back">← Back to Discussions</button>
+                
+                <div class="split-view-container">
+                    <!-- Left Side - Problem -->
+                    <div class="problem-side">
+                        <div class="problem-content">
+                            <div class="problem-icon" id="visitorProblemIcon">👤</div>
+                            <h2 id="visitorCenterTitle"></h2>
+                            <p id="visitorCenterDesc"></p>
+                            <div class="problem-meta">
+                                <span id="visitorProblemSolutionCount">💬 0 solutions</span>
+                                <span id="visitorProblemTopVotes">🔥 0 votes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Solutions -->
+                    <div class="solutions-side">
+                        <div class="solutions-header">
+                            <h3>Solutions & Advice</h3>
+                            <p class="solutions-count">Browse solutions from the community</p>
+                        </div>
+                        
+                        <div class="solutions-orbit" id="visitorSolutionsOrbit"></div>
+
+                        <div class="add-solution-section visitor-locked">
+                            <h3>🔒 Want to add your solution?</h3>
+                            <p>Join Round Table to share your wisdom and vote on solutions</p>
+                            <button onclick="showAuthModal()" class="btn-primary">Join Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "universal-media-downloader",
+  "version": "1.0.0",
+  "description": "Fast, free, open-source media downloader for YouTube and 1000+ platforms",
+  "main": "app.js",
+  "scripts": {
+    "start": "python server.py",
+    "dev": "python server.py"
+  },
+  "keywords": [
+    "youtube-downloader",
+    "video-downloader",
+    "media-downloader",
+    "yt-dlp",
+    "open-source",
+    "free"
+  ],
+  "author": "",
+  "license": "MIT"
+}

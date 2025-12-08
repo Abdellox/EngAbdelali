@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore all the amazing features of TechLife Blog - a modern blogging platform">
+    <title>Features - TechLife Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .features-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .features-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .features-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+        
+        .feature-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #f59e0b);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        .feature-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        .demo-section {
+            background: var(--bg-secondary);
+            padding: 4rem 0;
+            margin: 3rem 0;
+        }
+        
+        .demo-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
+        
+        .comparison-table {
+            background: var(--bg-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .comparison-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .check-icon {
+            color: #10b981;
+            font-size: 1.25rem;
+        }
+        
+        .cross-icon {
+            color: #ef4444;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">TechLife<span>Blog</span></a>
+                    <button class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="category-tech.html">Tech</a></li>
+                        <li><a href="category-lifestyle.html">Lifestyle</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="features.html" class="active">Features</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <button class="search-toggle" id="searchToggle">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="features-hero">
+        <div class="container">
+            <h1>🚀 Powerful Features</h1>
+            <p>Everything you need to create an amazing blog experience</p>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <main class="main-content">
+        <div class="container">
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Reading Progress Bar</h3>
+                    <p>Visual indicator showing how much of the article readers have completed. Keeps users engaged and informed about their reading progress.</p>
+                    <span class="feature-badge">NEW</span>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <h3>Bookmark & Save</h3>
+                    <p>Let readers save articles for later reading. Bookmarks are stored locally and persist across sessions.</p>
+                    <span class="feature-badge">POPULAR</span>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Reactions & Claps</h3>
+                    <p>Engage with content through reactions. Readers can show appreciation with unlimited claps, similar to Medium.</p>
+                    <span class="feature-badge">INTERACTIVE</span>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3>Auto Table of Contents</h3>
+                    <p>Automatically generated navigation from article headings. Makes long articles easy to navigate and scan.</p>
+                    <span class="feature-badge">SMART</span>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Code Syntax Highlighting</h3>
+                    <p>Beautiful code blocks with one-click copy functionality. Perfect for technical blogs and tutorials.</p>
+                    <span class="feature-badge">DEV-FRIENDLY</span>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Social Sharing</h3>
+                    <p>Share articles on Twitter, Facebook, LinkedIn, Reddit, and more. Includes native share API support for mobile.</p>
+                    <span class="feature-badge">VIRAL</span>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Dark Mode</h3>
+                    <p>Eye-friendly dark theme with smooth transitions. Preference is saved and persists across visits.</p>
+                    <span class="feature-badge">ESSENTIAL</span>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Fully Responsive</h3>
+                    <p>Perfect experience on all devices - desktop, tablet, and mobile. Mobile-first design approach.</p>
+                    <span class="feature-badge">MOBILE-READY</span>
+                </div>
+
+                <!-- Feature 9 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Follow Authors</h3>
+                    <p>Build your audience by letting readers follow their favorite authors. Track follower counts and engagement.</p>
+                    <span class="feature-badge">COMMUNITY</span>
+                </div>
+
+                <!-- Feature 10 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Series & Collections</h3>
+                    <p>Organize related articles into series. Perfect for multi-part tutorials and themed content.</p>
+                    <span class="feature-badge">ORGANIZED</span>
+                </div>
+
+                <!-- Feature 11 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>View Counter</h3>
+                    <p>Track article views and display popularity metrics. Helps identify trending content.</p>
+                    <span class="feature-badge">ANALYTICS</span>
+                </div>
+
+                <!-- Feature 12 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Reading Time</h3>
+                    <p>Automatically calculated reading time based on word count. Helps readers plan their time.</p>
+                    <span class="feature-badge">HELPFUL</span>
+                </div>
+
+                <!-- Feature 13 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Smart Search</h3>
+                    <p>Fast and intuitive search functionality. Find articles quickly with keyword matching.</p>
+                    <span class="feature-badge">FAST</span>
+                </div>
+
+                <!-- Feature 14 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Lazy Loading</h3>
+                    <p>Images load as you scroll, improving initial page load time and performance.</p>
+                    <span class="feature-badge">PERFORMANCE</span>
+                </div>
+
+                <!-- Feature 15 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <h3>Scroll to Top</h3>
+                    <p>Quick navigation back to the top of long articles. Appears automatically when scrolling down.</p>
+                    <span class="feature-badge">UX</span>
+                </div>
+
+                <!-- Feature 16 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Newsletter Integration</h3>
+                    <p>Built-in newsletter signup forms. Ready to integrate with Mailchimp, ConvertKit, and more.</p>
+                    <span class="feature-badge">GROWTH</span>
+                </div>
+
+                <!-- Feature 17 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Ad Placement Areas</h3>
+                    <p>Strategic ad placement zones ready for Google AdSense and other ad networks.</p>
+                    <span class="feature-badge">MONETIZATION</span>
+                </div>
+
+                <!-- Feature 18 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Tag System</h3>
+                    <p>Organize content with tags and categories. Improves content discovery and SEO.</p>
+                    <span class="feature-badge">ORGANIZED</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Section -->
+        <section class="demo-section">
+            <div class="container">
+                <h2>See It In Action</h2>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <a href="post-enhanced.html" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
+                        <i class="fas fa-play"></i> View Demo Article
+                    </a>
+                </div>
+
+                <!-- Comparison Table -->
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Basic Blogs</th>
+                                <th>TechLife Blog</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Reading Progress Bar</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Bookmark System</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Reactions/Claps</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Auto Table of Contents</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Code Copy Button</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Dark Mode</td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Responsive Design</td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Follow Authors</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Series Support</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>View Counter</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About TechLife Blog</h4>
+                    <p>A modern blogging platform with powerful features for content creators.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="features.html">Features</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="category-tech.html">Technology</a></li>
+                        <li><a href="category-lifestyle.html">Lifestyle</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for updates</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechLife Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
