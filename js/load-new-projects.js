@@ -99,7 +99,212 @@ function getProjects() {
 function initializeNewProjects() {
   localStorage.setItem('portfolioProjects', JSON.stringify(allNewProjects));
   localStorage.setItem('portfolioDataVersion', '3.0');
+  
+  // Initialize other portfolio data if not exists
+  initializeOtherData();
+  
   console.log('✅ New Projects Loaded: 30 Basic (FREE) + 20 Intermediate (LOCKED) + 20 Professional (LOCKED)');
+}
+
+// Initialize Services, Experience, Testimonials, Skills
+function initializeOtherData() {
+  const hasExperience = localStorage.getItem('portfolioExperience');
+  const hasTestimonials = localStorage.getItem('portfolioTestimonials');
+  const hasServices = localStorage.getItem('portfolioServices');
+  const hasSkills = localStorage.getItem('portfolioSkills');
+
+  // Default Experience Data
+  if (!hasExperience) {
+    const defaultExperience = [
+      {
+        id: 1,
+        period: '2022 - Present',
+        position: 'Senior Software Engineer',
+        company: 'Tech Solutions Inc.',
+        description: 'Leading development of enterprise web applications using modern JavaScript frameworks and cloud technologies.',
+        highlights: [
+          'Architected and deployed 20+ microservices on AWS',
+          'Led a team of 5 developers building real-time analytics dashboard',
+          'Reduced application load time by 60% through optimization',
+          'Implemented CI/CD pipelines reducing deployment time'
+        ]
+      },
+      {
+        id: 2,
+        period: '2020 - 2022',
+        position: 'Full Stack Developer',
+        company: 'Digital Innovations Ltd.',
+        description: 'Developed and maintained full-stack web applications using React, Node.js, and PostgreSQL.',
+        highlights: [
+          'Built 30+ responsive web applications',
+          'Integrated third-party APIs and payment gateways',
+          'Improved code quality with 85% test coverage',
+          'Mentored 3 junior developers'
+        ]
+      },
+      {
+        id: 3,
+        period: '2019 - 2020',
+        position: 'Frontend Developer',
+        company: 'Creative Web Studio',
+        description: 'Specialized in creating engaging user interfaces and interactive web experiences.',
+        highlights: [
+          'Developed 50+ pixel-perfect responsive websites',
+          'Implemented complex animations using CSS3 and JavaScript',
+          'Optimized website performance achieving 95+ Lighthouse scores',
+          'Collaborated with UX designers to improve accessibility'
+        ]
+      }
+    ];
+    localStorage.setItem('portfolioExperience', JSON.stringify(defaultExperience));
+  }
+
+  // Default Testimonials Data
+  if (!hasTestimonials) {
+    const defaultTestimonials = [
+      {
+        id: 1,
+        name: 'Sarah Mitchell',
+        company: 'CEO, TechStart Solutions',
+        rating: 5,
+        text: 'Abdel delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and problem-solving skills are outstanding.',
+        avatar: 'SM'
+      },
+      {
+        id: 2,
+        name: 'James Chen',
+        company: 'Product Manager, InnovateCo',
+        rating: 5,
+        text: 'Working with Abdel on our productivity app was a game-changer. He transformed our complex requirements into an intuitive application.',
+        avatar: 'JC'
+      },
+      {
+        id: 3,
+        name: 'Emily Johnson',
+        company: 'CTO, CloudMetrics Inc',
+        rating: 5,
+        text: 'Abdel\'s work on our weather application was phenomenal. His code quality and documentation made future maintenance effortless.',
+        avatar: 'EJ'
+      },
+      {
+        id: 4,
+        name: 'Michael Rodriguez',
+        company: 'Founder, ToolBox Pro',
+        rating: 5,
+        text: 'The calculator and converter tools Abdel built are incredibly robust. His mathematical precision and UI/UX sensibility created tools our users love.',
+        avatar: 'MR'
+      },
+      {
+        id: 5,
+        name: 'Lisa Park',
+        company: 'Director, EduPlay Games',
+        rating: 5,
+        text: 'Abdel developed multiple interactive games for our educational platform. The games are engaging, bug-free, and perform flawlessly.',
+        avatar: 'LP'
+      },
+      {
+        id: 6,
+        name: 'David Williams',
+        company: 'Operations Lead, TaskFlow Systems',
+        rating: 5,
+        text: 'The task management system Abdel created revolutionized our workflow. Exceptional work!',
+        avatar: 'DW'
+      }
+    ];
+    localStorage.setItem('portfolioTestimonials', JSON.stringify(defaultTestimonials));
+  }
+
+  // Default Services Data
+  if (!hasServices) {
+    const defaultServices = [
+      {
+        id: 1,
+        title: 'CV to Web App',
+        icon: '📄',
+        description: 'Turn your CV into a sleek, dynamic web application that stands out from traditional PDFs.',
+        features: ['Interactive design', 'Mobile responsive', 'Easy to share', 'Professional look']
+      },
+      {
+        id: 2,
+        title: 'Frontend Development',
+        icon: '🧱',
+        description: 'Build responsive and interactive user interfaces with modern technologies.',
+        features: ['HTML5, CSS3, JavaScript', 'React, Vue.js, Next.js', 'Responsive design', 'Performance optimization']
+      },
+      {
+        id: 3,
+        title: 'Backend Development',
+        icon: '🔙',
+        description: 'Create robust APIs and server-side logic for your applications.',
+        features: ['Node.js & Express', 'Python & Django', 'PHP & Laravel', 'RESTful APIs']
+      },
+      {
+        id: 4,
+        title: 'Database Setup',
+        icon: '💾',
+        description: 'Design and manage efficient database systems for your data.',
+        features: ['MySQL & PostgreSQL', 'MongoDB & Redis', 'Database design', 'Query optimization']
+      },
+      {
+        id: 5,
+        title: 'API Integration',
+        icon: '🔗',
+        description: 'Connect your application with payment gateways, authentication, and third-party services.',
+        features: ['Payment integration', 'Social login', 'Third-party APIs', 'Webhooks setup']
+      },
+      {
+        id: 6,
+        title: 'Hosting & Deployment',
+        icon: '☁️',
+        description: 'Deploy your applications on reliable cloud platforms.',
+        features: ['Vercel & Netlify', 'AWS & Render', 'CI/CD pipelines', 'Domain setup']
+      },
+      {
+        id: 7,
+        title: 'Authentication & Security',
+        icon: '🔐',
+        description: 'Implement secure user authentication and data protection.',
+        features: ['User login systems', 'Role-based access', 'Data encryption', 'Security best practices']
+      },
+      {
+        id: 8,
+        title: 'UI/UX Design',
+        icon: '🧠',
+        description: 'Create simple, clean, and mobile-friendly layouts.',
+        features: ['Responsive layouts', 'User-friendly design', 'Modern aesthetics', 'Accessibility']
+      },
+      {
+        id: 9,
+        title: 'Maintenance & Updates',
+        icon: '🧰',
+        description: 'Keep your application running smoothly with ongoing support.',
+        features: ['Bug fixes', 'Feature updates', 'Performance monitoring', 'Technical support']
+      }
+    ];
+    localStorage.setItem('portfolioServices', JSON.stringify(defaultServices));
+  }
+
+  // Default Skills Data
+  if (!hasSkills) {
+    const defaultSkills = [
+      {
+        id: 1,
+        category: 'Frontend',
+        technologies: ['JavaScript', 'TypeScript', 'React', 'Vue.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'SASS/SCSS', 'Redux', 'Next.js', 'Webpack', 'Vite']
+      },
+      {
+        id: 2,
+        category: 'Backend',
+        technologies: ['Node.js', 'Express', 'Python', 'Django', 'PostgreSQL', 'MongoDB', 'Redis', 'REST APIs', 'GraphQL', 'MySQL', 'Firebase', 'Prisma']
+      },
+      {
+        id: 3,
+        category: 'DevOps & Tools',
+        technologies: ['Docker', 'AWS', 'Git', 'GitHub Actions', 'CI/CD', 'Linux', 'Nginx', 'Jest', 'Vitest', 'VS Code', 'Postman', 'Figma']
+      }
+    ];
+    localStorage.setItem('portfolioSkills', JSON.stringify(defaultSkills));
+  }
 }
 
 // Auto-initialize on load
