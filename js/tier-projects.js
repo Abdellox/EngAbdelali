@@ -86,9 +86,9 @@ function renderProjectCard(project, tier, isUnlocked) {
     <div class="project-links">
       ${projectUrl && canAccess ? `<a href="${projectUrl}" target="_blank" class="project-link">
         🚀 View Demo
-      </a>` : isLocked ? `<button class="project-link unlock-btn" onclick="window.unlockSystem.openModal()">
-        🔓 Unlock
-      </button>` : `<span class="project-link" style="cursor: not-allowed; opacity: 0.6;">
+      </a>` : isLocked ? `<a href="support.html" class="project-link unlock-btn">
+        🔓 Unlock Projects
+      </a>` : `<span class="project-link" style="cursor: not-allowed; opacity: 0.6;">
         Demo Coming Soon
       </span>`}
     </div>
