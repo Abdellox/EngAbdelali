@@ -6,30 +6,60 @@
  * Contact: abdel.ali@example.com
  * ═══════════════════════════════════════════════════════════════════════
  */
-const words = ['javascript', 'programming', 'developer', 'computer', 'keyboard', 'algorithm', 'function', 'variable'];
+
+const words = ['javascript', 'programming', 'developer', 'computer', 'keyboard', 'algorithm', 'function', 'variable', 'website', 'coding', 'software', 'database'];
 let word = '';
 let guessedLetters = [];
+let wrongLetters = [];
 let wrongGuesses = 0;
 const maxWrong = 6;
+let gameOver = false;
+
+const hangmanParts = ['head', 'body', 'leftArm', 'rightArm', 'leftLeg', 'rightLeg'];
 
 function startGame() {
-    word = words[Math.floor(Math.random() * words.length)];
+    word = words[Math.floor(Math.random() * words.length)].toLowerCase();
     guessedLetters = [];
+    wrongLetters = [];
     wrongGuesses = 0;
+    gameOver = false;
+    
+    // Hide all hangman parts
+    hangmanParts.forEach(part => {
+        const element = document.getElementById(part);
+        if (element) {
+            element.classList.remove('show');
+        }
+    });
+    
     updateDisplay();
     createKeyboard();
+    document.getElementById('message').textContent = '';
 }
 
 function updateDisplay() {
+    // Update word display
     const wordDisplay = word.split('').map(letter => 
-        guessedLetters.includes(letter) ? letter : '_'
+        guessedLetters.includes(letter) ? letter.toUpperCase() : '_'
     ).join(' ');
     
     document.getElementById('wordDisplay').textContent = wordDisplay;
+    
+    // Update wrong letters display
+    document.getElementById('wrongLetters').textContent = wrongLetters.join(', ').toUpperCase();
+    
+    // Update attempts counter
     document.getElementById('wrongCount').textContent = `${wrongGuesses} / ${maxWrong}`;
     
-    drawHangman();
+    // Show hangman parts based on wrong guesses
+    for (let i = 0; i < wrongGuesses; i++) {
+        const part = document.getElementById(hangmanParts[i]);
+        if (part) {
+            part.classList.add('show');
+        }
+    }
     
+    // Check win/lose conditions
     if (!wordDisplay.includes('_')) {
         endGame(true);
     } else if (wrongGuesses >= maxWrong) {
@@ -41,22 +71,39 @@ function createKeyboard() {
     const keyboard = document.getElementById('keyboard');
     keyboard.innerHTML = '';
     
-    for (let i = 97; i <= 122; i++) {
-        const letter = String.fromCharCode(i);
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+    
+    for (let letter of letters) {
         const button = document.createElement('button');
-        button.textContent = letter;
+        button.textContent = letter.toUpperCase();
         button.onclick = () => guessLetter(letter);
-        button.disabled = guessedLetters.includes(letter);
+        button.disabled = guessedLetters.includes(letter) || gameOver;
+        
+        // Add visual feedback for guessed letters
+        if (guessedLetters.includes(letter)) {
+            if (word.includes(letter)) {
+                button.style.background = '#10b981';
+                button.style.color = 'white';
+            } else {
+                button.style.background = '#ef4444';
+                button.style.color = 'white';
+            }
+        }
+        
         keyboard.appendChild(button);
     }
 }
 
 function guessLetter(letter) {
-    if (guessedLetters.includes(letter)) return;
+    if (guessedLetters.includes(letter) || gameOver) return;
     
     guessedLetters.push(letter);
     
-    if (!word.includes(letter)) {
+    if (word.includes(letter)) {
+        // Correct guess - no penalty
+    } else {
+        // Wrong guess - add to wrong letters and increment counter
+        wrongLetters.push(letter);
         wrongGuesses++;
     }
     
@@ -64,68 +111,35 @@ function guessLetter(letter) {
     createKeyboard();
 }
 
-function drawHangman() {
-    const canvas = document.getElementById('hangmanCanvas');
-    const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeStyle = '#fff';
-    ctx.lineWidth = 2;
-    
-    // Base
-    if (wrongGuesses > 0) {
-        ctx.beginPath();
-        ctx.moveTo(10, 190);
-        ctx.lineTo(190, 190);
-        ctx.stroke();
-    }
-    
-    // Pole
-    if (wrongGuesses > 1) {
-        ctx.beginPath();
-        ctx.moveTo(50, 190);
-        ctx.lineTo(50, 10);
-        ctx.stroke();
-    }
-    
-    // Top
-    if (wrongGuesses > 2) {
-        ctx.beginPath();
-        ctx.moveTo(50, 10);
-        ctx.lineTo(130, 10);
-        ctx.stroke();
-    }
-    
-    // Rope
-    if (wrongGuesses > 3) {
-        ctx.beginPath();
-        ctx.moveTo(130, 10);
-        ctx.lineTo(130, 30);
-        ctx.stroke();
-    }
-    
-    // Head
-    if (wrongGuesses > 4) {
-        ctx.beginPath();
-        ctx.arc(130, 50, 20, 0, Math.PI * 2);
-        ctx.stroke();
-    }
-    
-    // Body
-    if (wrongGuesses > 5) {
-        ctx.beginPath();
-        ctx.moveTo(130, 70);
-        ctx.lineTo(130, 130);
-        ctx.stroke();
-    }
-}
-
 function endGame(won) {
-    const message = won ? '🎉 You Won!' : `😢 Game Over! Word was: ${word}`;
-    setTimeout(() => {
-        alert(message);
-        startGame();
-    }, 500);
+    gameOver = true;
+    const messageEl = document.getElementById('message');
+    
+    if (won) {
+        messageEl.textContent = '🎉 Congratulations! You won!';
+        messageEl.style.color = '#10b981';
+    } else {
+        messageEl.textContent = `😢 Game Over! The word was: ${word.toUpperCase()}`;
+        messageEl.style.color = '#ef4444';
+    }
+    
+    // Disable all keyboard buttons
+    createKeyboard();
 }
 
+function newGame() {
+    startGame();
+}
+
+// Keyboard support
+document.addEventListener('keydown', (e) => {
+    const letter = e.key.toLowerCase();
+    if (letter >= 'a' && letter <= 'z') {
+        guessLetter(letter);
+    }
+});
+
+// Initialize game
 startGame();
+
 console.log('Hangman Game - Built by Abdel Ali');

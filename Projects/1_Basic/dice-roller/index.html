@@ -15,9 +15,59 @@
     </nav>
     <div class="container">
         <div class="dice-box">
-            <div class="dice" id="dice">🎲</div>
-            <button onclick="roll()" class="btn-roll">Roll Dice</button>
-            <div class="history" id="history"></div>
+            <h2>🎲 Dice Roller</h2>
+            
+            <div class="dice-container" id="diceContainer">
+                <div class="dice" id="dice">
+                    <div class="dice-dot"></div>
+                    <div class="dice-dot"></div>
+                    <div class="dice-dot"></div>
+                    <div class="dice-dot"></div>
+                    <div class="dice-dot active"></div>
+                    <div class="dice-dot"></div>
+                    <div class="dice-dot"></div>
+                    <div class="dice-dot"></div>
+                    <div class="dice-dot"></div>
+                </div>
+                <div class="dice-emoji" id="diceEmoji">⚀</div>
+            </div>
+            
+            <div class="result" id="result">Click Roll Dice to start!</div>
+            
+            <button onclick="rollDice()" class="btn-roll">Roll Dice</button>
+            
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalRolls">0</div>
+                        <div class="stat-label">Total Rolls</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="average">0</div>
+                        <div class="stat-label">Average</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="highest">-</div>
+                        <div class="stat-label">Highest</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="lowest">-</div>
+                        <div class="stat-label">Lowest</div>
+                    </div>
+                </div>
+                
+                <div class="frequency-section">
+                    <h3>Roll Frequency</h3>
+                    <div class="frequency-chart" id="frequencyChart"></div>
+                </div>
+            </div>
+            
+            <div class="history-section">
+                <h3>Recent Rolls</h3>
+                <div class="history" id="history"></div>
+            </div>
+            
+            <button onclick="resetStats()" class="btn-reset">Reset Statistics</button>
         </div>
     </div>
     <script src="app.js"></script>

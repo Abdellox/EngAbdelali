@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Projects Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="header">
+            <h1>🚀 Basic Projects Collection</h1>
+            <p>30 Interactive Web Development Projects</p>
+        </div>
+
+        <div class="projects-grid">
+            <a href="2048-game/index.html" class="project-card">
+                <span class="project-icon">🎯</span>
+                <div class="project-title">2048 Game</div>
+            </a>
+            <a href="snake-game/index.html" class="project-card">
+                <span class="project-icon">🐍</span>
+                <div class="project-title">Snake Game</div>
+            </a>
+            <a href="tic-tac-toe/index.html" class="project-card">
+                <span class="project-icon">⭕</span>
+                <div class="project-title">Tic Tac Toe</div>
+            </a>
+            <a href="memory-game/index.html" class="project-card">
+                <span class="project-icon">🧠</span>
+                <div class="project-title">Memory Game</div>
+            </a>
+            <a href="hangman-game/index.html" class="project-card">
+                <span class="project-icon">🎪</span>
+                <div class="project-title">Hangman Game</div>
+            </a>
+            <a href="wordle-clone/index.html" class="project-card">
+                <span class="project-icon">📝</span>
+                <div class="project-title">Wordle Clone</div>
+            </a>
+            <a href="rock-paper-scissors/index.html" class="project-card">
+                <span class="project-icon">✂️</span>
+                <div class="project-title">Rock Paper Scissors</div>
+            </a>
+            <a href="number-guessing/index.html" class="project-card">
+                <span class="project-icon">🎲</span>
+                <div class="project-title">Number Guessing</div>
+            </a>
+            <a href="typing-game/index.html" class="project-card">
+                <span class="project-icon">⌨️</span>
+                <div class="project-title">Typing Game</div>
+            </a>
+            <a href="dice-roller/index.html" class="project-card">
+                <span class="project-icon">🎲</span>
+                <div class="project-title">Dice Roller</div>
+            </a>
+            <a href="calculator-app/index.html" class="project-card">
+                <span class="project-icon">🔢</span>
+                <div class="project-title">Calculator App</div>
+            </a>
+            <a href="bmi-calculator/index.html" class="project-card">
+                <span class="project-icon">⚖️</span>
+                <div class="project-title">BMI Calculator</div>
+            </a>
+            <a href="tip-calculator/index.html" class="project-card">
+                <span class="project-icon">💰</span>
+                <div class="project-title">Tip Calculator</div>
+            </a>
+            <a href="unit-converter/index.html" class="project-card">
+                <span class="project-icon">📏</span>
+                <div class="project-title">Unit Converter</div>
+            </a>
+            <a href="currency-converter/index.html" class="project-card">
+                <span class="project-icon">💱</span>
+                <div class="project-title">Currency Converter</div>
+            </a>
+            <a href="password-generator/index.html" class="project-card">
+                <span class="project-icon">🔐</span>
+                <div class="project-title">Password Generator</div>
+            </a>
+            <a href="drawing-app/index.html" class="project-card">
+                <span class="project-icon">🎨</span>
+                <div class="project-title">Drawing App</div>
+            </a>
+            <a href="color-picker/index.html" class="project-card">
+                <span class="project-icon">🌈</span>
+                <div class="project-title">Color Picker</div>
+            </a>
+            <a href="gradient-generator/index.html" class="project-card">
+                <span class="project-icon">🎭</span>
+                <div class="project-title">Gradient Generator</div>
+            </a>
+            <a href="meme-generator/index.html" class="project-card">
+                <span class="project-icon">😂</span>
+                <div class="project-title">Meme Generator</div>
+            </a>
+            <a href="qr-generator/index.html" class="project-card">
+                <span class="project-icon">📱</span>
+                <div class="project-title">QR Generator</div>
+            </a>
+            <a href="digital-clock/index.html" class="project-card">
+                <span class="project-icon">🕐</span>
+                <div class="project-title">Digital Clock</div>
+            </a>
+            <a href="stopwatch/index.html" class="project-card">
+                <span class="project-icon">⏱️</span>
+                <div class="project-title">Stopwatch</div>
+            </a>
+            <a href="countdown-timer/index.html" class="project-card">
+                <span class="project-icon">⏰</span>
+                <div class="project-title">Countdown Timer</div>
+            </a>
+            <a href="weather-app/index.html" class="project-card">
+                <span class="project-icon">🌤️</span>
+                <div class="project-title">Weather App</div>
+            </a>
+            <a href="json-formatter/index.html" class="project-card">
+                <span class="project-icon">📋</span>
+                <div class="project-title">JSON Formatter</div>
+            </a>
+            <a href="markdown-editor/index.html" class="project-card">
+                <span class="project-icon">📝</span>
+                <div class="project-title">Markdown Editor</div>
+            </a>
+            <a href="code-beautifier/index.html" class="project-card">
+                <span class="project-icon">💻</span>
+                <div class="project-title">Code Beautifier</div>
+            </a>
+            <a href="resume-builder/index.html" class="project-card">
+                <span class="project-icon">📄</span>
+                <div class="project-title">Resume Builder</div>
+            </a>
+            <a href="image-slider/index.html" class="project-card">
+                <span class="project-icon">🖼️</span>
+                <div class="project-title">Image Slider</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

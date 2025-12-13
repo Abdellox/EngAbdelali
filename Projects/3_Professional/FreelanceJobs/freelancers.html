@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse talented freelancers on FreelanceHub. Find experts in web development, design, writing, and more.">
+    <title>Find Freelancers - FreelanceHub</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>💼 FreelanceHub</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Browse Jobs</a></li>
+                <li><a href="freelancers.html" class="active">Find Freelancers</a></li>
+                <li><a href="post.html">Post Job</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Find Freelancers</h1>
+            <p>Hire top talent for your projects</p>
+        </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="freelancerSearch" placeholder="Search by name, skill, or expertise...">
+                <button class="btn btn-primary" id="searchFreelancerBtn">Search</button>
+            </div>
+            <div class="filters">
+                <select id="skillFilter">
+                    <option value="">All Skills</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="React">React</option>
+                    <option value="Python">Python</option>
+                    <option value="Design">Design</option>
+                    <option value="Writing">Writing</option>
+                    <option value="Marketing">Marketing</option>
+                </select>
+                <select id="ratingFilter">
+                    <option value="">All Ratings</option>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4+ Stars</option>
+                    <option value="3">3+ Stars</option>
+                </select>
+                <select id="hourlyRateFilter">
+                    <option value="">All Rates</option>
+                    <option value="0-25">$0 - $25/hr</option>
+                    <option value="25-50">$25 - $50/hr</option>
+                    <option value="50-100">$50 - $100/hr</option>
+                    <option value="100+">$100+/hr</option>
+                </select>
+                <button class="btn btn-outline" id="clearFreelancerFilters">Clear Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Freelancers Grid -->
+    <section class="freelancers-section">
+        <div class="container">
+            <div id="loadingFreelancers" class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading freelancers...</p>
+            </div>
+            <div class="freelancers-grid" id="freelancersGrid">
+                <!-- Freelancers will be loaded dynamically -->
+            </div>
+            <div id="noFreelancers" class="no-results" style="display: none;">
+                <p>No freelancers found matching your criteria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>💼 FreelanceHub</h3>
+                    <p>Connecting talent with opportunity</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="freelancers.html">Find Freelancers</a></li>
+                        <li><a href="post.html">Post a Job</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="jobs.html">Web Development</a></li>
+                        <li><a href="jobs.html">Design</a></li>
+                        <li><a href="jobs.html">Writing</a></li>
+                        <li><a href="jobs.html">Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="GitHub">🐙</a>
+                        <a href="#" aria-label="Email">📧</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FreelanceHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

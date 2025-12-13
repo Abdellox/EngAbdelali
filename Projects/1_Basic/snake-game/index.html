@@ -16,7 +16,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="container">
+        <div class="nav-container">
             <h1 class="logo">🐍 Snake Game</h1>
             <a href="../../../index.html" class="back-link">← Back</a>
         </div>
@@ -26,22 +26,79 @@
         <div class="game-info">
             <div class="score">Score: <span id="score">0</span></div>
             <div class="high-score">High Score: <span id="highScore">0</span></div>
+            <div class="level">Level: <span id="level">1</span></div>
+        </div>
+        
+        <div class="game-settings">
+            <div class="difficulty-section">
+                <h3>Difficulty Level</h3>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn" onclick="setDifficulty('easy')" data-difficulty="easy">
+                        🐌 Easy<br><small>Slow Speed</small>
+                    </button>
+                    <button class="difficulty-btn active" onclick="setDifficulty('medium')" data-difficulty="medium">
+                        🐍 Medium<br><small>Normal Speed</small>
+                    </button>
+                    <button class="difficulty-btn" onclick="setDifficulty('hard')" data-difficulty="hard">
+                        ⚡ Hard<br><small>Fast Speed</small>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="speed-section">
+                <h3>Custom Speed</h3>
+                <div class="speed-control">
+                    <label for="speedSlider">Speed: <span id="speedValue">5</span></label>
+                    <input type="range" id="speedSlider" min="1" max="10" value="5" oninput="updateSpeed(this.value)">
+                    <div class="speed-labels">
+                        <span>Slow</span>
+                        <span>Fast</span>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <canvas id="gameCanvas" width="400" height="400"></canvas>
         
         <div class="controls">
-            <button onclick="startGame()" id="startBtn">Start Game</button>
+            <button onclick="startGame()" id="startBtn">🎮 Start Game</button>
+            <button onclick="pauseGame()" id="pauseBtn" style="display: none;">⏸️ Pause</button>
+            <button onclick="resetGame()" id="resetBtn">🔄 Reset</button>
+            
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">Current Speed:</span>
+                    <span class="stat-value" id="currentSpeed">Medium</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Food Eaten:</span>
+                    <span class="stat-value" id="foodEaten">0</span>
+                </div>
+            </div>
+            
             <div class="instructions">
-                <p>Use Arrow Keys to move</p>
-                <p>Eat the food to grow!</p>
+                <p><strong>Controls:</strong></p>
+                <p>🖱️ Arrow Keys or WASD to move</p>
+                <p>📱 Swipe on mobile</p>
+                <p>⏸️ Spacebar to pause</p>
+                <p>🍎 Eat food to grow and increase score!</p>
             </div>
         </div>
         
         <div class="game-over" id="gameOver" style="display: none;">
-            <h2>Game Over!</h2>
-            <p>Final Score: <span id="finalScore">0</span></p>
-            <button onclick="startGame()">Play Again</button>
+            <div class="game-over-content">
+                <h2>🎮 Game Over!</h2>
+                <div class="final-stats">
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <p>Level Reached: <span id="finalLevel">1</span></p>
+                    <p>Food Eaten: <span id="finalFoodEaten">0</span></p>
+                    <p>Difficulty: <span id="finalDifficulty">Medium</span></p>
+                </div>
+                <div class="game-over-buttons">
+                    <button onclick="startGame()">🔄 Play Again</button>
+                    <button onclick="showSettings()">⚙️ Change Settings</button>
+                </div>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>

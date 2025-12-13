@@ -1,0 +1,7 @@
+node_modules/
+urls.db
+urls.db-journal
+.env
+*.log
+.DS_Store
+package-lock.json

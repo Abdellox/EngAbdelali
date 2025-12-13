@@ -1,0 +1,57 @@
+.map-container {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+.map-sidebar {
+  width: 300px;
+  background: white;
+  padding: 1.5rem;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.map-sidebar h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+.child-location-card {
+  background: #F9FAFB;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.child-location-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.child-location-card p {
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin: 0.25rem 0;
+}
+
+.location-time {
+  color: #9CA3AF;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.no-location {
+  color: #EF4444;
+  font-style: italic;
+}
+
+.map-view {
+  flex: 1;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}

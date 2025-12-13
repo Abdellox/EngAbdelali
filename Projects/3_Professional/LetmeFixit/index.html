@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Repair Guides for Everything</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🔧 FixIt</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#guides">Guides</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#search" class="btn-primary">Search Repairs</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Fix Anything. Save Money. Save the Planet.</h2>
+            <p>Free repair guides for everything, written by everyone.</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="What do you need to fix? (e.g., HP laptop won't turn on, iPhone battery drain...)" autocomplete="off">
+                <button onclick="searchRepairs()">Find Guide</button>
+                <div id="searchSuggestions" class="search-suggestions"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2>Popular Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="filterGuides('phone')">
+                    <span class="icon">📱</span>
+                    <h3>Phones</h3>
+                    <p>iPhone, Samsung, Google Pixel</p>
+                </div>
+                <div class="category-card" onclick="filterGuides('laptop')">
+                    <span class="icon">💻</span>
+                    <h3>Laptops</h3>
+                    <p>MacBook, Dell, HP, Lenovo</p>
+                </div>
+                <div class="category-card" onclick="filterGuides('tablet')">
+                    <span class="icon">📲</span>
+                    <h3>Tablets</h3>
+                    <p>iPad, Surface, Android tablets</p>
+                </div>
+                <div class="category-card" onclick="filterGuides('game')">
+                    <span class="icon">🎮</span>
+                    <h3>Game Consoles</h3>
+                    <p>PlayStation, Xbox, Nintendo</p>
+                </div>
+                <div class="category-card" onclick="filterGuides('appliance')">
+                    <span class="icon">🏠</span>
+                    <h3>Appliances</h3>
+                    <p>Refrigerator, Washer, Dryer</p>
+                </div>
+                <div class="category-card" onclick="filterGuides('car')">
+                    <span class="icon">🚗</span>
+                    <h3>Automotive</h3>
+                    <p>Cars, Motorcycles, Bikes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="guides" class="guides">
+        <div class="container">
+            <h2>Featured Repair Guides</h2>
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterGuides('all')">All</button>
+                <button class="filter-btn" onclick="filterGuides('easy')">Easy</button>
+                <button class="filter-btn" onclick="filterGuides('moderate')">Moderate</button>
+                <button class="filter-btn" onclick="filterGuides('difficult')">Difficult</button>
+            </div>
+            <div class="guides-grid" id="guidesGrid">
+                <!-- Guides will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="tools">
+        <div class="container">
+            <h2>Essential Repair Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://via.placeholder.com/200x200?text=Screwdriver+Set" alt="Screwdriver Set">
+                    <h3>Precision Screwdriver Set</h3>
+                    <p class="price">$19.99</p>
+                    <button class="btn-secondary">View Details</button>
+                </div>
+                <div class="tool-card">
+                    <img src="https://via.placeholder.com/200x200?text=Spudger+Tool" alt="Spudger">
+                    <h3>Opening Tool Kit</h3>
+                    <p class="price">$9.99</p>
+                    <button class="btn-secondary">View Details</button>
+                </div>
+                <div class="tool-card">
+                    <img src="https://via.placeholder.com/200x200?text=Repair+Mat" alt="Repair Mat">
+                    <h3>Magnetic Repair Mat</h3>
+                    <p class="price">$14.99</p>
+                    <button class="btn-secondary">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About FixIt</h3>
+                    <p>Empowering people to repair their own devices and reduce electronic waste.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#guides">Browse Guides</a></li>
+                        <li><a href="#tools">Shop Tools</a></li>
+                        <li><a href="#contribute">Contribute</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#forum">Forum</a></li>
+                        <li><a href="#answers">Answers</a></li>
+                        <li><a href="#right-to-repair">Right to Repair</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2025 FixIt. Free repair knowledge for everyone.</p>
+        </div>
+    </footer>
+
+    <script src="repair-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

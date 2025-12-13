@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFTools - Professional PDF Editor Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="6" fill="#FF6B6B"/>
+                        <path d="M10 8H18L22 12V24H10V8Z" fill="white"/>
+                        <path d="M18 8V12H22" stroke="white" stroke-width="1.5"/>
+                    </svg>
+                    <span>PDFTools</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Every tool you need to work with PDFs</h1>
+                <p class="hero-subtitle">Free and easy to use. Merge, split, compress, and convert PDFs.</p>
+                <div class="hero-features">
+                    <div class="feature-badge">✓ 100% Free</div>
+                    <div class="feature-badge">✓ Secure & Private</div>
+                    <div class="feature-badge">✓ Fast Processing</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tools-section">
+            <div class="container">
+                <div class="tools-grid" id="tools-grid">
+                    <!-- MAIN EDITOR - Featured Card -->
+                    <div class="tool-card featured-card" data-tool="edit">
+                        <div class="featured-badge">⭐ MAIN EDITOR</div>
+                        <div class="tool-icon edit-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                            </svg>
+                        </div>
+                        <h3>✏️ Edit PDF Text</h3>
+                        <p><strong>Click any text to edit instantly!</strong><br>
+                        Change words, colors, sizes - Like Microsoft Word</p>
+                        <div style="margin-top:10px;font-size:12px;opacity:0.9">
+                            ✓ Edit existing text<br>
+                            ✓ Change colors & fonts<br>
+                            ✓ Delete unwanted text<br>
+                            ✓ Add new content
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-tool="merge">
+                        <div class="tool-icon merge-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                            </svg>
+                        </div>
+                        <h3>Merge PDF</h3>
+                        <p>Combine multiple PDFs</p>
+                    </div>
+
+                    <div class="tool-card" data-tool="split">
+                        <div class="tool-icon split-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="9" y1="15" x2="15" y2="15"/>
+                            </svg>
+                        </div>
+                        <h3>Split PDF</h3>
+                        <p>Extract pages from PDF</p>
+                    </div>
+
+                    <div class="tool-card" data-tool="compress">
+                        <div class="tool-icon compress-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <polyline points="16 16 12 12 8 16"/>
+                                <line x1="12" y1="12" x2="12" y2="21"/>
+                                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+                            </svg>
+                        </div>
+                        <h3>Compress PDF</h3>
+                        <p>Reduce file size</p>
+                    </div>
+
+                    <div class="tool-card" data-tool="pdf-to-jpg">
+                        <div class="tool-icon pdf-to-jpg-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                        </div>
+                        <h3>PDF to JPG</h3>
+                        <p>Convert to images</p>
+                    </div>
+
+                    <div class="tool-card" data-tool="jpg-to-pdf">
+                        <div class="tool-icon jpg-to-pdf-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                        </div>
+                        <h3>JPG to PDF</h3>
+                        <p>Convert images to PDF</p>
+                    </div>
+
+                    <div class="tool-card" data-tool="rotate">
+                        <div class="tool-icon rotate-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <polyline points="23 4 23 10 17 10"/>
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                            </svg>
+                        </div>
+                        <h3>Rotate PDF</h3>
+                        <p>Rotate pages</p>
+                    </div>
+
+                    <div class="tool-card" data-tool="watermark">
+                        <div class="tool-icon watermark-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                        <h3>Add Watermark</h3>
+                        <p>Add text watermark</p>
+                    </div>
+
+                    <div class="tool-card" data-tool="delete">
+                        <div class="tool-icon delete-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <polyline points="3 6 5 6 21 6"/>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                            </svg>
+                        </div>
+                        <h3>Delete Pages</h3>
+                        <p>Remove pages</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="workspace" class="workspace hidden">
+            <div class="container">
+                <div class="workspace-header">
+                    <button class="back-btn" id="back-btn">← Back</button>
+                    <h2 id="workspace-title"></h2>
+                </div>
+                <div id="workspace-content"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p><strong>100% Secure & Private</strong> - All files processed locally in your browser</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

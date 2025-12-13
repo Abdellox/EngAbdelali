@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Government - Global Digital Services Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🌐 Digital Government</h1>
+                    <p class="tagline">Your Gateway to Global Digital Services</p>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search countries or services...">
+                </div>
+            </div>
+        </nav>
+        
+        <div class="categories-nav">
+            <div class="container">
+                <button class="category-btn active" data-category="all">All Services</button>
+                <button class="category-btn" data-category="government">🏛️ Government</button>
+                <button class="category-btn" data-category="banking">🏦 Banking</button>
+                <button class="category-btn" data-category="utilities">⚡ Utilities</button>
+                <button class="category-btn" data-category="food">🍔 Food Delivery</button>
+                <button class="category-btn" data-category="internet">📡 Internet/Telecom</button>
+                <button class="category-btn" data-category="transport">🚗 Transport</button>
+                <button class="category-btn" data-category="health">🏥 Healthcare</button>
+                <button class="category-btn" data-category="education">📚 Education</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Explore Digital Services Worldwide</h2>
+            <p>Access government, banking, utilities, food delivery, and more from 100+ countries</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="countryCount">0</span>
+                    <span class="stat-label">Countries</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="serviceCount">0</span>
+                    <span class="stat-label">Services</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="countries-grid" id="countriesGrid">
+            <!-- Countries will be dynamically loaded here -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Digital Government Portal. Connecting citizens to digital services worldwide.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

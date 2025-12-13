@@ -15,23 +15,22 @@
     </nav>
     
     <div class="container">
-        <div class="game-container">
-            <div class="hangman-drawing" id="hangman">
-                <div class="part head"></div>
-                <div class="part body"></div>
-                <div class="part left-arm"></div>
-                <div class="part right-arm"></div>
-                <div class="part left-leg"></div>
-                <div class="part right-leg"></div>
+        <div class="game-box">
+            <div class="hangman-display" id="hangmanDisplay">
+                Click "New Game" to start!
             </div>
             
-            <div class="word-display" id="wordDisplay"></div>
-            <div class="wrong-letters">Wrong: <span id="wrongLetters"></span></div>
+            <div class="word-display" id="wordDisplay">_ _ _ _ _</div>
+            
+            <div class="info">
+                <div class="wrong-letters">Wrong letters: <span id="wrongLetters"></span></div>
+                <div class="attempts">Attempts: <span id="wrongCount">0 / 6</span></div>
+            </div>
             
             <div class="keyboard" id="keyboard"></div>
             
             <div class="message" id="message"></div>
-            <button onclick="newGame()" class="btn-new-game">New Game</button>
+            <button onclick="newGame()" class="new-game-btn">New Game</button>
         </div>
     </div>
     

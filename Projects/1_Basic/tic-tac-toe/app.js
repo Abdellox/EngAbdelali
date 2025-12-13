@@ -21,6 +21,7 @@ let currentPlayer = 'X';
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameActive = true;
 let scores = { X: 0, O: 0, draw: 0 };
+let vsComputer = false;
 
 const winningConditions = [
     [0, 1, 2],
@@ -83,6 +84,11 @@ function checkResult() {
 
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     playerTurn.textContent = `Player ${currentPlayer}'s Turn`;
+    
+    // Computer move if vs computer and it's O's turn
+    if (vsComputer && currentPlayer === 'O') {
+        setTimeout(makeComputerMove, 500);
+    }
 }
 
 // Highlight winning cells
@@ -128,6 +134,76 @@ function newGame() {
     resetGame();
     scores = { X: 0, O: 0, draw: 0 };
     updateScores();
+}
+
+// Simple AI for computer opponent
+function makeComputerMove() {
+    if (!gameActive) return;
+    
+    // Try to win
+    for (let i = 0; i < 9; i++) {
+        if (gameBoard[i] === '') {
+            gameBoard[i] = 'O';
+            if (checkWinningMove('O')) {
+                makeMove(i);
+                return;
+            }
+            gameBoard[i] = '';
+        }
+    }
+    
+    // Block player from winning
+    for (let i = 0; i < 9; i++) {
+        if (gameBoard[i] === '') {
+            gameBoard[i] = 'X';
+            if (checkWinningMove('X')) {
+                gameBoard[i] = 'O';
+                makeMove(i);
+                return;
+            }
+            gameBoard[i] = '';
+        }
+    }
+    
+    // Take center if available
+    if (gameBoard[4] === '') {
+        makeMove(4);
+        return;
+    }
+    
+    // Take random available spot
+    const availableMoves = gameBoard.map((cell, index) => cell === '' ? index : null).filter(val => val !== null);
+    if (availableMoves.length > 0) {
+        const randomMove = availableMoves[Math.floor(Math.random() * availableMoves.length)];
+        makeMove(randomMove);
+    }
+}
+
+function checkWinningMove(player) {
+    for (let condition of winningConditions) {
+        const [a, b, c] = condition;
+        if (gameBoard[a] === player && gameBoard[b] === player && gameBoard[c] === player) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function makeMove(index) {
+    gameBoard[index] = 'O';
+    const cell = document.querySelector(`[data-index="${index}"]`);
+    cell.textContent = 'O';
+    cell.classList.add('o');
+    checkResult();
+}
+
+function toggleGameMode() {
+    vsComputer = !vsComputer;
+    const modeBtn = document.getElementById('modeBtn');
+    if (modeBtn) {
+        modeBtn.textContent = vsComputer ? 'vs Human' : 'vs Computer';
+    }
+    resetGame();
 }
 
 // Event listeners

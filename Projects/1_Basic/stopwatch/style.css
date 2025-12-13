@@ -27,8 +27,8 @@ body {
     border-radius: 10px;
 }
 
-.navbar .container {
-    max-width: 600px;
+.nav-container {
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -39,19 +39,23 @@ body {
 .logo {
     color: white;
     font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .back-link {
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    transition: all 0.3s;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .back-link:hover {
     background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
 }
 
 .container {
@@ -61,39 +65,47 @@ body {
 
 .stopwatch-container {
     background: white;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 3rem 2rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
+.stopwatch-container h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
 .display {
-    font-size: 48px;
+    font-size: 3rem;
     font-family: 'Courier New', monospace;
     font-weight: bold;
     color: #667eea;
-    margin-bottom: 30px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
 }
 
 .controls {
     display: flex;
-    gap: 10px;
+    gap: 1rem;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
 }
 
 .btn {
-    padding: 12px 24px;
+    padding: 1rem 1.5rem;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    min-width: 100px;
 }
 
 .btn:disabled {

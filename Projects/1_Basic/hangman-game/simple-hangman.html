@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Hangman Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .game-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .hangman-display {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            white-space: pre-line;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .word-display {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 1rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .info {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .wrong-letters {
+            color: #ef4444;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .attempts {
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .keyboard button {
+            padding: 15px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .keyboard button:hover:not(:disabled) {
+            background: #ede9fe;
+            border-color: #667eea;
+        }
+
+        .keyboard button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .keyboard button.correct {
+            background: #10b981;
+            color: white;
+            border-color: #10b981;
+        }
+
+        .keyboard button.wrong {
+            background: #ef4444;
+            color: white;
+            border-color: #ef4444;
+        }
+
+        .message {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            min-height: 40px;
+        }
+
+        .message.win {
+            color: #10b981;
+        }
+
+        .message.lose {
+            color: #ef4444;
+        }
+
+        .new-game-btn {
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .new-game-btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .game-container {
+                padding: 20px;
+            }
+            
+            .word-display {
+                font-size: 2rem;
+                letter-spacing: 0.5rem;
+            }
+            
+            .keyboard {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎯 Hangman Game</h1>
+        
+        <div class="hangman-display" id="hangmanDisplay">
+            Click "New Game" to start!
+        </div>
+        
+        <div class="word-display" id="wordDisplay">_ _ _ _ _</div>
+        
+        <div class="info">
+            <div class="wrong-letters">Wrong letters: <span id="wrongLetters"></span></div>
+            <div class="attempts">Attempts: <span id="attempts">0 / 6</span></div>
+        </div>
+        
+        <div class="keyboard" id="keyboard"></div>
+        
+        <div class="message" id="message"></div>
+        
+        <button class="new-game-btn" onclick="newGame()">New Game</button>
+    </div>
+
+    <script>
+        const words = ['javascript', 'programming', 'developer', 'computer', 'keyboard', 'algorithm', 'function', 'variable', 'website', 'coding'];
+        const hangmanStages = [
+            '',
+            '  +---+\n      |\n      |\n      |\n      |\n      |\n=========',
+            '  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========',
+            '  +---+\n  |   |\n  O   |\n      |\n      |\n      |\n=========',
+            '  +---+\n  |   |\n  O   |\n  |   |\n      |\n      |\n=========',
+            '  +---+\n  |   |\n  O   |\n /|   |\n      |\n      |\n=========',
+            '  +---+\n  |   |\n  O   |\n /|\\  |\n      |\n      |\n=========',
+            '  +---+\n  |   |\n  O   |\n /|\\  |\n /    |\n      |\n=========',
+            '  +---+\n  |   |\n  O   |\n /|\\  |\n / \\  |\n      |\n========='
+        ];
+
+        let currentWord = '';
+        let guessedLetters = [];
+        let wrongGuesses = 0;
+        let gameOver = false;
+
+        function newGame() {
+            currentWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
+            guessedLetters = [];
+            wrongGuesses = 0;
+            gameOver = false;
+            
+            updateDisplay();
+            createKeyboard();
+            document.getElementById('message').textContent = '';
+            document.getElementById('message').className = 'message';
+        }
+
+        function updateDisplay() {
+            // Update hangman drawing
+            document.getElementById('hangmanDisplay').textContent = hangmanStages[wrongGuesses];
+            
+            // Update word display
+            const wordDisplay = currentWord.split('').map(letter => 
+                guessedLetters.includes(letter) ? letter.toUpperCase() : '_'
+            ).join(' ');
+            document.getElementById('wordDisplay').textContent = wordDisplay;
+            
+            // Update wrong letters
+            const wrongLetters = guessedLetters.filter(letter => !currentWord.includes(letter));
+            document.getElementById('wrongLetters').textContent = wrongLetters.join(', ').toUpperCase();
+            
+            // Update attempts
+            document.getElementById('attempts').textContent = `${wrongGuesses} / 6`;
+            
+            // Check win/lose
+            if (!wordDisplay.includes('_')) {
+                endGame(true);
+            } else if (wrongGuesses >= 6) {
+                endGame(false);
+            }
+        }
+
+        function createKeyboard() {
+            const keyboard = document.getElementById('keyboard');
+            keyboard.innerHTML = '';
+            
+            const letters = 'abcdefghijklmnopqrstuvwxyz';
+            
+            for (let letter of letters) {
+                const button = document.createElement('button');
+                button.textContent = letter.toUpperCase();
+                button.onclick = () => guessLetter(letter);
+                button.disabled = guessedLetters.includes(letter) || gameOver;
+                
+                if (guessedLetters.includes(letter)) {
+                    if (currentWord.includes(letter)) {
+                        button.classList.add('correct');
+                    } else {
+                        button.classList.add('wrong');
+                    }
+                }
+                
+                keyboard.appendChild(button);
+            }
+        }
+
+        function guessLetter(letter) {
+            if (guessedLetters.includes(letter) || gameOver) return;
+            
+            guessedLetters.push(letter);
+            
+            if (!currentWord.includes(letter)) {
+                wrongGuesses++;
+            }
+            
+            updateDisplay();
+            createKeyboard();
+        }
+
+        function endGame(won) {
+            gameOver = true;
+            const messageEl = document.getElementById('message');
+            
+            if (won) {
+                messageEl.textContent = '🎉 Congratulations! You won!';
+                messageEl.className = 'message win';
+            } else {
+                messageEl.textContent = `😢 Game Over! The word was: ${currentWord.toUpperCase()}`;
+                messageEl.className = 'message lose';
+            }
+            
+            createKeyboard();
+        }
+
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            const letter = e.key.toLowerCase();
+            if (letter >= 'a' && letter <= 'z') {
+                guessLetter(letter);
+            }
+        });
+
+        // Initialize
+        newGame();
+    </script>
+</body>
+</html>

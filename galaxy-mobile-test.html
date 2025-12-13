@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>Galaxy Mobile Test - Abdel Ali Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile-optimizations.css">
+  
+  <style>
+    /* Test overlay to show device info */
+    .device-info {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      z-index: 10000;
+      font-family: monospace;
+    }
+    
+    .test-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.1;
+      background-image: 
+        linear-gradient(to right, red 1px, transparent 1px),
+        linear-gradient(to bottom, red 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    
+    /* Galaxy-specific test styles */
+    @media (max-width: 414px) {
+      .device-info {
+        background: rgba(255, 0, 0, 0.8);
+      }
+    }
+    
+    @media (max-width: 375px) {
+      .device-info {
+        background: rgba(0, 255, 0, 0.8);
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .device-info {
+        background: rgba(0, 0, 255, 0.8);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Device Info Overlay -->
+  <div class="device-info" id="deviceInfo">
+    Loading...
+  </div>
+  
+  <!-- Test Grid Overlay -->
+  <div class="test-grid"></div>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-brand">
+          <a href="#home" class="logo" aria-label="Home">&lt;AbdelAli/&gt;</a>
+        </div>
+        <ul class="nav-menu" role="menubar">
+          <li role="none"><a href="#home" role="menuitem">Home</a></li>
+          <li role="none"><a href="#about" role="menuitem">About</a></li>
+          <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="hero-greeting">Hi, I'm</div>
+            <h1 class="hero-title">Abdel Ali</h1>
+            <h2 class="hero-role">
+              <span class="gradient-text">Software Engineer</span>
+            </h2>
+            <p class="hero-subtitle">
+              I build exceptional digital experiences with clean code and modern technologies.
+            </p>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">View My Work</a>
+              <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+              <a href="support.html" class="btn btn-support">☕ Support Me</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="code-snippet">
+              <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"Abdel Ali"</span>,
+  <span class="code-property">role</span>: <span class="code-string">"Software Engineer"</span>,
+  <span class="code-property">projects</span>: <span class="code-number">193</span>,
+  <span class="code-property">skills</span>: [<span class="code-string">"JavaScript"</span>, <span class="code-string">"TypeScript"</span>],
+  <span class="code-property">passion</span>: <span class="code-string">"Building solutions"</span>
+};</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test Section -->
+    <section style="padding: 2rem; background: #f0f0f0; text-align: center;">
+      <h2>Galaxy Mobile Test Section</h2>
+      <p>This section tests the responsive layout on Galaxy devices.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        <div style="background: white; padding: 1rem; border-radius: 8px;">Card 1</div>
+        <div style="background: white; padding: 1rem; border-radius: 8px;">Card 2</div>
+        <div style="background: white; padding: 1rem; border-radius: 8px;">Card 3</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Device info display
+    function updateDeviceInfo() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      const userAgent = navigator.userAgent;
+      
+      let deviceType = 'Unknown';
+      if (width <= 320) deviceType = 'Galaxy Fold/Small';
+      else if (width <= 360) deviceType = 'Galaxy S (Small)';
+      else if (width <= 375) deviceType = 'iPhone/Galaxy S';
+      else if (width <= 414) deviceType = 'Galaxy S+/iPhone Plus';
+      else if (width <= 768) deviceType = 'Tablet Portrait';
+      else if (width <= 1024) deviceType = 'Tablet Landscape';
+      else deviceType = 'Desktop';
+      
+      const isGalaxy = userAgent.includes('Samsung') || userAgent.includes('Galaxy');
+      
+      document.getElementById('deviceInfo').innerHTML = `
+        <div><strong>${deviceType}</strong></div>
+        <div>${width}px × ${height}px</div>
+        <div>DPR: ${dpr}</div>
+        <div>Galaxy: ${isGalaxy ? 'Yes' : 'No'}</div>
+        <div>Touch: ${('ontouchstart' in window) ? 'Yes' : 'No'}</div>
+      `;
+    }
+    
+    // Mobile menu toggle
+    function initMobileMenu() {
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navMenu.classList.toggle('mobile-active');
+        });
+      }
+    }
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      updateDeviceInfo();
+      initMobileMenu();
+      window.addEventListener('resize', updateDeviceInfo);
+      window.addEventListener('orientationchange', () => {
+        setTimeout(updateDeviceInfo, 100);
+      });
+    });
+  </script>
+</body>
+</html>

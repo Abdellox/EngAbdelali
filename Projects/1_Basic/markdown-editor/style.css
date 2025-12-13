@@ -28,7 +28,7 @@ body {
     border-radius: 10px;
 }
 
-.navbar .container {
+.nav-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
@@ -46,14 +46,17 @@ body {
 .back-link {
     color: white;
     text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: background 0.3s;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .back-link:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
 }
 
 .editor-container {
@@ -190,12 +193,409 @@ body {
     text-decoration: underline;
 }
 
-@media (max-width: 1024px) {
+/* Large Screens (1440px+) */
+@media (min-width: 1440px) {
+    .nav-container {
+        max-width: 1600px;
+    }
+    
+    .editor-container {
+        max-width: 1600px;
+        padding: 40px;
+    }
+    
+    .toolbar {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .toolbar button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .editor-panels {
+        gap: 30px;
+    }
+    
+    .panel h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    #markdown {
+        min-height: 600px;
+        padding: 20px;
+        font-size: 16px;
+    }
+    
+    .preview {
+        min-height: 600px;
+        padding: 20px;
+        font-size: 16px;
+    }
+}
+
+/* Desktop (1200px - 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    .editor-container {
+        max-width: 1400px;
+        padding: 35px;
+    }
+    
+    .toolbar {
+        gap: 12px;
+    }
+    
+    .editor-panels {
+        gap: 25px;
+    }
+    
+    #markdown, .preview {
+        min-height: 550px;
+        padding: 18px;
+    }
+}
+
+/* Tablet Landscape & Small Desktop (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    body {
+        padding: 15px;
+    }
+    
+    .navbar {
+        margin-bottom: 20px;
+    }
+    
+    .editor-container {
+        padding: 25px;
+    }
+    
+    .toolbar {
+        gap: 8px;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+    
+    .toolbar button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
     .editor-panels {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
+    
+    .panel h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    #markdown {
+        min-height: 300px;
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    .preview {
+        min-height: 300px;
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .preview h1 {
+        font-size: 1.8rem;
+    }
+    
+    .preview h2 {
+        font-size: 1.5rem;
+    }
+    
+    .preview h3 {
+        font-size: 1.2rem;
+    }
+}
 
+/* Tablet Portrait & Large Mobile (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .back-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .navbar {
+        margin-bottom: 15px;
+    }
+    
+    .editor-container {
+        padding: 20px 15px;
+    }
+    
     .toolbar {
+        gap: 6px;
+        margin-bottom: 15px;
         justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .toolbar button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        min-width: 50px;
+    }
+    
+    .editor-panels {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .panel h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    #markdown {
+        min-height: 250px;
+        padding: 10px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+    
+    .preview {
+        min-height: 250px;
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+    
+    .preview h1 {
+        font-size: 1.5rem;
+        margin: 15px 0 8px;
+    }
+    
+    .preview h2 {
+        font-size: 1.3rem;
+        margin: 12px 0 6px;
+    }
+    
+    .preview h3 {
+        font-size: 1.1rem;
+        margin: 8px 0 4px;
+    }
+    
+    .preview p {
+        margin: 8px 0;
+        line-height: 1.5;
+    }
+    
+    .preview ul {
+        padding-left: 25px;
+    }
+    
+    .preview pre {
+        padding: 10px;
+        margin: 8px 0;
+        font-size: 11px;
+    }
+}
+
+/* Mobile (320px - 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .nav-container {
+        padding: 0 10px;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+    }
+    
+    .back-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .navbar {
+        margin-bottom: 10px;
+    }
+    
+    .editor-container {
+        padding: 15px 10px;
+        border-radius: 15px;
+    }
+    
+    .toolbar {
+        gap: 4px;
+        margin-bottom: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .toolbar button {
+        padding: 5px 8px;
+        font-size: 0.7rem;
+        min-width: 40px;
+        border-radius: 4px;
+    }
+    
+    .editor-panels {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .panel h3 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+        color: #667eea;
+    }
+    
+    #markdown {
+        min-height: 200px;
+        padding: 8px;
+        font-size: 11px;
+        border-radius: 6px;
+        border-width: 1px;
+    }
+    
+    .preview {
+        min-height: 200px;
+        padding: 8px;
+        font-size: 12px;
+        border-radius: 6px;
+        border-width: 1px;
+    }
+    
+    .preview h1 {
+        font-size: 1.3rem;
+        margin: 12px 0 6px;
+    }
+    
+    .preview h2 {
+        font-size: 1.1rem;
+        margin: 10px 0 5px;
+    }
+    
+    .preview h3 {
+        font-size: 1rem;
+        margin: 8px 0 4px;
+    }
+    
+    .preview p {
+        margin: 6px 0;
+        line-height: 1.4;
+        font-size: 11px;
+    }
+    
+    .preview ul {
+        margin: 6px 0;
+        padding-left: 20px;
+    }
+    
+    .preview li {
+        margin: 3px 0;
+        font-size: 11px;
+    }
+    
+    .preview code {
+        padding: 1px 4px;
+        font-size: 10px;
+    }
+    
+    .preview pre {
+        padding: 8px;
+        margin: 6px 0;
+        font-size: 9px;
+        border-radius: 4px;
+    }
+    
+    .preview blockquote {
+        padding-left: 10px;
+        margin: 6px 0;
+        font-size: 11px;
+    }
+}
+
+/* Extra Small Mobile (max 320px) */
+@media (max-width: 320px) {
+    .editor-container {
+        padding: 10px 5px;
+    }
+    
+    .toolbar {
+        gap: 2px;
+    }
+    
+    .toolbar button {
+        padding: 4px 6px;
+        font-size: 0.6rem;
+        min-width: 35px;
+    }
+    
+    #markdown, .preview {
+        min-height: 180px;
+        padding: 6px;
+        font-size: 10px;
+    }
+    
+    .preview h1 {
+        font-size: 1.1rem;
+    }
+    
+    .preview h2 {
+        font-size: 1rem;
+    }
+    
+    .preview h3 {
+        font-size: 0.9rem;
+    }
+    
+    .preview p, .preview li {
+        font-size: 10px;
+    }
+    
+    .preview pre {
+        font-size: 8px;
+        padding: 6px;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .editor-container {
+        padding: 10px;
+    }
+    
+    .toolbar {
+        margin-bottom: 8px;
+    }
+    
+    .toolbar button {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+    
+    #markdown, .preview {
+        min-height: 150px;
+        font-size: 11px;
+    }
+    
+    .editor-panels {
+        gap: 10px;
     }
 }

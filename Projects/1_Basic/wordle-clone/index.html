@@ -1,11 +1,3 @@
-<!--
-╔═══════════════════════════════════════════════════════════════════════╗
-║  © 2025 Abdel Ali - All Rights Reserved                              ║
-║  This project is part of Abdel Ali's portfolio                       ║
-║  Unauthorized copying or distribution is prohibited                  ║
-║  Contact: abdel.ali@example.com                                      ║
-╚═══════════════════════════════════════════════════════════════════════╝
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,16 +8,59 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">🔤 Wordle</h1>
+        <div class="nav-container">
+            <h1 class="logo">🔤 Wordle Clone</h1>
             <a href="../../../index.html" class="back-link">← Back</a>
         </div>
     </nav>
+    
     <div class="container">
-        <h1>Wordle Clone</h1>
-        <div id="grid"></div>
-        <p class="instructions">Type letters and press Enter to guess. Green = correct, Yellow = wrong position, Gray = not in word</p>
+        <div class="game-container">
+            <div class="header">
+                <h1>Wordle Clone</h1>
+                <p class="subtitle">Guess the 5-letter word in 6 tries!</p>
+            </div>
+            
+            <div class="game-board" id="gameBoard"></div>
+            
+            <div class="game-info">
+                <div class="attempts">
+                    <span>Attempts: </span>
+                    <span id="attempts">0/6</span>
+                </div>
+                <button onclick="newGame()" class="btn-new-game">New Game</button>
+            </div>
+            
+            <div class="keyboard" id="keyboard"></div>
+            
+            <div class="instructions">
+                <h3>How to Play</h3>
+                <div class="color-guide">
+                    <div class="guide-item">
+                        <div class="color-box correct"></div>
+                        <span>Correct letter in correct position</span>
+                    </div>
+                    <div class="guide-item">
+                        <div class="color-box present"></div>
+                        <span>Correct letter in wrong position</span>
+                    </div>
+                    <div class="guide-item">
+                        <div class="color-box absent"></div>
+                        <span>Letter not in word</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-message" id="gameMessage">
+                <div class="message-content">
+                    <h2 id="messageTitle">Congratulations!</h2>
+                    <p id="messageText">You found the word!</p>
+                    <button onclick="newGame()">Play Again</button>
+                </div>
+            </div>
+        </div>
     </div>
+    
     <script src="app.js"></script>
 </body>
 </html>

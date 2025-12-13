@@ -6,18 +6,186 @@
  * Contact: abdel.ali@example.com
  * ═══════════════════════════════════════════════════════════════════════
  */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-.navbar { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem 0; margin-bottom: 2rem; border-radius: 10px; }
-.navbar .container { max-width: 600px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-.logo { color: white; font-size: 1.5rem; }
-.back-link { color: white; text-decoration: none; padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.2); border-radius: 5px; }
-.container { max-width: 600px; margin: 0 auto; }
-.converter { background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); }
-select { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 16px; margin-bottom: 20px; cursor: pointer; }
-.conversion { display: flex; align-items: center; gap: 15px; }
-.input-group { flex: 1; }
-.input-group input { width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 18px; margin-bottom: 10px; }
-.input-group select { margin-bottom: 0; }
-.equals { font-size: 24px; font-weight: bold; color: #667eea; }
-@media (max-width: 768px) { .conversion { flex-direction: column; } .equals { transform: rotate(90deg); } }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.converter {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.converter h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.category-select {
+    margin-bottom: 2rem;
+}
+
+.category-select label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.conversion {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.input-group select {
+    margin-bottom: 0;
+}
+
+.equals {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+    padding: 0 1rem;
+}
+
+.result-section {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.result-section h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.result-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem auto;
+        padding: 0 10px;
+    }
+    
+    .converter {
+        padding: 1.5rem;
+    }
+    
+    .conversion {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .equals {
+        transform: rotate(90deg);
+        padding: 1rem 0;
+    }
+    
+    .result-value {
+        font-size: 1.5rem;
+    }
+}

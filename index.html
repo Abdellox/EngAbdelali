@@ -15,7 +15,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
   <meta name="description" content="Abdel Ali - Software Engineer Portfolio showcasing 193 projects across multiple categories including games, productivity tools, and web applications.">
   <meta name="keywords" content="software engineer, web developer, portfolio, JavaScript, TypeScript, React, Node.js, Abdel Ali">
   <meta name="author" content="Abdel Ali">
@@ -42,6 +42,7 @@
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/mobile-optimizations.css">
   <link rel="stylesheet" href="css/unlock-styles.css">
 </head>
 <body>
@@ -752,6 +753,68 @@
   <script src="js/unlock-system.js"></script>
   <script src="js/tier-projects.js"></script>
   <script src="js/script.js" defer></script>
+  
+  <!-- Galaxy Mobile Optimizations -->
+  <script>
+    // Galaxy mobile device optimizations
+    (function() {
+      // Prevent zoom on input focus for Galaxy devices
+      if (/Android|Galaxy|Samsung/i.test(navigator.userAgent)) {
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+          input.addEventListener('focus', function() {
+            if (this.style.fontSize !== '16px') {
+              this.style.fontSize = '16px';
+            }
+          });
+        });
+      }
+      
+      // Optimize touch interactions for Galaxy devices
+      if ('ontouchstart' in window) {
+        document.body.classList.add('touch-device');
+        
+        // Add touch-friendly hover effects
+        const interactiveElements = document.querySelectorAll('button, .btn, a, .nav-menu a');
+        interactiveElements.forEach(element => {
+          element.addEventListener('touchstart', function() {
+            this.classList.add('touch-active');
+          });
+          element.addEventListener('touchend', function() {
+            setTimeout(() => {
+              this.classList.remove('touch-active');
+            }, 150);
+          });
+        });
+      }
+      
+      // Handle orientation changes for Galaxy devices
+      window.addEventListener('orientationchange', function() {
+        setTimeout(function() {
+          // Force layout recalculation
+          document.body.style.height = 'auto';
+          setTimeout(() => {
+            document.body.style.height = '';
+          }, 100);
+        }, 100);
+      });
+      
+      // Optimize viewport for Galaxy devices
+      function optimizeViewport() {
+        const viewport = document.querySelector('meta[name="viewport"]');
+        if (viewport && window.innerWidth <= 414) {
+          // Ensure proper viewport for Galaxy devices
+          viewport.setAttribute('content', 
+            'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover'
+          );
+        }
+      }
+      
+      // Run optimizations
+      document.addEventListener('DOMContentLoaded', optimizeViewport);
+      window.addEventListener('resize', optimizeViewport);
+    })();
+  </script>
   
   <!-- Optional: Uncomment to enable additional protection (right-click disable, etc.) -->
   <!-- <script src="js/protection.js"></script> -->

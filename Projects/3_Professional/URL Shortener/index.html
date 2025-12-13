@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fast, simple, and reliable URL shortener. Create custom short links and track clicks.">
+    <title>ShortURL - Fast & Simple Link Shortener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <h2 id="authTitle">Welcome Back!</h2>
+            <p class="auth-subtitle">Login to manage your links</p>
+            
+            <div id="authForm">
+                <input type="text" id="username" placeholder="Username" required aria-label="Username" autocomplete="username">
+                <input type="password" id="password" placeholder="Password" required aria-label="Password" autocomplete="current-password">
+                <button id="authBtn" class="auth-btn">Login</button>
+                <p class="auth-switch">
+                    Don't have an account? 
+                    <a href="#" id="switchAuth">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div>
+                    <h1>🔗 ShortURL</h1>
+                    <p class="tagline">Fast, Simple, Reliable Link Shortening</p>
+                </div>
+                <div id="userInfo" class="user-info hidden">
+                    <span id="welcomeUser"></span>
+                    <button id="logoutBtn" class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="shortener-box">
+                <input type="url" id="longUrl" placeholder="Enter your long URL here..." required aria-label="Long URL">
+                <div class="custom-code-wrapper">
+                    <input type="text" id="customCode" placeholder="Custom code (optional)" maxlength="20" aria-label="Custom short code">
+                </div>
+                <button id="shortenBtn" aria-label="Shorten URL">Shorten URL</button>
+            </div>
+
+            <div id="result" class="result hidden">
+                <div class="result-content">
+                    <p class="label">Your shortened URL:</p>
+                    <div class="url-display">
+                        <input type="text" id="shortUrl" readonly>
+                        <button id="copyBtn" title="Copy to clipboard">📋 Copy</button>
+                    </div>
+                    <p class="success-msg">✓ Link created successfully!</p>
+                </div>
+            </div>
+
+            <div id="error" class="error hidden"></div>
+        </main>
+
+        <section class="features">
+            <div class="feature">
+                <span class="icon">⚡</span>
+                <h3>Lightning Fast</h3>
+                <p>Instant URL shortening</p>
+            </div>
+            <div class="feature">
+                <span class="icon">🔒</span>
+                <h3>Secure</h3>
+                <p>Safe and reliable</p>
+            </div>
+            <div class="feature">
+                <span class="icon">📊</span>
+                <h3>Track Clicks</h3>
+                <p>Monitor your links</p>
+            </div>
+        </section>
+
+        <section class="user-links" id="userLinksSection">
+            <h2>Your Recent Links</h2>
+            <div class="search-box">
+                <input type="text" id="searchLinks" placeholder="🔍 Search your links... (Ctrl+K)" aria-label="Search links">
+            </div>
+            <div id="linksList" class="links-list"></div>
+        </section>
+
+        <section class="stats-section" id="statsSection">
+            <h2>📊 Your Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalLinks">0</div>
+                    <div class="stat-label">Total Links</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalClicks">0</div>
+                    <div class="stat-label">Total Clicks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="topLink">-</div>
+                    <div class="stat-label">Top Link</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Made with ❤️ | Fast & Reliable URL Shortener</p>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

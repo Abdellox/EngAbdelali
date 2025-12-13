@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Post your project and connect with talented freelancers. Get started on FreelanceHub today.">
+    <title>Post a Job - FreelanceHub</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>💼 FreelanceHub</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Browse Jobs</a></li>
+                <li><a href="post.html" class="active">Post Job</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Post a Job</h1>
+            <p>Find the perfect freelancer for your project</p>
+        </div>
+    </section>
+
+    <!-- Post Job Form -->
+    <section class="post-job-section">
+        <div class="container">
+            <div class="form-container">
+                <form id="postJobForm">
+                    <div class="form-group">
+                        <label>Job Title</label>
+                        <input type="text" id="jobTitle" placeholder="e.g., Full Stack Developer Needed" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company Name</label>
+                        <input type="text" id="companyName" placeholder="Your company or name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="jobCategory" required>
+                            <option value="">Select a category</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Mobile Development">Mobile Development</option>
+                            <option value="Design">Design</option>
+                            <option value="Writing">Writing</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Data Science">Data Science</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="jobDescription" rows="6" placeholder="Describe your project requirements..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Budget ($)</label>
+                            <input type="number" id="jobBudget" placeholder="e.g., 1000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Experience Level</label>
+                            <select id="experienceLevel" required>
+                                <option value="">Select level</option>
+                                <option value="Entry">Entry Level</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Expert">Expert</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Deadline</label>
+                        <input type="date" id="jobDeadline" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Skills Required (comma separated)</label>
+                        <input type="text" id="jobSkills" placeholder="e.g., JavaScript, React, Node.js">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Post Job</button>
+                </form>
+
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <h3>✅ Job Posted Successfully!</h3>
+                    <p>Your job has been posted and is now visible to freelancers.</p>
+                    <a href="jobs.html" class="btn btn-secondary">View All Jobs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>💼 FreelanceHub</h3>
+                    <p>Connecting talent with opportunity</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="post.html">Post a Job</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="jobs.html">Web Development</a></li>
+                        <li><a href="jobs.html">Design</a></li>
+                        <li><a href="jobs.html">Writing</a></li>
+                        <li><a href="jobs.html">Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="GitHub">🐙</a>
+                        <a href="#" aria-label="Email">📧</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FreelanceHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

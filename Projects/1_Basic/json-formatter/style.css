@@ -28,7 +28,7 @@ body {
     border-radius: 10px;
 }
 
-.navbar .container {
+.nav-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -46,19 +46,23 @@ body {
 .back-link {
     color: white;
     text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: background 0.3s;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .back-link:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
 }
 
-.formatter-container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .formatter-box {
@@ -130,16 +134,289 @@ textarea:focus {
     margin: 0;
 }
 
-@media (max-width: 768px) {
-    .formatter-box {
-        padding: 20px;
+/* Large Screens (1440px+) */
+@media (min-width: 1440px) {
+    .nav-container {
+        max-width: 1400px;
     }
+    
+    .container {
+        max-width: 1400px;
+    }
+    
+    .formatter-box {
+        padding: 50px;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    
+    textarea {
+        min-height: 400px;
+        padding: 25px;
+        font-size: 16px;
+    }
+    
+    .controls button {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+    }
+    
+    .output {
+        padding: 25px;
+        min-height: 300px;
+        font-size: 16px;
+    }
+}
 
+/* Desktop (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .formatter-box {
+        padding: 45px;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    textarea {
+        min-height: 350px;
+        padding: 22px;
+    }
+    
+    .controls button {
+        padding: 14px 22px;
+    }
+    
+    .output {
+        padding: 22px;
+        min-height: 250px;
+    }
+}
+
+/* Tablet Landscape (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .formatter-box {
+        padding: 30px;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    textarea {
+        min-height: 300px;
+        padding: 18px;
+        font-size: 13px;
+    }
+    
+    .controls {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .controls button {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+    }
+    
+    .output {
+        padding: 18px;
+        min-height: 200px;
+        font-size: 13px;
+    }
+}
+
+/* Tablet Portrait & Large Mobile (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .back-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .navbar {
+        margin-bottom: 20px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .formatter-box {
+        padding: 25px 20px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    textarea {
+        min-height: 250px;
+        padding: 15px;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    
+    .controls {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .controls button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        min-width: auto;
+    }
+    
+    .output {
+        padding: 15px;
+        min-height: 150px;
+        font-size: 12px;
+    }
+}
+
+/* Mobile (320px - 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .nav-container {
+        padding: 0 10px;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+    }
+    
+    .back-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .navbar {
+        margin-bottom: 15px;
+    }
+    
+    .container {
+        padding: 0 5px;
+    }
+    
+    .formatter-box {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+    
+    textarea {
+        min-height: 200px;
+        padding: 12px;
+        font-size: 12px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+    }
+    
     .controls {
         flex-direction: column;
+        gap: 6px;
+        margin-bottom: 12px;
     }
-
+    
     .controls button {
         width: 100%;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+    
+    .output {
+        padding: 12px;
+        min-height: 120px;
+        font-size: 11px;
+        border-radius: 8px;
+    }
+}
+
+/* Extra Small Mobile (max 320px) */
+@media (max-width: 320px) {
+    .formatter-box {
+        padding: 15px 10px;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    textarea {
+        min-height: 180px;
+        padding: 10px;
+        font-size: 11px;
+    }
+    
+    .controls button {
+        padding: 7px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .output {
+        padding: 10px;
+        min-height: 100px;
+        font-size: 10px;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .formatter-box {
+        padding: 15px;
+    }
+    
+    textarea {
+        min-height: 120px;
+    }
+    
+    .output {
+        min-height: 80px;
+    }
+    
+    .controls {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
     }
 }

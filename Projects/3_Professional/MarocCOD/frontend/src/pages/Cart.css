@@ -1,0 +1,147 @@
+.cart-page {
+  padding: 40px 0;
+}
+
+.cart-page h1 {
+  color: var(--text-dark);
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.cart-empty h2 {
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 30px;
+}
+
+.cart-items {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 150px 100px 50px;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.item-details h3 {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.item-price {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-quantity button {
+  width: 35px;
+  height: 35px;
+  border: 2px solid var(--border-color);
+  background: white;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.item-quantity span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.item-total {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent-color);
+  font-size: 20px;
+}
+
+.cart-summary {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  height: fit-content;
+}
+
+.cart-summary h3 {
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid var(--border-color);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.cart-summary button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .cart-item {
+    grid-template-columns: 80px 1fr;
+    gap: 10px;
+  }
+  
+  .item-quantity, .item-total {
+    grid-column: 2;
+  }
+}

@@ -1,0 +1,108 @@
+.profile-page {
+  padding: 40px 0;
+}
+
+.profile-page h1 {
+  color: var(--text-dark);
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+}
+
+.profile-info {
+  height: fit-content;
+}
+
+.profile-info h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.profile-info p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.orders-section h2 {
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-card {
+  padding: 25px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.order-header h3 {
+  color: var(--text-dark);
+  font-size: 20px;
+}
+
+.status {
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-confirmed {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.status-processing {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.status-shipped {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-delivered {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.order-details p {
+  margin-bottom: 10px;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+}

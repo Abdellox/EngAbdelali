@@ -1,0 +1,142 @@
+
+   ______          __     _______ __               
+  / ____/___  ____/ /__  / ____(_) /___ _      __
+ / /   / __ \/ __  / _ \/ /_  / / / __ \ | /| / /
+/ /___/ /_/ / /_/ /  __/ __/ / / / /_/ / |/ |/ / 
+\____/\____/\__,_/\___/_/   /_/_/\____/|__/|__/  
+                                                   
+    _____ ____  ______                            
+   /  _// __ \/ ____/                            
+   / / / / / / __/                               
+ _/ / / /_/ / /___                               
+/___/_____/_____/                                
+                                                   
+
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║              ⚡ CodeFlow IDE - Version 2.0 ⚡              ║
+║                                                           ║
+║        Professional Browser-Based Development             ║
+║                                                           ║
+║  🚀 15+ Languages  |  💡 Smart Autocomplete               ║
+║  🎨 Beautiful UI   |  ⌨️  Powerful Shortcuts              ║
+║  📁 File Manager   |  ⚙️  Customizable                    ║
+║                                                           ║
+║              Free • Open Source • No Install              ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────┐
+│                    QUICK START                          │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  1. Open index.html in your browser                     │
+│  2. Start coding immediately!                           │
+│  3. Press Ctrl+P for command palette                    │
+│  4. Try typing 'log' and press Tab                      │
+│  5. Press Ctrl+Enter to run JavaScript                  │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────┐
+│                  KEY FEATURES                           │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  ⚡ Lightning Fast    - Instant startup                 │
+│  🎨 Beautiful UI      - Modern animations               │
+│  💡 Smart Complete    - 43 code snippets                │
+│  📚 15+ Languages     - Full syntax support             │
+│  ⌨️  Keyboard First   - 20+ shortcuts                   │
+│  🔧 Customizable      - Settings panel                  │
+│  📁 File Manager      - Multiple files                  │
+│  🎯 Command Palette   - Quick actions                   │
+│  💾 Auto-Save         - Never lose work                 │
+│  🌐 Works Everywhere  - All modern browsers             │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────┐
+│              SUPPORTED LANGUAGES                        │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  📜 JavaScript    🐍 Python       ☕ Java               │
+│  📘 TypeScript    🌐 HTML         🎨 CSS                │
+│  ⚙️  C++          🔷 C#           📋 JSON               │
+│  📝 Markdown      🗄️  SQL         🐘 PHP                │
+│  💎 Ruby          🔵 Go           🦀 Rust               │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────┐
+│            KEYBOARD SHORTCUTS                           │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  Ctrl+P          Command Palette                        │
+│  Ctrl+Enter      Run Code                               │
+│  Ctrl+S          Download File                          │
+│  Ctrl+N          New File                               │
+│  Ctrl+B          Toggle Sidebar                         │
+│  Ctrl+Space      Autocomplete                           │
+│  Alt+Shift+F     Format Code                            │
+│  Right-Click     Context Menu                           │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────┐
+│                  DOCUMENTATION                          │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  📖 README.md           - Complete documentation        │
+│  🚀 QUICKSTART.md       - 60-second tutorial            │
+│  🎯 FEATURES.md         - 100+ features listed          │
+│  📝 CHANGELOG.md        - Version history               │
+│  📋 PROJECT_OVERVIEW.md - High-level overview           │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────┐
+│                    STATISTICS                           │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  Total Features:        100+                            │
+│  Languages Supported:   15                              │
+│  Code Snippets:         43                              │
+│  Keyboard Shortcuts:    20+                             │
+│  Themes:                3                               │
+│  Lines of Code:         ~2000                           │
+│  Load Time:             < 2 seconds                     │
+│  License:               MIT (Free!)                     │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+
+
+        ╔═══════════════════════════════════════╗
+        ║                                       ║
+        ║    Made with ❤️  for developers       ║
+        ║         by developers                 ║
+        ║                                       ║
+        ║      Free Forever • Open Source       ║
+        ║                                       ║
+        ╚═══════════════════════════════════════╝
+
+
+                    ⚡ Start Coding Now! ⚡
+
+              No Installation • No Configuration
+                    Just Pure Coding Joy!
+
+
+═══════════════════════════════════════════════════════════
+
+  GitHub: [Your Repository URL]
+  License: MIT
+  Version: 2.0 Enhanced Edition
+  Status: Stable ✅
+
+═══════════════════════════════════════════════════════════

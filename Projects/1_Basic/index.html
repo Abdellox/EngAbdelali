@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Projects Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .category {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .category h2 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .back-link {
+                position: static;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="header">
+            <h1>🚀 Basic Projects Collection</h1>
+            <p>30 Interactive Web Development Projects</p>
+        </div>
+
+        <div class="category">
+            <h2>🎮 Games</h2>
+            <div class="projects-grid">
+                <a href="2048-game/index.html" class="project-card">
+                    <span class="project-icon">🎯</span>
+                    <div class="project-title">2048 Game</div>
+                    <div class="project-description">Classic sliding puzzle game with touch support and smooth animations</div>
+                </a>
+                <a href="snake-game/index.html" class="project-card">
+                    <span class="project-icon">🐍</span>
+                    <div class="project-title">Snake Game</div>
+                    <div class="project-description">Classic snake game with canvas graphics and score tracking</div>
+                </a>
+                <a href="tic-tac-toe/index.html" class="project-card">
+                    <span class="project-icon">⭕</span>
+                    <div class="project-title">Tic Tac Toe</div>
+                    <div class="project-description">Interactive game with score tracking and winning animations</div>
+                </a>
+                <a href="memory-game/index.html" class="project-card">
+                    <span class="project-icon">🧠</span>
+                    <div class="project-title">Memory Game</div>
+                    <div class="project-description">Card matching game with timer and move counter</div>
+                </a>
+                <a href="hangman-game/index.html" class="project-card">
+                    <span class="project-icon">🎪</span>
+                    <div class="project-title">Hangman Game</div>
+                    <div class="project-description">Word guessing game with visual hangman drawing</div>
+                </a>
+                <a href="wordle-clone/index.html" class="project-card">
+                    <span class="project-icon">📝</span>
+                    <div class="project-title">Wordle Clone</div>
+                    <div class="project-description">Word guessing game inspired by the popular Wordle</div>
+                </a>
+                <a href="rock-paper-scissors/index.html" class="project-card">
+                    <span class="project-icon">✂️</span>
+                    <div class="project-title">Rock Paper Scissors</div>
+                    <div class="project-description">Classic game with animations and score tracking</div>
+                </a>
+                <a href="number-guessing/index.html" class="project-card">
+                    <span class="project-icon">🎲</span>
+                    <div class="project-title">Number Guessing</div>
+                    <div class="project-description">Guess the random number with hints and attempt tracking</div>
+                </a>
+                <a href="typing-game/index.html" class="project-card">
+                    <span class="project-icon">⌨️</span>
+                    <div class="project-title">Typing Game</div>
+                    <div class="project-description">Test your typing speed and accuracy with real-time feedback</div>
+                </a>
+                <a href="dice-roller/index.html" class="project-card">
+                    <span class="project-icon">🎲</span>
+                    <div class="project-title">Dice Roller</div>
+                    <div class="project-description">Animated dice rolling with history and statistics</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🔧 Utilities</h2>
+            <div class="projects-grid">
+                <a href="calculator-app/index.html" class="project-card">
+                    <span class="project-icon">🔢</span>
+                    <div class="project-title">Calculator App</div>
+                    <div class="project-description">Full-featured calculator with keyboard support and operations</div>
+                </a>
+                <a href="bmi-calculator/index.html" class="project-card">
+                    <span class="project-icon">⚖️</span>
+                    <div class="project-title">BMI Calculator</div>
+                    <div class="project-description">Body Mass Index calculator with visual health indicators</div>
+                </a>
+                <a href="tip-calculator/index.html" class="project-card">
+                    <span class="project-icon">💰</span>
+                    <div class="project-title">Tip Calculator</div>
+                    <div class="project-description">Calculate tips and split bills with multiple people</div>
+                </a>
+                <a href="unit-converter/index.html" class="project-card">
+                    <span class="project-icon">📏</span>
+                    <div class="project-title">Unit Converter</div>
+                    <div class="project-description">Convert between different units of measurement</div>
+                </a>
+                <a href="currency-converter/index.html" class="project-card">
+                    <span class="project-icon">💱</span>
+                    <div class="project-title">Currency Converter</div>
+                    <div class="project-description">Convert between currencies with exchange rates</div>
+                </a>
+                <a href="password-generator/index.html" class="project-card">
+                    <span class="project-icon">🔐</span>
+                    <div class="project-title">Password Generator</div>
+                    <div class="project-description">Generate secure passwords with customizable options</div>
+                </a>
+                <a href="qr-generator/index.html" class="project-card">
+                    <span class="project-icon">📱</span>
+                    <div class="project-title">QR Generator</div>
+                    <div class="project-description">Generate QR codes for text, URLs, and download them</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>⏰ Time & Productivity</h2>
+            <div class="projects-grid">
+                <a href="countdown-timer/index.html" class="project-card">
+                    <span class="project-icon">⏰</span>
+                    <div class="project-title">Countdown Timer</div>
+                    <div class="project-description">Customizable countdown timer with alerts</div>
+                </a>
+                <a href="stopwatch/index.html" class="project-card">
+                    <span class="project-icon">⏱️</span>
+                    <div class="project-title">Stopwatch</div>
+                    <div class="project-description">Precise stopwatch with lap timing and controls</div>
+                </a>
+                <a href="digital-clock/index.html" class="project-card">
+                    <span class="project-icon">🕐</span>
+                    <div class="project-title">Digital Clock</div>
+                    <div class="project-description">Real-time clock with date, time, and timezone display</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🎨 Creative Tools</h2>
+            <div class="projects-grid">
+                <a href="drawing-app/index.html" class="project-card">
+                    <span class="project-icon">🎨</span>
+                    <div class="project-title">Drawing App</div>
+                    <div class="project-description">Canvas-based drawing application with tools and colors</div>
+                </a>
+                <a href="color-picker/index.html" class="project-card">
+                    <span class="project-icon">🌈</span>
+                    <div class="project-title">Color Picker</div>
+                    <div class="project-description">Color selection tool with palette generation and formats</div>
+                </a>
+                <a href="gradient-generator/index.html" class="project-card">
+                    <span class="project-icon">🎭</span>
+                    <div class="project-title">Gradient Generator</div>
+                    <div class="project-description">CSS gradient generator with presets and custom colors</div>
+                </a>
+                <a href="meme-generator/index.html" class="project-card">
+                    <span class="project-icon">😂</span>
+                    <div class="project-title">Meme Generator</div>
+                    <div class="project-description">Create memes with templates and custom text</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>📝 Text & Data</h2>
+            <div class="projects-grid">
+                <a href="markdown-editor/index.html" class="project-card">
+                    <span class="project-icon">📝</span>
+                    <div class="project-title">Markdown Editor</div>
+                    <div class="project-description">Live markdown editor with real-time preview</div>
+                </a>
+                <a href="json-formatter/index.html" class="project-card">
+                    <span class="project-icon">📋</span>
+                    <div class="project-title">JSON Formatter</div>
+                    <div class="project-description">Format, validate, and minify JSON data</div>
+                </a>
+                <a href="code-beautifier/index.html" class="project-card">
+                    <span class="project-icon">💻</span>
+                    <div class="project-title">Code Beautifier</div>
+                    <div class="project-description">Format and beautify HTML, CSS, and JavaScript</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🌐 Web & Media</h2>
+            <div class="projects-grid">
+                <a href="weather-app/index.html" class="project-card">
+                    <span class="project-icon">🌤️</span>
+                    <div class="project-title">Weather App</div>
+                    <div class="project-description">Weather information with location and forecast</div>
+                </a>
+                <a href="image-slider/index.html" class="project-card">
+                    <span class="project-icon">🖼️</span>
+                    <div class="project-title">Image Slider</div>
+                    <div class="project-description">Responsive image carousel with controls and autoplay</div>
+                </a>
+                <a href="resume-builder/index.html" class="project-card">
+                    <span class="project-icon">📄</span>
+                    <div class="project-title">Resume Builder</div>
+                    <div class="project-description">Create professional resumes with live preview</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

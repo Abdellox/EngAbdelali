@@ -1,1 +1,217 @@
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh}.navbar{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:1rem 0}.nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}.logo{color:white;font-size:1.5rem;font-weight:700}.back-link{color:white;text-decoration:none;padding:0.5rem 1rem;border-radius:8px;transition:background 0.3s}.back-link:hover{background:rgba(255,255,255,0.2)}.container{max-width:600px;margin:2rem auto;padding:0 20px}.converter-box{background:white;border-radius:20px;padding:2rem;box-shadow:0 20px 60px rgba(0,0,0,0.3)}.converter-box h2{text-align:center;color:#333;margin-bottom:2rem}.input-group{margin-bottom:1.5rem}.input-group label{display:block;margin-bottom:0.5rem;color:#333;font-weight:600}.input-group input{width:100%;padding:1rem;border:2px solid #e0e0e0;border-radius:12px;font-size:1.2rem}.input-group input:focus{outline:none;border-color:#667eea}.currency-select{display:flex;align-items:center;gap:1rem;margin-bottom:2rem}.select-group{flex:1}.select-group select{width:100%;padding:1rem;border:2px solid #e0e0e0;border-radius:12px;font-size:1rem;cursor:pointer}.select-group select:focus{outline:none;border-color:#667eea}.btn-swap{width:50px;height:50px;background:#f0f0f0;border:none;border-radius:50%;font-size:1.5rem;cursor:pointer;transition:all 0.3s}.btn-swap:hover{background:#667eea;color:white;transform:rotate(180deg)}.btn-convert{width:100%;padding:1.25rem;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;border:none;border-radius:12px;font-size:1.2rem;font-weight:700;cursor:pointer;transition:all 0.3s;margin-bottom:2rem}.btn-convert:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(102,126,234,0.4)}.result-box{background:#f8f9fa;padding:2rem;border-radius:12px;text-align:center}.result{font-size:1.5rem;font-weight:700;color:#333}@media(max-width:600px){.currency-select{flex-direction:column}.btn-swap{transform:rotate(90deg)}.btn-swap:hover{transform:rotate(270deg)}}
+/*
+ * ═══════════════════════════════════════════════════════════════════════
+ * © 2025 Abdel Ali - All Rights Reserved
+ * This project is part of Abdel Ali's portfolio
+ * Unauthorized copying or distribution is prohibited
+ * Contact: abdel.ali@example.com
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.converter-box {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.converter-box h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.currency-select {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.select-group {
+    flex: 1;
+}
+
+.select-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.select-group select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+.select-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn-swap {
+    width: 50px;
+    height: 50px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1.5rem;
+}
+
+.btn-swap:hover {
+    background: #667eea;
+    color: white;
+    transform: rotate(180deg);
+}
+
+.btn-convert {
+    width: 100%;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 2rem;
+}
+
+.btn-convert:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.result-box {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+}
+
+.result {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem auto;
+        padding: 0 10px;
+    }
+    
+    .converter-box {
+        padding: 1.5rem;
+    }
+    
+    .currency-select {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn-swap {
+        transform: rotate(90deg);
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .btn-swap:hover {
+        transform: rotate(270deg);
+    }
+    
+    .result {
+        font-size: 1.2rem;
+    }
+}

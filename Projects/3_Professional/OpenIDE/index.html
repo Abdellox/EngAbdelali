@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeFlow IDE - Free Browser IDE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ide-container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">CodeFlow IDE</span>
+            </div>
+            <div class="top-bar-actions">
+                <select id="languageSelector" class="language-selector tooltip" data-tooltip="Select Language">
+                    <option value="javascript">JavaScript</option>
+                    <option value="typescript">TypeScript</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="cpp">C++</option>
+                    <option value="csharp">C#</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="json">JSON</option>
+                    <option value="markdown">Markdown</option>
+                    <option value="sql">SQL</option>
+                    <option value="php">PHP</option>
+                    <option value="ruby">Ruby</option>
+                    <option value="go">Go</option>
+                    <option value="rust">Rust</option>
+                </select>
+                <select id="themeSelector" class="theme-selector tooltip" data-tooltip="Change Theme">
+                    <option value="vs-dark">Dark</option>
+                    <option value="vs-light">Light</option>
+                    <option value="hc-black">High Contrast</option>
+                </select>
+                <button id="runBtn" class="btn btn-primary tooltip" data-tooltip="Run Code (Ctrl+Enter)">▶ Run</button>
+                <button id="downloadBtn" class="btn btn-secondary tooltip" data-tooltip="Download File (Ctrl+S)">⬇ Download</button>
+                <button id="newFileBtn" class="btn btn-secondary tooltip" data-tooltip="New File (Ctrl+N)">+ New</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Files</h3>
+                    <button id="toggleSidebar" class="btn-icon tooltip" data-tooltip="Toggle Sidebar (Ctrl+B)">◀</button>
+                </div>
+                <div class="file-tree" id="fileTree">
+                    <div class="file-item active" data-file="welcome.js">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">welcome.js</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editor Area -->
+            <div class="editor-area">
+                <div class="tabs" id="tabs">
+                    <div class="tab active" data-file="welcome.js">
+                        <span class="tab-name">welcome.js</span>
+                        <button class="tab-close">×</button>
+                    </div>
+                </div>
+                <div id="editor"></div>
+            </div>
+
+            <!-- Output Panel -->
+            <div class="output-panel" id="outputPanel">
+                <div class="output-header">
+                    <h3>Output</h3>
+                    <button id="clearOutput" class="btn-icon tooltip" data-tooltip="Clear Output">🗑</button>
+                </div>
+                <div class="output-content" id="outputContent">
+                    <div class="output-message">Ready to code! Press Ctrl+P for command palette...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <span id="statusLanguage">JavaScript</span>
+                <span id="statusPosition">Ln 1, Col 1</span>
+            </div>
+            <div class="status-right">
+                <span id="statusEncoding">UTF-8</span>
+                <span id="statusEOL">LF</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fab" id="fabButton" onclick="toggleFabMenu()">+</button>
+    <div class="fab-menu" id="fabMenu" style="display: none;">
+        <div class="fab-menu-item" onclick="codePlayground.showPlayground()">
+            <span>🎮</span>
+            <span>Playground</span>
+        </div>
+        <div class="fab-menu-item" onclick="themeManager.showThemeGallery()">
+            <span>🎨</span>
+            <span>Themes</span>
+        </div>
+        <div class="fab-menu-item" onclick="showCodeAnalysis()">
+            <span>📊</span>
+            <span>Analysis</span>
+        </div>
+        <div class="fab-menu-item" onclick="snippetLibrary.showLibrary()">
+            <span>📚</span>
+            <span>Snippets</span>
+        </div>
+        <div class="fab-menu-item" onclick="showVersionHistory()">
+            <span>📜</span>
+            <span>History</span>
+        </div>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+            <div class="welcome-title">⚡ CodeFlow IDE</div>
+            <div class="welcome-subtitle">Your powerful browser-based development environment</div>
+            <div class="welcome-features">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <div class="feature-title">Lightning Fast</div>
+                    <div class="feature-desc">Instant startup, no installation needed</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-title">Beautiful UI</div>
+                    <div class="feature-desc">Modern interface with smooth animations</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <div class="feature-title">Smart Autocomplete</div>
+                    <div class="feature-desc">Intelligent suggestions for 15+ languages</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <div class="feature-title">Powerful Tools</div>
+                    <div class="feature-desc">Command palette, shortcuts & more</div>
+                </div>
+            </div>
+            <button class="welcome-start-btn" onclick="document.getElementById('welcomeScreen').remove()">
+                Start Coding →
+            </button>
+        </div>
+    </div>
+
+    <!-- Monaco Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+    <script src="snippets.js"></script>
+    <script src="features.js"></script>
+    <script src="advanced-features.js"></script>
+    <script src="premium-themes.js"></script>
+    <script src="ai-assistant.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
